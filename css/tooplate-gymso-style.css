@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5, h6,
 
   .custom-btn.bg-color:hover,
   .custom-btn.bg-color:focus {
-    background: var(--white-color);
+    background: var(--dark-color);
     border-color: transparent;
     color: var(--primary-color);
   }
@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6,
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.1;
+    opacity: 0.3;
   }
 
 
@@ -358,7 +358,7 @@ h1, h2, h3, h4, h5, h6,
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  min-height: 85vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -489,7 +489,7 @@ h1, h2, h3, h4, h5, h6,
   }
 
   .about-working-hours strong {
-    color: var(--white-color);
+    color: var( --dark-color);
     opacity: 0.85;
   }
 
@@ -498,7 +498,7 @@ h1, h2, h3, h4, h5, h6,
   }
 
   .team-info {
-    background: var(--white-color);
+    background: var( --dark-color);
     border-radius: 0 0 2px 2px;
     box-shadow: 6px 0 38px rgba(20,20,20,0.10);
     padding: 20px;
