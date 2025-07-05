@@ -1,124 +1,221 @@
 /*
-
-Tooplate 2119 Gymso Fitness
-
-https://www.tooplate.com/view/2119-gymso-fitness
-
-*/
-
-
-/* Importación si no está en el HTML */
+/* Importación de fuentes */
 @import url('https://fonts.cdnfonts.com/css/monday-pro');
-
-/* Aplicar Monday Pro solo a encabezados y navbar */
-h1, h2, h3, h4, h5, h6,
-.navbar, .navbar-brand, .nav-link {
-    font-family: 'Monday Pro', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,700&display=swap');
 
 :root {
-  --primary-color: #FFD102; /* Color plano base */
-  --primary-gradient: linear-gradient(90deg, #FBEF04, #FFD102); /* Degradado */
+  --primary-color: #FDDD03;
+  --primary-gradient: linear-gradient(90deg, #FBEF04, #FFD102);
+
+  --white-color:          #ffffff;
+  --dark-color:           #171819;
+  --about-bg-color:       #f9f9f9;
+
+  --gray-color:           #909090;
+  --link-color:           #404040;
+  --p-color:              #666262;
+
+  --base-font-family:     'Montserrat', sans-serif;
+  --monday-font-family:   'Monday Pro', sans-serif;
+
+  --font-weight-bold:     bold;
+  --font-weight-normal:   normal;
+  --font-weight-light:    300;
+  --font-weight-thin:     100;
+
+  --h1-font-size:         48px;
+  --h2-font-size:         36px;
+  --h3-font-size:         28px;
+  --h4-font-size:         24px;
+  --h5-font-size:         22px;
+  --h6-font-size:         22px;
+  --p-font-size:          18px;
+  --base-font-size:       16px;
+  --menu-font-size:       14px;
+
+  --border-radius-large:  100%;
+  --border-radius-small:  2px;
 }
 
-  :root {
-    --primary-color:        #FDDD03;
-    --white-color:          #ffffff;
-    --dark-color:           #171819;
-    --about-bg-color:       #f9f9f9;
+body {
+  background: var(--white-color);
+  font-family: var(--base-font-family);
+}
 
-    --gray-color:           #909090;
-    --link-color:           #404040;
-    --p-color:              #666262;
+/*---------------------------------------
+   TIPOGRAFÍA GENERAL            
+-----------------------------------------*/
+h1, h2, h3, h4, h5, h6,
+.navbar, .navbar-brand, .nav-link,
+button, .btn, .custom-btn {
+  font-family: var(--monday-font-family);
+}
 
-    --base-font-family:     'Plain', sans-serif;
-    --font-weight-bold:     bold;
-    --font-weight-normal:   normal;
-    --font-weight-light:    300;
-    --font-weight-thin:     100;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-thin);
+  line-height: normal;
+}
 
-    --h1-font-size:         48px;
-    --h2-font-size:         36px;
-    --h3-font-size:         28px;
-    --h4-font-size:         24px;
-    --h5-font-size:         22px;
-    --h6-font-size:         22px;
-    --p-font-size:          18px;
-    --base-font-size:       16px;
-    --menu-font-size:       14px;
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
 
-    --border-radius-large:  100%;
-    --border-radius-small:  2px;
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -2px;
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+}
+
+h6 {
+  color: var(--gray-color);
+  font-size: var(--h6-font-size);
+  line-height: inherit;
+  margin: 0;
+}
+
+p {
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-light);
+  line-height: 1.5em;
+  font-family: var(--base-font-family);
+}
+
+b, strong {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+}
+
+.section {
+  padding: 7rem 0;
+}
+
+/* Estilos específicos para footer */
+.site-footer {
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+  font-family: var(--base-font-family);
+  font-size: 15px;
+}
+
+.site-footer a {
+  color: #ffffffd9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: #FFD102;
+}
+
+.site-footer h6.footer-title {
+  font-family: var(--monday-font-family);
+  color: #e6e6e6;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-premium {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  color: #cccccc;
+}
+
+.footer-quality {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  color: #f2f2f2;
+}
+
+.site-footer .social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: #18191d;
+  box-shadow: 4px 4px 8px #0a0a0a, -4px -4px 8px #22242a;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.site-footer .social-icons a:hover {
+  background: #FFD102;
+  color: #000;
+  box-shadow: inset 4px 4px 6px #c6a900, inset -4px -4px 6px #ffe744;
+  transform: scale(1.05);
+}
+
+.site-footer .fa {
+  color: #FFD102;
+  width: 18px;
+}
+
+.footer-links,
+.footer-contact {
+  font-family: var(--base-font-family);
+  font-size: 15px;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+@media (min-width: 992px) {
+  .site-footer .col-lg-2,
+  .site-footer .col-lg-3,
+  .site-footer .col-lg-5 {
+    border-right: 1px solid #2e2e2e;
   }
 
-
-  body {
-    background: var(--white-color);
-    font-family: var(--base-font-family);
+  .site-footer .col-lg-5 {
+    border-right: none;
   }
+}
 
 
-  /*---------------------------------------
-     TYPOGRAPHY              
-  -----------------------------------------*/
 
-  h1,h2,h3,h4,h5,h6 {
-    font-weight: var(--font-weight-thin);
-    line-height: normal;
-  }
+/* Efecto hover para enlaces de correo y WhatsApp */
+.site-footer a[href^="mailto:"],
+.site-footer a[href*="wa.me"],
+.site-footer .social-icons a {
+  transition: all 0.3s ease;
+}
 
-  h1 {
-    font-size: var(--h1-font-size);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    margin: 20px 0;
-  }
+/* Hover para enlaces de contacto (correo, WhatsApp) */
+.site-footer a[href^="mailto:"]:hover,
+.site-footer a[href*="wa.me"]:hover {
+  color: #FFD102;
+  font-size: 17px;
+}
 
-  h2 {
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: -2px;
-  }
-
-  h3 {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: -1px;
-    margin: 0;
-  }
-
-  h4 {
-    font-size: var(--h4-font-size);
-  }
-
-  h5 {
-    font-size: var(--h5-font-size);
-  }
-
-  h6 {
-    color: var(--gray-color);
-    font-size: var(--h6-font-size);
-    line-height: inherit;
-    margin: 0;
-  }
-
-  p {
-    color: var(--p-color);
-    font-size: var(--p-font-size);
-    font-weight: var(--font-weight-light);
-    line-height: 1.5em;
-  }
-
-  b, 
-  strong {
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0;
-  }
-
-  .section {
-    padding: 7rem 0;
-  }
+/* Hover para íconos sociales */
+.site-footer .social-icons a:hover {
+  color: #FFD102;
+  transform: scale(1.1);
+}
 
 
   /* BUTTON */
@@ -571,24 +668,105 @@ h1, h2, h3, h4, h5, h6,
      FOOTER              
   -----------------------------------------*/
 
-  .site-footer {
-    border-top: 1px solid #efebeb;
-    padding: 3rem 0;
+/* Estilos generales para el footer */
+.site-footer {
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+  font-family: 'Monday Pro', sans-serif;
+  font-size: 15px;
+}
+
+/* Enlaces */
+.site-footer a {
+  color: #ffffffd9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: #FFD102; /* color dorado */
+}
+
+/* Títulos */
+.site-footer h6 {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Íconos sociales */
+.site-footer .social-icons a {
+  font-size: 18px;
+  margin-right: 12px;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.site-footer .social-icons a:hover {
+  color: #FFD102;
+  transform: scale(1.1);
+}
+
+/* Íconos de contacto */
+.site-footer .fa {
+  color: #FFD102;
+  width: 18px;
+}
+
+/* Separadores entre columnas (solo en pantallas grandes) */
+@media (min-width: 992px) {
+  .site-footer .col-lg-2,
+  .site-footer .col-lg-3,
+  .site-footer .col-lg-5 {
+    border-right: 1px solid #2e2e2e;
   }
 
-  .site-footer a {
-    color: var(--p-color);
-    font-weight: var(--font-weight-light);
+  .site-footer .col-lg-5 {
+    border-right: none; /* Última columna sin borde */
   }
+}
 
-  .site-footer p {
-    font-size: var(--base-font-size);
-  }
 
-  .contact .fa,
-  .site-footer .fa {
-    color: var(--primary-color);
-  }
+
+  /*---------------------------------------
+     Contenedor de íconos sociales con neomorfismo 
+  -----------------------------------------*/
+
+.site-footer .social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: #18191d;
+  box-shadow: 4px 4px 8px #0a0a0a, -4px -4px 8px #22242a;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Hover neumórfico: cambio de color y relieve inverso */
+.site-footer .social-icons a:hover {
+  background: #FFD102;
+  color: #000;
+  box-shadow: inset 4px 4px 6px #c6a900, inset -4px -4px 6px #ffe744;
+  transform: scale(1.05);
+}
+
+
+
+.site-footer ul li i {
+  background: #18191d;
+  border-radius: 50%;
+  padding: 6px;
+  width: 30px;
+  text-align: center;
+  margin-right: 10px;
+  color: #FFD102;
+  box-shadow: 2px 2px 4px #0a0a0a, -2px -2px 4px #22242a;
+}
 
 
   /*---------------------------------------
