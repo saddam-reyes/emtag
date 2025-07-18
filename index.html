@@ -64,7 +64,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </script>
 
   <!-- Fuentes -->
-  <link href="https://fonts.cdnfonts.com/css/monday-pro" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -142,58 +145,130 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         </div>
     </nav>
-Pastel12
-
-<!-- HERO -->
-<section class="hero d-flex flex-column justify-content-center align-items-center" id="home">
-
-  <!-- Capa oscura de fondo -->
-  <div class="bg-overlay"></div>
-
-  <div class="container">
-    <div class="row justify-content-center">
-
-      <div class="col-lg-8 col-md-10 col-12">
-        <div class="hero-text mt-5 text-center">
-
-          <!-- Logo EMTAG -->
-           <!--<img src="images/logo-emtag-gde.png"
-               alt="Logo EMTAG"
-               class="img-fluid mb-4"
-               style="max-width: 400px;"
-               data-aos="fade-down"
-               data-aos-delay="100">-->
-
-          <!-- Banner debajo del logo -->
-           <img src="images/banner-emtag.png"
-               alt="Banner EMTAG"
-               class="img-fluid mb-4"
-               style="max-width: 60%;"
-               data-aos="fade-down"
-               data-aos-delay="200">
-          <!-- Slogan -->
-          <h6 class="text-white" data-aos="fade-up" data-aos-delay="300">
-            <!--ESTILO, POTENCIA Y PRECISION EN CADA RIN.-->
-          </h6>
-
-          <!-- Título principal (opcional) -->
-          <h1 class="text-white mb-4" data-aos="fade-up" data-aos-delay="500">
-                
-          </h1>
-           <div class="row"> </div>
-
-<div class="row"> </div>
 
 
+[<section id="hero-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
 
-       <a href="#about" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="700">
-            Ver catálogo de rines
-          </a>
-
+    <!-- Slide 1: EMTAG -->
+    <div class="carousel-item active" style="background: url('images/carrusel/hero-emtag-bg.jpg') center/cover no-repeat;">
+      <div class="carousel-overlay"></div>
+      <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
+        <div class="brand-logo mb-4">
+          <img src="images/logos/logo-emtag-white.png" alt="EMTAG Logo" class="img-fluid">
         </div>
+        <h2 class="mb-3">EMTAG</h2>
+        <h6 class="mb-4">RINES PREMIUM PARA AUTOS DE ALTA GAMA</h6>
+        <p>Estilo, precisión y durabilidad. Conecta tu vehículo con la excelencia.</p>
+        <a href="#contacto" class="btn-emtag mt-3">AGENDA TU SERVICIO</a>
+      </div>
+    </div>
+
+    <!-- Slide 2: Mercedes-Benz -->
+    <div class="carousel-item" style="background: url('images/carrusel/hero-mercedes-benz-bg.jpg') center/cover no-repeat;">
+      <div class="carousel-overlay"></div>
+      <div class="container h-100 d-flex flex-column justify-content-center align-items-start text-left">
+        <div class="brand-logo mb-4">
+          <img src="images/logos/logo-mercedes-benz.png" alt="Mercedes-Benz Logo" class="img-fluid">
+        </div>
+        <h2 class="mb-3">MERCEDES-BENZ</h2>
+        <h6 class="mb-4">ELEGANCIA Y PRECISIÓN EN MOVIMIENTO</h6>
+        <p>Rines diseñados para realzar tu clase y potencia.</p>
+        <a href="#contacto" class="btn-emtag mt-3">VER OPCIONES</a>
+      </div>
+    </div>
+
+    <!-- Slide 3: BMW -->
+    <div class="carousel-item" style="background: url('images/carrusel/hero-bmw-bg.jpg') center/cover no-repeat;">
+      <div class="carousel-overlay"></div>
+      <div class="container h-100 d-flex flex-column justify-content-center align-items-end text-right">
+        <div class="brand-logo mb-4">
+          <img src="images/logos/logo-bmw.png" alt="BMW Logo" class="img-fluid">
+        </div>
+        <h2 class="mb-3">BMW</h2>
+        <h6 class="mb-4">ESTILO Y DEPORTIVIDAD SUPERIOR</h6>
+        <p>Rines que elevan el carácter único de tu BMW.</p>
+        <a href="#contacto" class="btn-emtag mt-3">EXPLORA MODELOS</a>
+      </div>
+    </div>
+
+    <!-- Slide 4: Audi -->
+    <div class="carousel-item" style="background: url('images/carrusel/hero-audi-bg.jpg') center/cover no-repeat;">
+      <div class="carousel-overlay"></div>
+      <div class="container h-100 d-flex flex-column justify-content-center align-items-start text-left">
+        <div class="brand-logo mb-4">
+          <img src="images/logos/logo-audi.png" alt="Audi Logo" class="img-fluid">
+        </div>
+        <h2 class="mb-3">AUDI</h2>
+        <h6 class="mb-4">DISEÑO VANGUARDISTA, TECNOLOGÍA IMPECABLE</h6>
+        <p>El complemento perfecto para tu auto de alta gama.</p>
+        <a href="#contacto" class="btn-emtag mt-3">SOLICITA ASESORÍA</a>
+      </div>
+    </div>
+
+    <!-- Slide 5: Porsche -->
+    <div class="carousel-item" style="background: url('images/carrusel/hero-porsche-bg.jpg') center/cover no-repeat;">
+      <div class="carousel-overlay"></div>
+      <div class="container h-100 d-flex flex-column justify-content-center align-items-end text-right">
+        <div class="brand-logo mb-4">
+          <img src="images/logos/logo-porsche.png" alt="Porsche Logo" class="img-fluid">
+        </div>
+        <h2 class="mb-3">PORSCHE</h2>
+        <h6 class="mb-4">PRESTIGIO, DESEMPEÑO Y PERFECCIÓN</h6>
+        <p>Rines a la altura del diseño más icónico del mundo.</p>
+        <a href="#contacto" class="btn-emtag mt-3">PERSONALIZA TU PORSCHE</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controles -->
+  <a class="carousel-control-prev" href="#hero-carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#hero-carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Siguiente</span>
+  </a>
+</section>
+
+
+<!-- SECCIÓN PROMOCIÓN MARKETPLACE -->
+<section class="marketplace-promo d-flex align-items-center py-5">
+  <div class="container">
+    <div class="row align-items-center text-center text-lg-left">
+      <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+        <h2 data-aos="fade-up" data-aos-delay="200" class="text-white mb-0" style="font-family: 'Goldman', sans-serif;">
+          COMPRA TUS RINES EN:
+        </h2>
       </div>
 
+      <div class="col-lg-6 col-12">
+        <a href="https://wa.me/525580578240?text=Hola%2C%20quiero%20comprar%20rines%20a%20través%20de%20su%20publicación%20en%20Mercado%20Libre." target="_blank" rel="noopener noreferrer">
+          <img src="images/logos/logo-mercado-libre.png" alt="Compra en Mercado Libre" class="img-fluid mx-auto d-block" data-aos="zoom-in" data-aos-delay="400" style="max-width: 220px;">
+        </a>
+      </div>
     </div>
+  </div>
+</section>
+
+
+<!-- SECCIÓN ABOUT EMTAG -->
+<section class="about-emtag text-center d-flex align-items-center py-5">
+  <div class="container">
+    <h2 class="about-title mb-4 text-uppercase">
+      <span class="yellow-gradient">RINES PREMIUM</span> <br>
+      <span class="gray-gradient">PARA AUTOS DE LUJO</span>
+    </h2>
+
+    <p class="about-description">
+      En EMTAG nos especializamos en la venta de rines de alta calidad para autos de marcas exclusivas. 
+      Ofrecemos diseños detallados, acabados de nivel superior y una durabilidad en la que puedes confiar. 
+      Conecta tu vehículo con el estilo y rendimiento que merece.
+    </p>
+
+    <a href="#about" class="btn-emtag mt-4">VER CATÁLOGO DE RINES</a>
   </div>
 </section>
 
@@ -202,32 +277,24 @@ Pastel12
 <section class="feature" id="feature">
   <div class="container">
     <div class="row">
-
-      <!-- Texto e información -->
       <div class="d-flex flex-column justify-content-center ml-lg-auto mr-lg-5 col-lg-6 col-md-6 col-12">
         <h2 class="mb-3 text-white" data-aos="fade-up">Estilo, potencia y precisión</h2>
-
         <h6 class="mb-4 text-white" data-aos="fade-up">Expertos en rines para autos de alta gama</h6>
-
         <p data-aos="fade-up" data-aos-delay="200">
           En EMTAG elevamos la estética y el rendimiento de tu auto con rines OEM/ODM y servicios de reparación profesional.
         </p>
-
-        <a href="#contacto" class="btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="300">
-          Agenda tu servicio
+        <a href="#contacto" class="btn-emtag mt-3" data-aos="fade-up" data-aos-delay="300">
+          AGENDA TU SERVICIO
         </a>
       </div>
 
-      <!-- Imagen o ilustración opcional -->
       <div class="mr-lg-auto mt-3 col-lg-5 col-md-6 col-12">
         <img src="images/rines-emtag.png" alt="Rines EMTAG" class="img-fluid rounded" data-aos="zoom-in" data-aos-delay="400">
       </div>
-
     </div>
   </div>
 </section>
-
-
+]
      <!-- ABOUT -->
     <!--  <section class="about section" id="about">
                <div class="container">
