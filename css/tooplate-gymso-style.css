@@ -1,314 +1,598 @@
-/*
-/* Importación de fuentes */
-@import url('https://fonts.cdnfonts.com/css/monday-pro');
+/*-------------------------------------
+  IMPORTACIÓN DE FUENTES
+--------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+/*-------------------------------------
+  VARIABLES
+--------------------------------------*/
 :root {
   --primary-color: #FDDD03;
-  --primary-gradient: linear-gradient(90deg, #FBEF04, #FFD102);
+  --primary-gradient: linear-gradient(45deg, #FBEF04, #FFD102);
 
-  --white-color:          #ffffff;
-  --dark-color:           #171819;
-  --about-bg-color:       #f9f9f9;
+  --white-color: #ffffff;
+  --dark-color: #171819;
+  --gray-color: #909090;
+  --link-color: #404040;
+  --p-color: #666262;
 
-  --gray-color:           #909090;
-  --link-color:           #404040;
-  --p-color:              #666262;
+  --base-font-family: 'Montserrat', sans-serif;
+  --heading-font-family: 'Orbitron', sans-serif;
 
-  --base-font-family:     'Montserrat', sans-serif;
-  --monday-font-family:   'Monday Pro', sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+  --font-weight-light: 300;
 
-  --font-weight-bold:     bold;
-  --font-weight-normal:   normal;
-  --font-weight-light:    300;
-  --font-weight-thin:     100;
+  --h1-font-size: 48px;
+  --h2-font-size: 36px;
+  --h3-font-size: 28px;
+  --h4-font-size: 24px;
+  --h5-font-size: 22px;
+  --h6-font-size: 22px;
+  --p-font-size: 18px;
+  --menu-font-size: 12px;
 
-  --h1-font-size:         48px;
-  --h2-font-size:         36px;
-  --h3-font-size:         28px;
-  --h4-font-size:         24px;
-  --h5-font-size:         22px;
-  --h6-font-size:         22px;
-  --p-font-size:          18px;
-  --base-font-size:       16px;
-  --menu-font-size:       14px;
-
-  --border-radius-large:  100%;
-  --border-radius-small:  2px;
+  --border-radius-large: 100%;
+  --border-radius-small: 2px;
 }
 
+/*-------------------------------------
+  TIPOGRAFÍA GLOBAL
+--------------------------------------*/
 body {
   background: var(--white-color);
   font-family: var(--base-font-family);
+  color: var(--p-color);
 }
 
-/*---------------------------------------
-   TIPOGRAFÍA GENERAL            
------------------------------------------*/
 h1, h2, h3, h4, h5, h6,
-.navbar, .navbar-brand, .nav-link,
 button, .btn, .custom-btn {
-  font-family: var(--monday-font-family);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--font-weight-thin);
-  line-height: normal;
-}
-
-h1 {
-  font-size: var(--h1-font-size);
+  font-family: var(--heading-font-family);
+  font-style: italic;
   font-weight: var(--font-weight-bold);
-  letter-spacing: -1px;
+  background: linear-gradient(45deg, #808080, #e7e7e7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-  margin: 20px 0;
 }
 
+h1 { font-size: var(--h1-font-size); }
+h2 { font-size: var(--h2-font-size); }
+h3 { font-size: var(--h3-font-size); }
+h4 { font-size: var(--h4-font-size); }
+h5 { font-size: var(--h5-font-size); }
+h6 { font-size: var(--h6-font-size); }
+
+p {
+  font-family: var(--base-font-family);
+  font-size: var(--p-font-size);
+  line-height: 1.5;
+  color: var(--p-color);
+}
+
+/*-------------------------------------
+  MENÚ DE NAVEGACIÓN (Orbitron)
+--------------------------------------*/
+.navbar, .navbar-brand, .nav-link {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--menu-font-size);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/*-------------------------------------
+  BOTONES UNIVERSALES EMTAG
+--------------------------------------*/
+.btn-emtag {
+  display: inline-block;
+  padding: 12px 40px;
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #FFD102;
+  font-family: "Goldman", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid #FFD102;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+/* Hover Elegante */
+.btn-emtag:hover {
+  background-color: rgba(253, 221, 3, 0.05);
+  box-shadow: 0 0 10px rgba(253, 221, 3, 0.4);
+  color: #FFD102;
+  transform: scale(1.03);
+}
+
+/* Active / Click */
+.btn-emtag:active {
+  background: linear-gradient(90deg, #FBEF04, #FFD102);
+  color: #111;
+  border: none;
+  transform: scale(1.05);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tamaño Pequeño */
+.btn-emtag-sm {
+  padding: 10px 30px;
+  font-size: 13px;
+}
+
+
+
+/*-------------------------------------
+  HERO CARRUSEL - ESTILOS GENERALES
+--------------------------------------*/
+.carousel-item {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 60px;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.carousel-item .container {
+  position: relative;
+  z-index: 2;
+}
+
+/*-------------------------------------
+  MARCA - LOGO DENTRO DEL CARRUSEL
+--------------------------------------*/
+.brand-logo img {
+  max-width: 140px;
+  opacity: 0.8;
+}
+
+/*-------------------------------------
+  TEXTOS GENERALES DEL CARRUSEL
+--------------------------------------*/
 h2 {
-  font-size: var(--h2-font-size);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -2px;
-}
-
-h3 {
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -1px;
-  margin: 0;
-}
-
-h4 {
-  font-size: var(--h4-font-size);
-}
-
-h5 {
-  font-size: var(--h5-font-size);
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 h6 {
-  color: var(--gray-color);
-  font-size: var(--h6-font-size);
-  line-height: inherit;
-  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 
 p {
-  color: var(--p-color);
-  font-size: var(--p-font-size);
-  font-weight: var(--font-weight-light);
-  line-height: 1.5em;
-  font-family: var(--base-font-family);
+  max-width: 450px;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-b, strong {
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0;
+/*-------------------------------------
+  BOTÓN CTA DENTRO DEL CARRUSEL
+--------------------------------------*/
+.btn-cta {
+  padding: 12px 36px;
 }
 
-.section {
-  padding: 7rem 0;
+/*-------------------------------------
+  ANIMACIONES DE ENTRADA
+--------------------------------------*/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Estilos específicos para footer */
-.site-footer {
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*-------------------------------------
+  APLICACIÓN DE ANIMACIONES
+--------------------------------------*/
+.carousel-item.active .brand-logo {
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.carousel-item.active h2 {
+  animation: fadeInLeft 1.2s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.carousel-item.active h6 {
+  animation: fadeInLeft 1.2s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.carousel-item.active p {
+  animation: fadeInLeft 1.2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.carousel-item.active .btn-cta {
+  animation: fadeInRight 1.2s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/*-------------------------------------
+  ESTADO INICIAL - OPACIDAD CERO
+--------------------------------------*/
+.carousel-item .brand-logo,
+.carousel-item h2,
+.carousel-item h6,
+.carousel-item p,
+.carousel-item .btn-cta {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------
+   SECCIÓN MARKETPLACE PROMO
+------------------------------------- */
+.marketplace-promo {
   background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #fff;
-  font-family: var(--base-font-family);
-  font-size: 15px;
-}
-
-.site-footer a {
-  color: #ffffffd9;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.site-footer a:hover {
-  color: #FFD102;
-}
-
-.site-footer h6.footer-title {
-  font-family: var(--monday-font-family);
-  color: #e6e6e6;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.footer-premium {
-  font-family: 'Montserrat', sans-serif;
-  font-style: italic;
-  font-weight: normal;
-  color: #cccccc;
-}
-
-.footer-quality {
-  font-family: 'Montserrat', sans-serif;
-  font-style: italic;
-  font-weight: bold;
-  color: #f2f2f2;
-}
-
-.site-footer .social-icons a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 36px;
-  height: 36px;
-  margin-right: 12px;
-  border-radius: 50%;
-  background: #18191d;
-  box-shadow: 4px 4px 8px #0a0a0a, -4px -4px 8px #22242a;
-  color: #fff;
-  font-size: 16px;
+  padding: 4rem 0;
   transition: all 0.3s ease;
 }
 
-.site-footer .social-icons a:hover {
-  background: #FFD102;
-  color: #000;
-  box-shadow: inset 4px 4px 6px #c6a900, inset -4px -4px 6px #ffe744;
-  transform: scale(1.05);
+.marketplace-promo:hover {
+  filter: brightness(1.2);
 }
 
-.site-footer .fa {
-  color: #FFD102;
-  width: 18px;
+
+.marketplace-title {
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
-.footer-links,
-.footer-contact {
-  font-family: var(--base-font-family);
-  font-size: 15px;
-  color: #cccccc;
+.marketplace-logo {
+  max-width: 220px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+  .marketplace-promo .row {
+    text-align: center;
+  }
+
+  .marketplace-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .marketplace-logo {
+    margin: 0 auto;
+    max-width: 160px;
+  }
+}
+
+
+
+
+/*-----------------------------
+  about-emtag
+------------------------------*/
+
+.about-emtag {
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+  padding: 7rem 0;
+  text-align: center;
+}
+
+.about-emtag .about-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; /* Tamaño más refinado */
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+}
+
+.about-emtag .yellow-gradient {
+  background: linear-gradient(90deg, #FBEF04, #FFD102);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.about-emtag .gray-gradient {
+  background: linear-gradient(90deg, #8d8d8d, #595959);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.about-emtag .about-description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.05rem;
+  max-width: 720px;
+  margin: 0 auto;
   line-height: 1.7;
+  color: #cccccc;
 }
 
-@media (min-width: 992px) {
-  .site-footer .col-lg-2,
-  .site-footer .col-lg-3,
-  .site-footer .col-lg-5 {
-    border-right: 1px solid #2e2e2e;
+@media (max-width: 768px) {
+  .about-emtag {
+    padding: 5.5rem 0;
   }
 
-  .site-footer .col-lg-5 {
-    border-right: none;
+  .about-emtag .about-title {
+    font-size: 1.6rem; /* Más fino en móvil */
+    margin-bottom: 2rem;
+  }
+
+  .about-emtag .about-description {
+    font-size: 0.95rem;
+    padding: 0 1.5rem;
   }
 }
 
 
 
-/* Efecto hover para enlaces de correo y WhatsApp */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------
+  HOVER LINKS FOOTER
+------------------------------*/
 .site-footer a[href^="mailto:"],
 .site-footer a[href*="wa.me"],
 .site-footer .social-icons a {
   transition: all 0.3s ease;
 }
 
-/* Hover para enlaces de contacto (correo, WhatsApp) */
 .site-footer a[href^="mailto:"]:hover,
 .site-footer a[href*="wa.me"]:hover {
   color: #FFD102;
   font-size: 17px;
 }
 
-/* Hover para íconos sociales */
 .site-footer .social-icons a:hover {
   color: #FFD102;
   transform: scale(1.1);
 }
 
+/*-----------------------------
+  CLASES PERSONALIZADAS MONTSERRAT Y Orbitron
+------------------------------*/
+.orbitron-regular {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+}
 
-  /* BUTTON */
+.orbitron-bold {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+}
 
-  .custom-btn {
-    background: transparent;
-    border-radius: var(--border-radius-small);
-    padding: 14px 24px;
-    color: var(--white-color);
-    font-size: var(--menu-font-size);
-    font-weight: var(--font-weight-normal);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    transition: all 0.3s ease;
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.montserrat-semibold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.montserrat-italic {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+}
+
+.montserrat-bolditalic {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+
+
+
+/*-----------------------------
+  MARKETPLACE PROMO SECTION
+------------------------------*/
+.marketplace-promo {
+    background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.marketplace-promo h2 {
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.marketplace-promo img {
+  max-width: 180px;
+}
+
+@media (max-width: 767px) {
+  .marketplace-promo .row {
+    text-align: center;
   }
 
-  .custom-btn:hover {
-    color: var(--primary-color);
+  .marketplace-promo h2 {
+    margin-bottom: 1rem;
   }
 
-  .custom-btn:focus {
-    box-shadow: none;
+  .marketplace-promo img {
+    margin: 0 auto;
+  }
+}
+
+/* -------------------------------------
+   SECCIÓN MARKETPLACE PROMO
+------------------------------------- */
+.marketplace-promo {
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.marketplace-promo .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketplace-promo h2 {
+  color: #fff;
+   font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.marketplace-promo img {
+  max-width: 200px;
+}
+
+/* Alineación horizontal en desktop, vertical en mobile */
+@media (min-width: 768px) {
+  .marketplace-promo .row {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .custom-btn.bordered:hover,
-  .custom-btn.bordered:focus,
-
-  .custom-btn.bg-color:hover,
-  .custom-btn.bg-color:focus {
-    background: var(--dark-color);
-    border-color: transparent;
-    color: var(--primary-color);
+  .marketplace-promo .col-lg-6 {
+    display: flex;
+    align-items: center;
   }
 
-  .bordered {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+  .marketplace-promo .col-lg-6:first-child {
+    justify-content: flex-end;
+    padding-right: 2rem;
   }
 
-  .bg-color {
-    background: var(--primary-color);
-    color: var(--white-color);
+  .marketplace-promo .col-lg-6:last-child {
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .marketplace-promo .row {
+    flex-direction: column;
+    text-align: center;
   }
 
-
-
-  /*---------------------------------------
-     GENERAL               
-  -----------------------------------------*/
-
-  * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  *::before,
-  *::after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  a {
-    color: var(--link-color);
-    font-weight: normal;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  a:hover, 
-  a:active, 
-  a:focus {
-    color: var(--primary-color);
-    outline: none;
-    text-decoration: none;
+  .marketplace-promo img {
+    margin-top: 1rem;
   }
 
 
-  /* BG OVERLAY */
+.marketplace-promo {
+  background: linear-gradient(90deg, #282828, #101010);
+  padding: 4rem 0;
+  transition: all 0.3s ease;
+}
 
-  .bg-overlay {
-    background: var(--dark-color);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.3;
-  }
+.marketplace-promo:hover {
+  filter: brightness(1.2);
+}
+
+.marketplace-promo a img {
+  transition: all 0.3s ease;
+}
+
+.marketplace-promo a:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
   /*---------------------------------------
@@ -672,7 +956,7 @@ b, strong {
 .site-footer {
   background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #fff;
-  font-family: 'Monday Pro', sans-serif;
+  font-family: 'Goldman', sans-serif;
   font-size: 15px;
 }
 
