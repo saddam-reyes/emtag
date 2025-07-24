@@ -63,11 +63,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   </script>
 
-  <!-- Fuentes -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/elemental-end" rel="stylesheet">
 
+  <!-- Íconos FontAwesome (opcional si usas íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -97,54 +99,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7MNPFWR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <!-- MENU BAR -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
 
-           <a class="navbar-brand" href="index.html">
-  <img src="images/logo-emtag.png" alt="EMTAG Logo" style="height: 40px;">
-</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#inicio">
+      <img src="images/logo-emtag.png" alt="Logo EMTAG" />
+    </a>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link smoothScroll">HOME</a>
-                    </li>
+    <!-- Botón para móviles -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link smoothScroll">RINES</a>
-                    </li>
+    <!-- Menú -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
 
-                    <li class="nav-item">
-                        <a href="#class" class="nav-link smoothScroll">LLANTAS</a>
-                    </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#inicio">Inicio</a>
+        </li>
 
-                    <li class="nav-item">
-                        <a href="#schedule" class="nav-link smoothScroll">ACCESORIOS</a>
-                    </li>
+        <li class="nav-item dropdown position-static">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#rines"
+            id="rinesDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Rines
+          </a>
+          <div class="dropdown-menu" aria-labelledby="rinesDropdown">
+            <a class="dropdown-item" href="#mercedes">Mercedes-Benz</a>
+            <a class="dropdown-item" href="#bmw">BMW</a>
+            <a class="dropdown-item" href="#audi">Audi</a>
+            <a class="dropdown-item" href="#porsche">Porsche</a>
+          </div>
+        </li>
 
-                    <li class="nav-item">
-                        <a href="#schedule" class="nav-link smoothScroll">SERVICOS</a>
-                    </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </li>
 
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link smoothScroll">CONTACTO</a>
-                    </li>
-                </ul>
+        <!-- Teléfono -->
+        <li class="nav-item d-flex align-items-center ml-4 phone-container">
+          <i class="fas fa-phone-alt mr-2"></i>
+          <span class="phone-number">55 19308 1634</span>
+        </li>
 
-                <ul class="social-icon ml-lg-3">
-                    <li><a href="https://fb.com/tooplate" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                </ul>
-            </div>
+        <!-- Redes sociales -->
+        <li class="nav-item d-flex align-items-center ml-3 social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </li>
 
-        </div>
-    </nav>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Scripts necesarios -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 
 [<section id="hero-carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -254,6 +285,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 
+
+
+
+
 <!-- SECCIÓN ABOUT EMTAG -->
 <section class="about-emtag text-center d-flex align-items-center py-5">
   <div class="container">
@@ -269,12 +304,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
 
     <a href="#about" class="btn-emtag mt-4">VER CATÁLOGO DE RINES</a>
+    <br> <br> <br> <br> <br> <br>
+
+  
   </div>
 </section>
 
 
+<!-- Sección Destacada EMTAG - Clientes y Marcas -->
+<section>
+  <br>
+  <img src="images/carrusel/dest.jpg" alt="Fondo" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  ">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Caja Izquierda -->
+      <div class="col-lg-4 col-md-6 col-12 text-center text-lg-left mb-4 mb-lg-0" data-aos="fade-right">
+        <h2 class="highlight-title">+10 MARCAS PREMIUM</h2>
+        <p class="highlight-subtext">Aliados en rines de lujo</p>
+      </div>
+
+      <!-- Imagen del Rin centrado -->
+      <div class="col-lg-4 col-md-12 col-12 text-center position-relative" data-aos="zoom-in">
+        <img src="images/rines-emtag.png" alt="Rin de lujo" class="highlight-img img-fluid">
+      </div>
+
+      <!-- Caja Derecha -->
+      <div class="col-lg-4 col-md-6 col-12 text-center text-lg-right mt-4 mt-lg-0" data-aos="fade-left">
+        <h2 class="highlight-title">
+          <span class="counter" data-target="1000">0</span> CLIENTES
+        </h2>
+        <p class="highlight-subtext">Satisfechos en todo México</p>
+      </div>
+
+    </div>
+  </div>
+   <br> 
+
+
+</section>
+
+
+
+
+
 <!-- Sección EMTAG - Característica destacada -->
-<section class="feature" id="feature">
+<!--<section class="feature" id="feature">
   <div class="container">
     <div class="row">
       <div class="d-flex flex-column justify-content-center ml-lg-auto mr-lg-5 col-lg-6 col-md-6 col-12">
@@ -293,7 +376,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
+
+
 ]
      <!-- ABOUT -->
     <!--  <section class="about section" id="about">
@@ -675,6 +761,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      <script src="js/aos.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
+     <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const speed = 50;
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  });
+</script>
+
 
 </body>
 </html>

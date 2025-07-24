@@ -1,73 +1,31 @@
-/* Reseteo de márgenes y paddings */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background: #0d0d0d; /* Ajusta al color de tu fondo */
-    box-sizing: border-box;
-}
-
-/* Asegurar que el footer esté bien pegado al final */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
-
-/* Corregir posibles bordes o líneas blancas */
-img, svg, video, canvas {
-    display: block;
-    max-width: 100%;
-}
-
-/* Opcional: Forzar color de fondo completo */
-footer {
-    background: #0d0d0d; /* O el degradado si usas uno */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------------------
-  IMPORTACIÓN DE FUENTES
---------------------------------------*/
+/*=====================================
+=            1. IMPORTACIONES         =
+=====================================*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/elemental-end');
 
-/*-------------------------------------
-  VARIABLES
---------------------------------------*/
+/*=====================================
+=            2. VARIABLES ROOT        =
+=====================================*/
 :root {
+  /* Colores */
   --primary-color: #FDDD03;
   --primary-gradient: linear-gradient(45deg, #FBEF04, #FFD102);
-
   --white-color: #ffffff;
   --dark-color: #171819;
   --gray-color: #909090;
   --link-color: #404040;
   --p-color: #666262;
 
+  /* Tipografías */
   --base-font-family: 'Montserrat', sans-serif;
-  --heading-font-family: 'Orbitron', sans-serif;
+  --heading-font-family: 'Elemental End', sans-serif;
 
+  /* Pesos */
   --font-weight-bold: 700;
   --font-weight-normal: 400;
-  --font-weight-light: 300;
 
+  /* Tamaños */
   --h1-font-size: 48px;
   --h2-font-size: 36px;
   --h3-font-size: 28px;
@@ -76,25 +34,31 @@ footer {
   --h6-font-size: 22px;
   --p-font-size: 18px;
   --menu-font-size: 12px;
-
-  --border-radius-large: 100%;
-  --border-radius-small: 2px;
 }
 
-/*-------------------------------------
-  TIPOGRAFÍA GLOBAL
---------------------------------------*/
+/*=====================================
+=            3. RESET GENERAL         =
+=====================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*=====================================
+=            4. TIPOGRAFÍA            =
+=====================================*/
 body {
-  background: var(--white-color);
   font-family: var(--base-font-family);
   color: var(--p-color);
+  background: var(--white-color);
 }
 
 h1, h2, h3, h4, h5, h6,
 button, .btn, .custom-btn {
   font-family: var(--heading-font-family);
   font-style: italic;
-    font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
   background: linear-gradient(45deg, #808080, #e7e7e7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -115,26 +79,160 @@ p {
   color: var(--p-color);
 }
 
-/*-------------------------------------
-  MENÚ DE NAVEGACIÓN (Orbitron)
---------------------------------------*/
-.navbar, .navbar-brand, .nav-link {
-  font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--menu-font-size);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
 
-/*-------------------------------------
-  BOTONES UNIVERSALES EMTAG
---------------------------------------*/
+  /* Navbar general */
+  .navbar {
+    background: var(--dark-color);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-family: var(--heading-font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--menu-font-size);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Logo */
+  .navbar-brand img {
+    height: 40px;
+  }
+
+  /* Links del menú */
+  .navbar-nav .nav-link {
+    color: var(--white-color);
+    font-weight: var(--font-weight-bold);
+    font-size: 0.7rem;
+    margin-right: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  /* Dropdown toggle (Rines) */
+  .nav-link.dropdown-toggle {
+    cursor: pointer;
+  }
+
+  /* MENÚ DESPLEGABLE RINES */
+  .dropdown-menu {
+    display: none; /* oculto por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    padding: 0.4rem 0.8rem;
+
+    display: flex !important;
+    flex-direction: row;
+    gap: 1.2rem;
+    min-width: auto;
+    white-space: nowrap;
+    z-index: 1050;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Mostrar menú solo al hacer click (Bootstrap agrega 'show') */
+  .dropdown-menu.show {
+    display: flex !important;
+    opacity: 9;
+    pointer-events: auto;
+  }
+
+  /* Ítems del dropdown */
+  .dropdown-item {
+    color: var(--white-color);
+    font-weight: var(--font-weight-bold);
+    font-size: 0.7rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    white-space: nowrap;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+
+  /* Posición absoluta correcta para dropdown */
+  .position-static .dropdown-menu {
+    position: absolute;
+  }
+
+  /* Teléfono y redes sociales */
+  .phone-container {
+    justify-content: flex-end;
+  }
+
+  .phone-number {
+    color: var(--white-color);
+    font-size: .9rem;
+    font-weight: 600;
+    user-select: text;
+  }
+
+  .fas.fa-phone-alt {
+    color: var(--primary-color);
+  }
+
+  .social-icons a {
+    color: var(--white-color);
+    font-size: .9rem;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  .social-icons a:hover,
+  .social-icons a:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  /* Responsive (móvil) */
+  @media (max-width: 991px) {
+    .dropdown-menu {
+      flex-direction: column !important;
+      min-width: 100% !important;
+    }
+
+    .social-icons a {
+      margin-left: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 1rem;
+    }
+  }
+
+
+/*=====================================
+=      6. BOTONES PERSONALIZADOS      =
+=====================================*/
 .btn-emtag {
   display: inline-block;
   padding: 12px 40px;
   background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #FFD102;
-  font-family: "Goldman", sans-serif;
+  font-family: 'Elemental End', sans-serif;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 1px;
@@ -146,7 +244,6 @@ p {
   box-shadow: 0 0 0 transparent;
 }
 
-/* Hover Elegante */
 .btn-emtag:hover {
   background-color: rgba(253, 221, 3, 0.05);
   box-shadow: 0 0 10px rgba(253, 221, 3, 0.4);
@@ -154,7 +251,6 @@ p {
   transform: scale(1.03);
 }
 
-/* Active / Click */
 .btn-emtag:active {
   background: linear-gradient(90deg, #FBEF04, #FFD102);
   color: #111;
@@ -163,17 +259,14 @@ p {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Tamaño Pequeño */
 .btn-emtag-sm {
   padding: 10px 30px;
   font-size: 13px;
 }
 
-
-
-/*-------------------------------------
-  HERO CARRUSEL - ESTILOS GENERALES
---------------------------------------*/
+/*=====================================
+=          7. SECCIÓN HERO            =
+=====================================*/
 .carousel-item {
   position: relative;
   min-height: 100vh;
@@ -184,10 +277,7 @@ p {
 
 .carousel-overlay {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   background: rgba(0, 0, 0, 0.55);
   z-index: 1;
 }
@@ -197,18 +287,11 @@ p {
   z-index: 2;
 }
 
-/*-------------------------------------
-  MARCA - LOGO DENTRO DEL CARRUSEL
---------------------------------------*/
 .brand-logo img {
   max-width: 140px;
   opacity: 0.8;
 }
 
-/*-------------------------------------
-  TEXTOS GENERALES DEL CARRUSEL
---------------------------------------*/
-h2 {
   font-size: 3rem;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -219,85 +302,41 @@ h6 {
   letter-spacing: 1px;
 }
 
-p {
+.carousel-item p {
   max-width: 450px;
   font-size: 1rem;
   line-height: 1.6;
 }
 
-/*-------------------------------------
-  BOTÓN CTA DENTRO DEL CARRUSEL
---------------------------------------*/
 .btn-cta {
   padding: 12px 36px;
+  font-family: 'Elemental End', sans-serif;
 }
 
-/*-------------------------------------
-  ANIMACIONES DE ENTRADA
---------------------------------------*/
+/*=====================================
+=            8. ANIMACIONES           =
+=====================================*/
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
-/*-------------------------------------
-  APLICACIÓN DE ANIMACIONES
---------------------------------------*/
-.carousel-item.active .brand-logo {
-  animation: fadeInUp 1.2s ease forwards;
-}
+.carousel-item.active .brand-logo { animation: fadeInUp 1.2s ease forwards; }
+.carousel-item.active h2 { animation: fadeInLeft 1.2s ease forwards; animation-delay: 0.2s; }
+.carousel-item.active h6 { animation: fadeInLeft 1.2s ease forwards; animation-delay: 0.4s; }
+.carousel-item.active p { animation: fadeInLeft 1.2s ease forwards; animation-delay: 0.6s; }
+.carousel-item.active .btn-cta { animation: fadeInRight 1.2s ease forwards; animation-delay: 0.8s; }
 
-.carousel-item.active h2 {
-  animation: fadeInLeft 1.2s ease forwards;
-  animation-delay: 0.2s;
-}
-
-.carousel-item.active h6 {
-  animation: fadeInLeft 1.2s ease forwards;
-  animation-delay: 0.4s;
-}
-
-.carousel-item.active p {
-  animation: fadeInLeft 1.2s ease forwards;
-  animation-delay: 0.6s;
-}
-
-.carousel-item.active .btn-cta {
-  animation: fadeInRight 1.2s ease forwards;
-  animation-delay: 0.8s;
-}
-
-/*-------------------------------------
-  ESTADO INICIAL - OPACIDAD CERO
---------------------------------------*/
 .carousel-item .brand-logo,
 .carousel-item h2,
 .carousel-item h6,
@@ -306,62 +345,26 @@ p {
   opacity: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -------------------------------------
-   SECCIÓN MARKETPLACE PROMO
-------------------------------------- */
-.marketplace-promo {
-  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
-  color: #fff;
-  padding: 4rem 0;
+/*=====================================
+=       9. EFECTOS HOVER UNIVERSALES  =
+=====================================*/
+a[href^="tel"], a[href^="mailto"], .fa-whatsapp, .fa-phone, .fa-envelope {
   transition: all 0.3s ease;
 }
 
-.marketplace-promo:hover {
-  filter: brightness(1.2);
+a[href^="tel"]:hover,
+a[href^="mailto"]:hover,
+.fa-whatsapp:hover,
+.fa-phone:hover,
+.fa-envelope:hover {
+  color: #FDDD03 !important;
+  font-size: calc(1em + 1px);
 }
 
 
-.marketplace-title {
-  color: #ffffff;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
 
-.marketplace-logo {
-  max-width: 220px;
-}
 
-/* RESPONSIVE */
-@media (max-width: 767px) {
-  .marketplace-promo .row {
-    text-align: center;
-  }
 
-  .marketplace-title {
-    margin-bottom: 1.5rem;
-  }
-
-  .marketplace-logo {
-    margin: 0 auto;
-    max-width: 160px;
-  }
-}
 
 
 
@@ -373,14 +376,15 @@ p {
 .about-emtag {
   background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #fff;
-  padding: 7rem 0;
+  padding: 14rem 0; /* DOBLE DE ESPACIO */
   text-align: center;
 }
+
 
 .about-emtag .about-title {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
-  font-size: 2rem; /* Tamaño más refinado */
+  font-size: 2rem;
   line-height: 1.4;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -414,11 +418,11 @@ p {
 
 @media (max-width: 768px) {
   .about-emtag {
-    padding: 5.5rem 0;
+    padding: 5.5rem 0; /* SE MANTIENE NORMAL EN MÓVIL */
   }
 
   .about-emtag .about-title {
-    font-size: 1.6rem; /* Más fino en móvil */
+    font-size: 1.6rem;
     margin-bottom: 2rem;
   }
 
@@ -476,15 +480,6 @@ p {
 /*-----------------------------
   CLASES PERSONALIZADAS MONTSERRAT Y Orbitron
 ------------------------------*/
-.orbitron-regular {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 400;
-}
-
-.orbitron-bold {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 700;
-}
 
 .montserrat-regular {
   font-family: "Montserrat", sans-serif;
@@ -511,69 +506,52 @@ p {
 
 
 
-
-/*-----------------------------
+/*=====================================
   MARKETPLACE PROMO SECTION
-------------------------------*/
+=====================================*/
 .marketplace-promo {
-    background: linear-gradient(180deg, #18191d 0%, #000000 100%);
-  color: #fff;
-  padding: 2rem 0;
-}
-
-.marketplace-promo h2 {
-  color: #fff;
-  font-family: var(--heading-font-family);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.marketplace-promo img {
-  max-width: 180px;
-}
-
-@media (max-width: 767px) {
-  .marketplace-promo .row {
-    text-align: center;
-  }
-
-  .marketplace-promo h2 {
-    margin-bottom: 1rem;
-  }
-
-  .marketplace-promo img {
-    margin: 0 auto;
-  }
-}
-
-/* -------------------------------------
-   SECCIÓN MARKETPLACE PROMO
-------------------------------------- */
-.marketplace-promo {
-  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  background: linear-gradient(90deg, #282828, #101010);
   color: #fff;
   padding: 4rem 0;
+  transition: all 0.3s ease;
+}
+
+.marketplace-promo:hover {
+  filter: brightness(1.2);
 }
 
 .marketplace-promo .row {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column; /* mobile por defecto */
+  text-align: center;
 }
 
 .marketplace-promo h2 {
   color: #fff;
-   font-family: var(--heading-font-family);
+  font-family: var(--heading-font-family);
   font-weight: 700;
   font-size: 1.8rem;
-  margin-bottom: 0;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .marketplace-promo img {
   max-width: 200px;
+  margin-top: 1rem;
 }
 
-/* Alineación horizontal en desktop, vertical en mobile */
+.marketplace-promo a img {
+  transition: all 0.3s ease;
+}
+
+.marketplace-promo a:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Tablet y desktop */
 @media (min-width: 768px) {
   .marketplace-promo .row {
     flex-direction: row;
@@ -594,39 +572,15 @@ p {
     justify-content: flex-start;
     padding-left: 2rem;
   }
-}
 
-@media (max-width: 767px) {
-  .marketplace-promo .row {
-    flex-direction: column;
-    text-align: center;
+  .marketplace-promo h2 {
+    margin-bottom: 0;
+    text-align: left;
   }
 
   .marketplace-promo img {
-    margin-top: 1rem;
+    margin: 0;
   }
-
-
-.marketplace-promo {
-  background: linear-gradient(90deg, #282828, #101010);
-  padding: 4rem 0;
-  transition: all 0.3s ease;
-}
-
-.marketplace-promo:hover {
-  filter: brightness(1.2);
-}
-
-.marketplace-promo a img {
-  transition: all 0.3s ease;
-}
-
-.marketplace-promo a:hover img {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-
 }
 
 
@@ -636,203 +590,139 @@ p {
 
 
 
+/*=========================
+=     SECCIÓN DESTACADA   =
+=========================*/
+
+.highlight-section {
+  position: relative;
+  padding: 4.8rem 0; /* aumentado un 20% */
+  overflow: hidden;
+  z-index: 10;
+}
 
 
 
-  /*---------------------------------------
-     MODAL              
-  -----------------------------------------*/
-
-  .modal-content {
-    padding: 2rem 3rem;
-  }
-
-  .modal-header,
-  .modal-body,
-  .modal-footer {
-    border: 0;
-    padding: 0;
-  }
-
-  .membership-form a {
-    color: var(--primary-color);
-  }
-
-
-  /*---------------------------------------
-    FEATURE          
-  -----------------------------------------*/
-
-  .feature {
-    background: var(--dark-color);
-    padding: 5rem 0;
-  }
-
-
-  /*---------------------------------------
-     MENU             
-  -----------------------------------------*/
-
-  .navbar {
-    background: var(--dark-color);
-    padding: 1rem;
-  }
-
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-  }
-
-  .navbar-brand {
-    color: var(--white-color);
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-weight-bold);
-    line-height: normal;
-    padding-top: 0;
-  }
-
-  .nav-item .nav-link {
-    display: block;
-    color: var(--white-color);
-    font-size: var(--menu-font-size);
-    font-weight: var(--font-weight-normal);
-    text-transform: uppercase;
-    padding: 2px 6px;
-  }
-
-  .nav-item .nav-link.active,
-  .nav-item .nav-link:hover {
-    color: var(--primary-color);
-  }
-
-  .navbar .social-icon li a {
-    color: var(--white-color);
-  }
-
-  .navbar-toggler {
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    margin: 0 10px 0 0;
-    width: 30px;
-    height: 35px;
-    outline: none;
-  }
-
-  .navbar-toggler:focus {
-    outline: none;
-  }
-
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background: transparent;
-  }
-
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
-    transition: top 300ms 50ms ease, transform 300ms 350ms ease;
-    transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
-    top: 0;
-  }
-
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-    transform: rotate(45deg);
-  }
-
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transform: rotate(-45deg);
-  }
-
-  .navbar-toggler .navbar-toggler-icon {
-    background: var(--primary-color);
-    transition: background 10ms 300ms ease;
-    display: block;
-    width: 30px;
-    height: 2px;
-    position: relative;
-  }
-
-  .navbar-toggler .navbar-toggler-icon::before,
-  .navbar-toggler .navbar-toggler-icon::after {
-    transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
-    transition: top 300ms 350ms ease, transform 300ms 50ms ease;
-    transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
-    position: absolute;
-    right: 0;
-    left: 0;
-    background: var(--primary-color);
-    width: 30px;
-    height: 2px;
-    content: '';
-  }
-
-  .navbar-toggler .navbar-toggler-icon::before {
-    top: -8px;
-  }
-
-  .navbar-toggler .navbar-toggler-icon::after {
-    top: 8px;
-  }
-
-  /*---------------------------------------
-     HERO              
-  -----------------------------------------*/
-
-.hero {
-  background-image: url('../images/hero-bg.png');
+.highlight-bg {
+  background-image: url('images/dest.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  min-height: 85vh;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Texto y contenido */
+.highlight-title {
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.highlight-subtext {
+  color: #ccc;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.highlight-img {
+  max-width: 100%;
+  width: 300px;
+  margin: -80px auto;
   position: relative;
-  display: flex;
-  align-items: center; /* Centra contenido verticalmente */
-  justify-content: center; /* Centra contenido horizontalmente */
-  padding: 1rem; /* Espaciado interno para evitar contenido pegado a los bordes */
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .hero {
-    min-height: 60vh;
-    background-position: top;
-  }
+  z-index: 2;
 }
 
-  /*---------------------------------------
-     CLASS               
-  -----------------------------------------*/
-
-  .class-info {
-    background: var(--white-color);
-    box-shadow: 6px 0 38px rgba(20,20,20,0.10);
-    border-radius: 0 0 2px 2px;
-    padding: 1rem 2rem;
-    position: relative;
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .highlight-img {
+    width: 220px;
+    margin: -60px auto;
   }
 
-  .class-info img {
-    border-radius: 2px 2px 0 0;
+  .highlight-title {
+    font-size: 1.6rem;
   }
 
-  .class-info strong {
-    color: var(--gray-color);
+  .highlight-subtext {
+    font-size: 1rem;
+  }
+}
+
+
+
+.highlight-title {
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.highlight-subtext {
+  color: #ccc;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.highlight-img {
+  max-width: 100%;
+  width: 300px;
+  margin: -80px auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .highlight-img {
+    width: 220px;
+    margin: -60px auto;
   }
 
-  .class-price {
-    background: var(--primary-color);
-    border-radius: var(--border-radius-large);
-    color: var(--white-color);
-    font-weight: var(--font-weight-bold);
-    display: block;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    line-height: 3.5rem;
-    text-align: center;
+  .highlight-title {
+    font-size: 1.6rem;
   }
+
+  .highlight-subtext {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /*---------------------------------------
@@ -1024,7 +914,7 @@ p {
 
 /* Íconos sociales */
 .site-footer .social-icons a {
-  font-size: 18px;
+  font-size: 16px;
   margin-right: 12px;
   color: #fff;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -1056,34 +946,38 @@ p {
 
 
 
-  /*---------------------------------------
-     Contenedor de íconos sociales con neomorfismo 
-  -----------------------------------------*/
+  /*=====================================
+  FONDO GLOBAL (opcional)
+=====================================*/
+body {
+  background: linear-gradient(90deg, #18191d 0%, #000000 100%);
+}
 
+/*=====================================
+  ÍCONOS SOCIALES EN FOOTER CON NEOMORFISMO
+=====================================*/
 .site-footer .social-icons a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
+  width: 25px;
+  height: 25px;
   margin-right: 12px;
   border-radius: 50%;
   background: #18191d;
-  box-shadow: 4px 4px 8px #0a0a0a, -4px -4px 8px #22242a;
-  color: #fff;
-  font-size: 16px;
+  color: #FFD102;
+  font-family: var(--body-font-family);
+  font-size: 14px;
   transition: all 0.3s ease;
+  box-shadow: 4px 4px 8px #0a0a0a, -4px -4px 8px #22242a;
 }
 
-/* Hover neumórfico: cambio de color y relieve inverso */
 .site-footer .social-icons a:hover {
   background: #FFD102;
   color: #000;
-  box-shadow: inset 4px 4px 6px #c6a900, inset -4px -4px 6px #ffe744;
   transform: scale(1.05);
+  box-shadow: inset 4px 4px 6px #c6a900, inset -4px -4px 6px #ffe744;
 }
-
-
 
 .site-footer ul li i {
   background: #18191d;
@@ -1096,81 +990,75 @@ p {
   box-shadow: 2px 2px 4px #0a0a0a, -2px -2px 4px #22242a;
 }
 
+/*=====================================
+  LISTA DE ICONOS SOCIALES
+=====================================*/
+.social-icon {
+  padding: 0;
+  margin-top: 5px;
+}
 
-  /*---------------------------------------
-     SOCIAL ICON              
-  -----------------------------------------*/
+.social-icon li {
+  display: inline-block;
+  list-style: none;
+}
 
-  .social-icon {
-    position: relative;
-    padding: 0;
-    margin: 5px 0 0 0;
+.social-icon li a {
+  display: inline-block;
+  margin: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFD102;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+}
+
+.social-icon li a:hover {
+  color: #ffffff;
+}
+
+/*=====================================
+  ESTILOS RESPONSIVOS
+=====================================*/
+@media screen and (max-width: 992px) {
+  .section {
+    padding: 5rem 0;
   }
 
-  .social-icon li {
-    display: inline-block;
-    list-style: none;
+  .nav-item .nav-link {
+    padding: 6px;
   }
 
-  .social-icon li a {
-    text-decoration: none;
-    display: inline-block;
-    color: var(--p-color);
-    font-size: var(--p-font-size);
-    font-weight: var(--font-weight-bold);
-    margin: 5px 10px;
+  .navbar .social-icon {
+    margin-top: 22px;
+  }
+
+  .navbar-collapse,
+  .site-footer {
     text-align: center;
   }
 
-  .social-icon li a:hover {
-    color: var(--primary-color);
+  .schedule-table {
+    display: block;
   }
 
+  .modal-content {
+    padding: 2rem;
+  }
+}
 
-  /*---------------------------------------
-     RESPONSIVE STYLES              
-  -----------------------------------------*/
-
-  @media screen and (max-width: 992px) {
-
-    .section {
-      padding: 5rem 0;
-    }
-
-    .nav-item .nav-link {
-      padding: 6px;
-    }
-
-    .navbar .social-icon {
-      margin-top: 22px;
-    }
-
-    .navbar-collapse,
-    .site-footer {
-      text-align: center;
-    }
-
-    .schedule-table {
-      display: block;
-    }
-
-    .modal-content {
-      padding: 2rem;
-    }
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 38px;
   }
 
-  @media screen and (max-width: 767px) {
-
-    h1 {
-      font-size: 38px;
-    }
-
-    .about-working-hours {
-      border-left: 0;
-      padding: 22px 0 0 0;
-    }
-
-    .contact h2 span {
-      display: block;
-    }
+  .about-working-hours {
+    border-left: 0;
+    padding: 22px 0 0 0;
   }
+
+  .contact h2 span {
+    display: block;
+  }
+}
