@@ -292,12 +292,12 @@ p {
   opacity: 0.8;
 }
 
+.carousel-item h2 {
   font-size: 3rem;
   letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
-h6 {
+.carousel-item h6 {
   font-size: 1.1rem;
   letter-spacing: 1px;
 }
