@@ -14,75 +14,129 @@
   --white-color: #ffffff;
   --dark-color: #171819;
   --gray-color: #909090;
+  --text-color: #666262;
   --link-color: #404040;
-  --p-color: #666262;
 
   /* Tipografías */
-  --base-font-family: 'Montserrat', sans-serif;
-  --heading-font-family: 'Elemental End', sans-serif;
+  --font-heading: 'Elemental End', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
 
   /* Pesos */
   --font-weight-bold: 700;
   --font-weight-normal: 400;
 
-  /* Tamaños */
-  --h1-font-size: 48px;
-  --h2-font-size: 36px;
-  --h3-font-size: 28px;
-  --h4-font-size: 24px;
-  --h5-font-size: 22px;
-  --h6-font-size: 22px;
-  --p-font-size: 18px;
-  --menu-font-size: 12px;
+  /* Tamaños tipográficos */
+  --h1-size: 48px;
+  --h2-size: 36px;
+  --h3-size: 28px;
+  --h4-size: 24px;
+  --h5-size: 22px;
+  --h6-size: 20px;
+  --p-size: 18px;
+  --menu-size: 12px;
 }
 
 /*=====================================
 =            3. RESET GENERAL         =
 =====================================*/
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /*=====================================
-=            4. TIPOGRAFÍA            =
+=            4. ESTILO BASE           =
 =====================================*/
 body {
-  font-family: var(--base-font-family);
-  color: var(--p-color);
-  background: var(--white-color);
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background-color: var(--white-color);
+  line-height: 1.5;
+  font-weight: var(--font-weight-normal);
 }
 
+/*=====================================
+=            5. TIPOGRAFÍA            =
+=====================================*/
 h1, h2, h3, h4, h5, h6,
 button, .btn, .custom-btn {
-  font-family: var(--heading-font-family);
+  font-family: var(--font-heading);
   font-style: italic;
   font-weight: var(--font-weight-bold);
   background: linear-gradient(45deg, #808080, #e7e7e7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-h1 { font-size: var(--h1-font-size); }
-h2 { font-size: var(--h2-font-size); }
-h3 { font-size: var(--h3-font-size); }
-h4 { font-size: var(--h4-font-size); }
-h5 { font-size: var(--h5-font-size); }
-h6 { font-size: var(--h6-font-size); }
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+h4 { font-size: var(--h4-size); }
+h5 { font-size: var(--h5-size); }
+h6 { font-size: var(--h6-size); }
 
 p {
-  font-family: var(--base-font-family);
-  font-size: var(--p-font-size);
-  line-height: 1.5;
-  color: var(--p-color);
+  font-family: var(--font-body);
+  font-size: var(--p-size);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-weight: var(--font-weight-normal);
 }
+
+/*=====================================
+=            6. ENLACES               =
+=====================================*/
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/*=====================================
+=            7. UTILIDADES            =
+=====================================*/
+.text-center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.btn-cta {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 12px;
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-cta:hover {
+  background: var(--primary-color);
+  color: var(--dark-color);
+  transform: scale(1.05);
+}
+
 
 
   /* Navbar general */
   .navbar {
-    background: var(--dark-color);
+      background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
     padding: 1rem 2rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     font-family: var(--heading-font-family);
@@ -369,68 +423,8 @@ a[href^="mailto"]:hover,
 
 
 
-/*-----------------------------
-  about-emtag
-------------------------------*/
-
-.about-emtag {
-  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
-  color: #fff;
-  padding: 14rem 0; /* DOBLE DE ESPACIO */
-  text-align: center;
-}
 
 
-.about-emtag .about-title {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 1.4;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 2.5rem;
-}
-
-.about-emtag .yellow-gradient {
-  background: linear-gradient(90deg, #FBEF04, #FFD102);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.about-emtag .gray-gradient {
-  background: linear-gradient(90deg, #8d8d8d, #595959);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.about-emtag .about-description {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  font-style: italic;
-  font-size: 1.05rem;
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.7;
-  color: #cccccc;
-}
-
-@media (max-width: 768px) {
-  .about-emtag {
-    padding: 5.5rem 0; /* SE MANTIENE NORMAL EN MÓVIL */
-  }
-
-  .about-emtag .about-title {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-  }
-
-  .about-emtag .about-description {
-    font-size: 0.95rem;
-    padding: 0 1.5rem;
-  }
-}
 
 
 
@@ -510,7 +504,7 @@ a[href^="mailto"]:hover,
   MARKETPLACE PROMO SECTION
 =====================================*/
 .marketplace-promo {
-  background: linear-gradient(90deg, #282828, #101010);
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #fff;
   padding: 4rem 0;
   transition: all 0.3s ease;
@@ -582,6 +576,121 @@ a[href^="mailto"]:hover,
     margin: 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+./* --------------------------- */
+/* SECCIÓN: ABOUT EMTAG       */
+/* --------------------------- */
+
+.about-emtag {
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+  padding: 6rem 2rem 8rem 2rem; /* Mayor padding-bottom */
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* TÍTULO PRINCIPAL */
+.about-emtag .about-title {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* TEXTO AMARILLO CON GRADIENTE */
+.about-emtag .yellow-gradient {
+  background: linear-gradient(90deg, #FBEF04, #FFD102);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.about-emtag .yellow-gradient:hover {
+  opacity: 0.9;
+}
+
+/* TEXTO GRIS CON GRADIENTE */
+.about-emtag .gray-gradient {
+  background: linear-gradient(90deg, #8d8d8d, #595959);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.about-emtag .gray-gradient:hover {
+  opacity: 0.9;
+}
+
+/* DESCRIPCIÓN */
+.about-emtag .about-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 300;
+  color: #cccccc;
+  line-height: 1.7;
+  max-width: 740px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.4s;
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-emtag {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .about-emtag .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-emtag .about-description {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -699,187 +808,304 @@ a[href^="mailto"]:hover,
   }
 }
 
+/* === SECCIÓN PREMIUM === */
+.premium-section {
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+}
 
+/* === CONTENEDOR DE TARJETAS === */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+/* === TARJETAS === */
+.card {
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
 
+.card:hover {
+  transform: translateY(-8px);
+}
 
+/* === IMAGEN DE LA TARJETA === */
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
+/* === CONTENIDO DE LA TARJETA === */
+.card-content {
+  padding: 30px 20px 40px;
+  text-align: center;
+}
 
+/* === TÍTULOS === */
+.card-title {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-secundario);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
+.card-title .highlight {
+  color: var(--color-principal);
+}
 
+/* === DESCRIPCIÓN === */
+.card-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-texto);
+  margin-bottom: 25px;
+}
 
+/* === BOTÓN CTA === */
+.cta-button {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1.5px solid var(--color-principal);
+  color: var(--color-principal);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 
+.cta-button:hover {
+  background-color: var(--color-principal);
+  color: #000;
+  transform: scale(1.05);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*---------------------------------------
-     SCHEDULE             
-  -----------------------------------------*/
-
-  .schedule {
-    background: var(--dark-color);
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .schedule-table {
-    display: table;
-    border: 0;
-    text-align: center;
+  .card-content {
+    padding: 20px 15px;
   }
 
-  .schedule-table strong,
-  .schedule-table span {
-    display: block;
-    text-align: center;
+  .card-title {
+    font-size: 1.5rem;
   }
 
-  .schedule-table strong {
-    color: var(--white-color);
+  .card-description {
+    font-size: 0.95rem;
   }
+}
 
-  .schedule-table span {
-    color: var(--gray-color);
+
+
+
+
+
+
+
+
+
+/* ------------------------------------ */
+/* SECCIÓN: RINES QUE DEFINEN TU ESTILO */
+/* ------------------------------------ */
+
+.seccion-rines {
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+  padding: 5rem 2rem;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* TITULAR PRINCIPAL */
+.titulo-seccion {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* GRADIENTE AMARILLO: “RINES QUE DEFINEN” */
+.titulo-seccion .texto-amarillo {
+  background: linear-gradient(90deg, #FDDD03, #fff300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.titulo-seccion .texto-amarillo:hover {
+  filter: brightness(1.2);
+}
+
+/* GRADIENTE PLATEADO: “TU ESTILO” */
+.titulo-seccion .texto-plateado {
+  background: linear-gradient(90deg, #bbb, #eee, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.titulo-seccion .texto-plateado:hover {
+  filter: brightness(1.2);
+}
+
+/* DESCRIPCIÓN INTRODUCTORIA */
+.descripcion-intro {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 4rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.3s;
+}
+
+/* GALERÍA EN GRID */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+}
+
+/* CADA PRODUCTO */
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.producto:nth-child(1) { animation-delay: 0.4s; }
+.producto:nth-child(2) { animation-delay: 0.6s; }
+.producto:nth-child(3) { animation-delay: 0.8s; }
+.producto:nth-child(4) { animation-delay: 1s; }
+.producto:nth-child(5) { animation-delay: 1.2s; }
+.producto:nth-child(6) { animation-delay: 1.4s; }
+.producto:nth-child(7) { animation-delay: 1.6s; }
+
+.imagen-rin {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.imagen-rin:hover {
+  transform: scale(1.1);
+}
+
+/* NOMBRE DEL RIN */
+.nombre-rin {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.nombre-rin:hover {
+  color: #FDDD03;
+}
+
+/* BOTÓN CTA SECUNDARIO */
+.btn-cta-secundario {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.4rem 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-cta-secundario:hover {
+  background-color: #FDDD03;
+  color: #000;
+  border-color: #FDDD03;
+  transform: scale(1.05);
+}
+
+/* BOTÓN CTA FINAL */
+.cta-final {
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 2s;
+}
+
+.btn-cta-principal {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 1rem;
+  color: black;
+  background: #FDDD03;
+  padding: 0.6rem 1.8rem;
+  border-radius: 25px;
+  box-shadow: 0 0 10px #FDDD03aa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-cta-principal:hover {
+  background: #fff300;
+  box-shadow: 0 0 15px #fff300cc;
+  transform: scale(1.05);
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-
-  .schedule-table span,
-  .schedule-table small {
-    font-size: var(--menu-font-size);
-    text-transform: uppercase;
-  }
-
-  .schedule-table small {
-    position: relative;
-    top: 10px;
-  }
-
-  .table .thead-light th,
-  .schedule-table tr td:first-child {
-    background: var(--primary-color);
-    border: 1px solid #212122;
-    color: var(--white-color);
-  }
-
-  .schedule-table .thead-light th {
-    border-bottom: 0;
-    text-transform: uppercase;
-  }
-
-  .table-bordered td, 
-  .table-bordered th {
-    border: 1px solid #212122;
-  }
-
-  .table-bordered td {
-    padding-bottom: 22px;
-  }
-
-  .table td, .table th {
-    padding: 1rem;
-  }
+}
 
 
-  /*---------------------------------------
-      ABOUT & TEAM            
-  -----------------------------------------*/
-
-  .about {
-    background: var(--about-bg-color);
-  }
-
-  .about-working-hours {
-    border-left: 2px solid;
-    padding-left: 3.5rem;
-  }
-
-  .about-working-hours strong {
-    color: var( --dark-color);
-    opacity: 0.85;
-  }
-
-  .team-thumb {
-    position: relative;
-  }
-
-  .team-info {
-    background: var( --dark-color);
-    border-radius: 0 0 2px 2px;
-    box-shadow: 6px 0 38px rgba(20,20,20,0.10);
-    padding: 20px;
-    position: relative;
-  }
-
-  .team-info span {
-    font-weight: var(--font-weight-light);
-    opacity: 0.85;
-  }
-
-  .team-info .social-icon {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-  }
-
-  .team-info .social-icon li {
-    display: block;
-  }
 
 
-  /*---------------------------------------
-     CONTACT              
-  -----------------------------------------*/
 
-  .webform input,
-  button#submit-button {
-    height: calc(2.25rem + 20px);
-  }
 
-  .form-control {
-    border-radius: var(--border-radius-small);
-    margin: 1.3rem 0;
-  }
 
-  .form-control:focus {
-    box-shadow: none;
-    border-color: var(--dark-color);
-  }
 
-  button#submit-button {
-    background: var(--dark-color);
-    border-color: transparent;
-    color: var(--white-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  button#submit-button:hover {
-    background: var(--primary-color);
-  }
-
-  .contact h2 + p {
-    max-width: 90%;
-  }
-
-  .google-map {
-    border-top: 1px solid #efebeb;
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
-  }
-
-  .google-map iframe {
-    width: 100%;
-  }
 
 
   /*---------------------------------------
