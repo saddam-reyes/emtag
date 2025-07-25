@@ -688,75 +688,103 @@ a[href^="mailto"]:hover,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*=========================
-=     SECCIÓN DESTACADA   =
-=========================*/
+/*===============================
+=  SECCIÓN DESTACADA EMTAG     =
+===============================*/
 
 .highlight-section {
   position: relative;
-  padding: 4.8rem 0; /* aumentado un 20% */
+  padding: 1rem 0 0rem;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+  color: #fff;
   overflow: hidden;
-  z-index: 10;
+  z-index: 1;
 }
 
 
-
-.highlight-bg {
-  background-image: url('images/dest.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: fixed;
+.highlight-section::before {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-image: url('../images/dest.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 1.0;
   z-index: -1;
 }
 
-/* Texto y contenido */
+.highlight-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+.highlight-box {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .highlight-box.left {
+    text-align: left;
+  }
+  .highlight-box.right {
+    text-align: right;
+  }
+}
+
 .highlight-title {
-  color: #fff;
-  font-family: var(--heading-font-family);
+  font-family: 'Elemental End', sans-serif;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .highlight-subtext {
+  font-family: 'Montserrat', sans-serif;
   color: #ccc;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.4;
+}
+
+.highlight-image-wrapper {
+  flex: 1 1 280px;
+  text-align: center;
 }
 
 .highlight-img {
   max-width: 100%;
   width: 300px;
-  margin: -80px auto;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
+  transition: transform 0.3s ease;
 }
 
-/* Responsivo */
-@media screen and (max-width: 768px) {
-  .highlight-img {
-    width: 220px;
-    margin: -60px auto;
-  }
+.highlight-img:hover {
+  transform: scale(1.05);
+}
 
+.counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FDDD03;
+}
+
+@media screen and (max-width: 768px) {
   .highlight-title {
     font-size: 1.6rem;
   }
@@ -764,49 +792,23 @@ a[href^="mailto"]:hover,
   .highlight-subtext {
     font-size: 1rem;
   }
-}
 
-
-
-.highlight-title {
-  color: #fff;
-  font-family: var(--heading-font-family);
-  font-weight: 700;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.highlight-subtext {
-  color: #ccc;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.highlight-img {
-  max-width: 100%;
-  width: 300px;
-  margin: -80px auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* Responsivo */
-@media screen and (max-width: 768px) {
   .highlight-img {
     width: 220px;
-    margin: -60px auto;
-  }
-
-  .highlight-title {
-    font-size: 1.6rem;
-  }
-
-  .highlight-subtext {
-    font-size: 1rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* === SECCIÓN PREMIUM === */
 .premium-section {
@@ -864,9 +866,14 @@ a[href^="mailto"]:hover,
   letter-spacing: 1px;
 }
 
-.card-title .highlight {
-  color: var(--color-principal);
+.card-title .texto-amarillo {
+  background: linear-gradient(90deg, #FDDD03, #fff300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
 }
+
+
 
 /* === DESCRIPCIÓN === */
 .card-description {
@@ -930,7 +937,7 @@ a[href^="mailto"]:hover,
 /* ------------------------------------ */
 
 .seccion-rines {
-  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  background-image: url('images/rines-especiales.jpg');
   color: #fff;
   padding: 5rem 2rem;
   color: white;
