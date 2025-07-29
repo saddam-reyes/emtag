@@ -16,7 +16,9 @@
   --gray-color: #909090;
   --text-color: #666262;
   --link-color: #404040;
-
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;
+}
   /* Tipografías */
   --font-heading: 'Elemental End', sans-serif;
   --font-body: 'Montserrat', sans-serif;
@@ -134,17 +136,25 @@ a:hover {
 
 
   /* Navbar general */
-  .navbar {
-      background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+.navbar {
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #fff;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    font-family: var(--heading-font-family);
-    font-weight: var(--font-weight-bold);
-    font-size: var(--menu-font-size);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--menu-font-size);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  /* Nueva animación suave */
+  transition: transform 0.6s ease-out, box-shadow 0.4s ease-out;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px); /* Opcional: sensación de vidrio esmerilado */
+}
+
 
   /* Logo */
   .navbar-brand img {
@@ -937,12 +947,43 @@ a[href^="mailto"]:hover,
 /* ------------------------------------ */
 
 .seccion-rines {
-  background-image: url('images/rines-especiales.jpg');
   color: #fff;
-  padding: 5rem 2rem;
+  padding: 0 2rem 5rem; /* padding abajo para que no choque con footer */
   color: white;
   text-align: center;
   overflow: hidden;
+}
+
+.seccion-rines header {
+  position: relative;
+  width: 100vw;                /* fuerza a ocupar el ancho total del viewport */
+  left: 50%;                   /* mueve el elemento al centro */
+  transform: translateX(-50%); /* lo reubica desde el centro para romper márgenes */
+    background-image: url('../images/rin-estilo.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+
+/* Capa oscura para mejor contraste en header */
+.seccion-rines header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: -1;
+}
+
+/* Título y párrafo por encima de la capa oscura */
+.seccion-rines header > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* TITULAR PRINCIPAL */
@@ -983,7 +1024,7 @@ a[href^="mailto"]:hover,
 }
 
 /* DESCRIPCIÓN INTRODUCTORIA */
-.descripcion-intro {
+.about-description {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: #ccc;
@@ -996,7 +1037,6 @@ a[href^="mailto"]:hover,
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards 0.3s;
 }
-
 /* GALERÍA EN GRID */
 .grid-productos {
   display: grid;
@@ -1004,6 +1044,7 @@ a[href^="mailto"]:hover,
   gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto 4rem auto;
+  padding: 0 1rem;
 }
 
 /* CADA PRODUCTO */
@@ -1011,9 +1052,20 @@ a[href^="mailto"]:hover,
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  background-color: #1a1a1a; /* Fondo sutil para destacar */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: translateY(20px);
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
+}
+
+.producto:hover {
+  transform: translateY(0) scale(1.03);
+  box-shadow: 0 0 15px rgba(253, 221, 3, 0.2);
 }
 
 .producto:nth-child(1) { animation-delay: 0.4s; }
@@ -1023,16 +1075,24 @@ a[href^="mailto"]:hover,
 .producto:nth-child(5) { animation-delay: 1.2s; }
 .producto:nth-child(6) { animation-delay: 1.4s; }
 .producto:nth-child(7) { animation-delay: 1.6s; }
+.producto:nth-child(8) { animation-delay: 1.8s; }
 
+/* FIGURA */
+.producto figure {
+  margin: 0;
+}
+
+/* IMAGEN */
 .imagen-rin {
   max-width: 100%;
   height: auto;
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
+  border-radius: 6px;
 }
 
 .imagen-rin:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* NOMBRE DEL RIN */
@@ -1049,54 +1109,95 @@ a[href^="mailto"]:hover,
   color: #FDDD03;
 }
 
+
+
+
+
+
+
 /* BOTÓN CTA SECUNDARIO */
 .btn-cta-secundario {
   background-color: transparent;
-  border: 1px solid #666;
-  color: #ccc;
+  border: 1.5px solid #888;
+  color: #bbb;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
-  padding: 0.4rem 1.2rem;
+  font-size: 0.75rem;
+  padding: 0.6rem 0.8rem; /* más alto, menos ancho */
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   transition: all 0.3s ease;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: inset 0 0 5px #fff3;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-cta-secundario:hover {
   background-color: #FDDD03;
-  color: #000;
+  color: #111;
   border-color: #FDDD03;
-  transform: scale(1.05);
+  transform: scale(1.04);
+  box-shadow: 0 0 8px #FDDD03cc;
+  text-decoration: none;
 }
 
 /* BOTÓN CTA FINAL */
 .cta-final {
   margin-top: 2rem;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards 2s;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s;
 }
 
-.btn-cta-principal {
+.btn-emtag {
   font-family: 'Elemental End', sans-serif;
-  font-size: 1rem;
-  color: black;
-  background: #FDDD03;
-  padding: 0.6rem 1.8rem;
-  border-radius: 25px;
-  box-shadow: 0 0 10px #FDDD03aa;
+  font-size: 0.85rem;
+  color: #fff300;
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  padding: 0.65rem 1rem; /* más alto, menos ancho */
+  border-radius: 12px;
+  box-shadow: 0 0 12px #18191d;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.3px;
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  font-weight: 700;
+  border: 1px solid #18191d;
+  text-decoration: none;
+  text-align: center;
 }
 
-.btn-cta-principal:hover {
-  background: #fff300;
-  box-shadow: 0 0 15px #fff300cc;
+.btn-emtag:hover {
+  background: linear-gradient(135deg, #fff300, #d4c300);
+  color: #18191d;
+  box-shadow: 0 0 18px #fff300dd;
   transform: scale(1.05);
+  border: none;
+  text-decoration: none;
 }
+
+
+/* Opcional: si los botones son links <a> y quieres quitar subrayado por defecto */
+.btn-cta-secundario,
+.btn-emtag {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ANIMACIONES */
 @keyframes fadeInUp {
@@ -1106,7 +1207,22 @@ a[href^="mailto"]:hover,
   }
 }
 
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .grid-productos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 
+  .nombre-rin {
+    font-size: 0.95rem;
+  }
+
+  .btn-cta-secundario {
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+  }
+}
 
 
 
@@ -1294,4 +1410,9 @@ body {
   .contact h2 span {
     display: block;
   }
+}
+.navbar-hidden {
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
 }
