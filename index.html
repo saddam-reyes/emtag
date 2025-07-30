@@ -52,7 +52,7 @@
 
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="icon" href="images/favicon.ico" type="image/png">
 
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -60,6 +60,8 @@
 
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 
   <!-- Estilos -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -98,7 +100,7 @@
     <div class="container">
       <!-- Logo -->
       <a class="navbar-brand" href="#inicio">
-        <img src="images/logo-emtag.png" alt="Logo EMTAG" />
+        <img src="images/logo.svg" alt="Logo EMTAG" />
       </a>
 
       <!-- Botón móvil -->
@@ -399,7 +401,7 @@
     <div class="grid-productos">
 
 <!-- === Rines Mercedes-Benz === -->
-<div class="fila-rines" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+<div class="fila-rines" onclick="abrirModal()" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
   <meta itemprop="name" content="Rines Mercedes-Benz">
 
   <article class="producto" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
@@ -617,6 +619,76 @@
 
 
 
+<!-- Modal: Ficha Técnica Rin -->
+<div id="modal-rin" class="modal-rin">
+  <div class="modal-content-rin">
+    
+    <!-- Botón cerrar -->
+    <button class="modal-close" onclick="cerrarModal()">&times;</button>
+
+    <!-- Contenedor de imagen y miniaturas -->
+    <div class="modal-image-container">
+      <img id="mainImage" src="images/modelos-rin/porsche/Edicion-Especial-Black-Gloss.png" alt="Rin Matt Black" class="main-image">
+
+      <div class="thumbnail-container">
+        <img src="images/modelos-rin/porsche/Edicion-Especial-Black-Gloss.png" alt="Vista lateral" class="thumbnail" onclick="changeMainImage(this)">
+        <img src="images/modelos-rin/porsche/Edicion-Especial-Black-Gloss.png" alt="Detalle" class="thumbnail" onclick="changeMainImage(this)">
+      </div>
+    </div>
+
+    <!-- Contenido texto -->
+    <div class="modal-text-rin">
+      <h2><span class="yellow-gradient">MATT/B.</span> Matt Black</h2>
+
+      <div class="modal-specs">
+        <p>Diseño funcional con estilo audaz y elegante en negro mate.</p>
+        <ul>
+          <li><i class="fa-solid fa-ruler-combined"></i> Medida: 18x8.5"</li>
+          <li><i class="fa-solid fa-circle-notch"></i> Birlos: 5</li>
+          <li><i class="fa-solid fa-bolt"></i> Barrenación: 5x114.3</li>
+          <li><i class="fa-solid fa-ring"></i> CB: 73.1 mm</li>
+          <li><i class="fa-solid fa-weight-hanging"></i> Offset: +35</li>
+          <li><i class="fa-solid fa-car"></i> Compatible: Mercedes-Benz, BMW, Golf, Jetta, Audi.</li>
+          <li><i class="fa-solid fa-palette"></i> Color: Negro Brillante / Detalles Pulidos</li>
+          <li><i class="fa-solid fa-check-circle"></i> Material: Aluminio Premium</li>
+        </ul>
+      </div>
+
+      <!-- Botones CTA -->
+      <div class="modal-cta-buttons">
+        <a href="#comprar" target="_blank">Comprar</a>
+        <a href="https://www.mercadolibre.com.mx/" target="_blank">Compra en Mercado Libre</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -819,6 +891,21 @@
   });
 </script>
 
+<script>
+  function abrirModal() {
+    document.getElementById('modal-rin').classList.add('open');
+  }
+
+  function cerrarModal() {
+    document.getElementById('modal-rin').classList.remove('open');
+  }
+</script>
+  <script>
+  function changeMainImage(thumbnail) {
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = thumbnail.src;
+  }
+</script>
 
 
 </body>

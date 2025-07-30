@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nota de Remisión EMTAG</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nota.css">
+    <style>
+  body {
+  background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+
+.nota {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.nota-header {
+  position: relative;
+  height: 150px;
+  background: #111;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.bg-header {
+  position: absolute;
+  inset: 0;
+  background-image: url('tu-fondo.jpg'); /* Cambia a tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 1rem;
+  object-fit: contain;
+}
+
+.info p {
+  margin: 0.5rem 0;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  width: 200px;
+  max-width: 100%;
+}
+
+.productos {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.productos th,
+.productos td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.productos input {
+  width: 100%;
+}
+
+.resumen {
+  margin: 1rem 0;
+}
+
+.resumen label {
+  margin-right: 1rem;
+}
+
+.observaciones ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.firma p {
+  margin: 0.3rem 0;
+}
+
+.footer {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #333;
+}
+
+.botones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.botones button {
+  background: #fff;
+  border: 2px solid #ffd700;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botones button:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+button.whatsapp {
+  background-color: #25D366;
+  border: none;
+  color: white;
+}
+
+button.whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="nota">
+    <!-- Encabezado con imagen -->
+    <div class="nota-header">
+      <img src="images/logo.svg" alt="Logo EMTAG" />
+      <div class="bg-header"></div>
+    </div>
+
+    <!-- Datos generales -->
+    <div class="info">
+      <p><strong>Fecha:</strong> <input type="date"></p>
+      <p><strong>Cliente:</strong> <input type="text" placeholder="Nombre del cliente"></p>
+      <p><strong>Teléfono:</strong> <input type="text" placeholder="Teléfono"></p>
+    </div>
+
+    <!-- Tabla de productos -->
+    <table class="productos">
+      <thead>
+        <tr>
+          <th>Cantidad</th>
+          <th>Descripción</th>
+          <th>Precio Unitario</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="number" placeholder="1"></td>
+          <td><input type="text" placeholder="Ej. Rin 18x8.5 - Matt Black"></td>
+          <td><input type="text" placeholder="$00.00"></td>
+          <td><input type="text" placeholder="$00.00"></td>
+        </tr>
+        <!-- Puedes duplicar esta fila según lo necesites -->
+      </tbody>
+    </table>
+
+    <!-- Resumen -->
+    <div class="resumen">
+      <p><strong>Total a Pagar:</strong> $<input type="text" placeholder="0.00"> MXN</p>
+      <p><strong>Forma de pago:</strong>
+        <label><input type="checkbox"> Efectivo</label>
+        <label><input type="checkbox"> Transferencia</label>
+        <label><input type="checkbox"> Tarjeta</label>
+        <label><input type="checkbox"> Otro</label>
+      </p>
+    </div>
+
+    <!-- Observaciones -->
+    <div class="observaciones">
+      <p><strong>Observaciones / Garantía:</strong></p>
+      <ul>
+        <li>Garantía de 12 meses en defectos de fabricación.</li>
+        <li>No cubre daños por mal uso, impactos o instalaciones incorrectas.</li>
+        <li>Se recomienda instalación por profesionales certificados.</li>
+      </ul>
+    </div>
+
+    <!-- Firma -->
+    <div class="firma">
+      <p>Firma de entrega: ___________________________</p>
+      <p>Nombre del cliente: ___________________________</p>
+    </div>
+
+    <!-- Pie -->
+    <div class="footer">
+      <p>Gracias por su preferencia. Cualquier duda o aclaración, contáctenos vía WhatsApp.</p>
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="botones">
+    <button onclick="imprimirNota()"><i class="fa-solid fa-print"></i> Imprimir</button>
+    <button onclick="convertirJPG()"><i class="fa-solid fa-image"></i> Guardar como JPG</button>
+    <a href="https://wa.me/?text=Hola%20EMTAG%2C%20adjunto%20mi%20nota%20de%20remisión" target="_blank">
+      <button class="whatsapp"><i class="fa-brands fa-whatsapp"></i> Enviar por WhatsApp</button>
+    </a>
+  </div>
+</div>
+
+<!-- Script para JPG -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+function imprimirNota() {
+  window.print();
+}
+
+function convertirJPG() {
+  html2canvas(document.querySelector(".nota")).then(canvas => {
+    let link = document.createElement('a');
+    link.download = 'nota_remision_emtag.jpg';
+    link.href = canvas.toDataURL("image/jpeg");
+    link.click();
+  });
+}
+</script>
+
+</body>
+</html>
