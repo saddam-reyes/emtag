@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/elemental-end');
+
+:root {
+  --primary-color: #FDDD03;
+  --dark: #000;
+  --light: #fff;
+  --gray: #ccc;
+  --accent: #333;
+}
+
+body {
+  background-color: var(--dark);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 1.5rem;
+  color: var(--accent);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.nota {
+  background: var(--light);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.07);
+}
+
+.nota-header {
+  position: relative;
+  height: 90px;
+  background: #111;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  height: 100%;
+  padding: 1rem;
+  object-fit: contain;
+}
+
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.campo {
+  flex: 1;
+  min-width: 180px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.4rem;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+input[readonly] {
+  background-color: #f0f0f0;
+}
+
+.prefijo {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-right: 4px;
+}
+
+.productos {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.productos th,
+.productos td {
+  border: 1px solid var(--gray);
+  padding: 0.6rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.productos th {
+  background-color: var(--accent);
+  color: var(--light);
+  font-weight: 600;
+  text-align: center;
+}
+
+.productos input,
+.productos textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.btn-eliminar {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn-eliminar:hover {
+  background: #c0392b;
+}
+
+.resumen {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.resumen label {
+  margin-right: 1rem;
+}
+
+#total-final {
+  font-weight: bold;
+  background-color: #dff0d8;
+  width: 100%;
+  text-align: right;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.observaciones {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.observaciones ul {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.firma p {
+  margin: 0.4rem 0;
+}
+
+.footer {
+  margin-top: 2rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.botones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.botones button {
+  background: var(--light);
+  border: 2px solid var(--primary-color);
+  color: var(--dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.botones button:hover {
+  background: var(--primary-color);
+  color: var(--dark);
+}
+
+button.whatsapp {
+  background-color: #25D366;
+  border: none;
+  color: white;
+}
+
+button.whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.switch-toggle {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.switch-toggle label {
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fila {
+    flex-direction: column;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+  }
+
+  .productos th,
+  .productos td {
+    font-size: 0.85rem;
+  }
+
+  .btn-eliminar {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .botones button {
+    width: 100%;
+    text-align: center;
+  }
+}

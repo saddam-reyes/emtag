@@ -5,193 +5,72 @@
   <title>Nota de Remisión EMTAG</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="nota.css">
-    <style>
-  body {
-  background-color: #000;
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 2rem;
-}
+    <!-- Estilos -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/nota.css">
 
-.container {
-  max-width: 850px;
-  margin: auto;
-}
-
-.nota {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-}
-
-.nota-header {
-  position: relative;
-  height: 150px;
-  background: #111;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-
-.bg-header {
-  position: absolute;
-  inset: 0;
-  background-image: url('tu-fondo.jpg'); /* Cambia a tu imagen de fondo */
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3;
-  z-index: 1;
-}
-
-.logo {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  padding: 1rem;
-  object-fit: contain;
-}
-
-.info p {
-  margin: 0.5rem 0;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="number"] {
-  padding: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 0.3rem;
-  width: 200px;
-  max-width: 100%;
-}
-
-.productos {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-}
-
-.productos th,
-.productos td {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  text-align: left;
-}
-
-.productos input {
-  width: 100%;
-}
-
-.resumen {
-  margin: 1rem 0;
-}
-
-.resumen label {
-  margin-right: 1rem;
-}
-
-.observaciones ul {
-  padding-left: 1.2rem;
-  margin: 0.5rem 0 1rem;
-}
-
-.firma p {
-  margin: 0.3rem 0;
-}
-
-.footer {
-  margin-top: 1.5rem;
-  font-style: italic;
-  color: #333;
-}
-
-.botones {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.botones button {
-  background: #fff;
-  border: 2px solid #ffd700;
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.botones button:hover {
-  background: #ffd700;
-  color: #000;
-}
-
-button.whatsapp {
-  background-color: #25D366;
-  border: none;
-  color: white;
-}
-
-button.whatsapp:hover {
-  background-color: #1ebe5d;
-}
-
-</style>
 
 </head>
 <body>
+
+<!-- Dentro del <body>... -->
 
 <div class="container">
   <div class="nota">
     <!-- Encabezado con imagen -->
     <div class="nota-header">
-      <img src="images/logo.svg" alt="Logo EMTAG" />
+      <img src="tu-logo-aqui.png" alt="Logo EMTAG" class="logo">
       <div class="bg-header"></div>
     </div>
+<h2>Nota de Venta</h2>
 
-    <!-- Datos generales -->
-    <div class="info">
-      <p><strong>Fecha:</strong> <input type="date"></p>
-      <p><strong>Cliente:</strong> <input type="text" placeholder="Nombre del cliente"></p>
-      <p><strong>Teléfono:</strong> <input type="text" placeholder="Teléfono"></p>
+    <!-- Fila de información -->
+    <div class="info fila">
+      <div class="campo">
+        <label>Fecha:</label><br>
+        <input type="date">
+      </div>
+      <div class="campo">
+        <label>Cliente:</label><br>
+        <input type="text" placeholder="Nombre del cliente">
+      </div>
+      <div class="campo">
+        <label>Teléfono:</label><br>
+        <input type="text" placeholder="Teléfono">
+      </div>
     </div>
 
-    <!-- Tabla de productos -->
-    <table class="productos">
-      <thead>
-        <tr>
-          <th>Cantidad</th>
-          <th>Descripción</th>
-          <th>Precio Unitario</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input type="number" placeholder="1"></td>
-          <td><input type="text" placeholder="Ej. Rin 18x8.5 - Matt Black"></td>
-          <td><input type="text" placeholder="$00.00"></td>
-          <td><input type="text" placeholder="$00.00"></td>
-        </tr>
-        <!-- Puedes duplicar esta fila según lo necesites -->
-      </tbody>
-    </table>
+<table id="nota-table">
+  <thead>
+    <tr>
+      <th>Cantidad</th>
+      <th>Descripción</th>
+      <th>Precio por juego ($)</th>
+      <th>Precio unitario ($)</th>
+      <th>Total ($)</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody id="nota-body">
+    <tr>
+      <td><input type="number" class="cantidad" min="1" value="1"></td>
+      <td><input type="text" class="descripcion"></td>
+      <td><input type="number" class="precio-juego" min="0"></td>
+      <td><input type="text" class="precio-unitario" readonly></td>
+      <td><input type="text" class="total" readonly></td>
+      <td><button class="btn eliminar">🗑️</button></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4" style="text-align:right;">Total Final ($):</td>
+      <td><input type="text" id="total-final" readonly></td>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>
 
-    <!-- Resumen -->
-    <div class="resumen">
-      <p><strong>Total a Pagar:</strong> $<input type="text" placeholder="0.00"> MXN</p>
-      <p><strong>Forma de pago:</strong>
-        <label><input type="checkbox"> Efectivo</label>
-        <label><input type="checkbox"> Transferencia</label>
-        <label><input type="checkbox"> Tarjeta</label>
-        <label><input type="checkbox"> Otro</label>
-      </p>
-    </div>
 
     <!-- Observaciones -->
     <div class="observaciones">
@@ -214,6 +93,23 @@ button.whatsapp:hover {
       <p>Gracias por su preferencia. Cualquier duda o aclaración, contáctenos vía WhatsApp.</p>
     </div>
   </div>
+
+  <!-- Botón para eliminar el último ítem -->
+<div style="text-align: right; margin-top: 0.5rem;">
+  <button id="btn-eliminar-ultimo" style="
+      background: var(--primary-color);
+      border: none;
+      color: var(--white-color);
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      border-radius: 6px;
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    ">
+    Eliminar último ítem
+  </button>
+</div>
 
   <!-- Botones -->
   <div class="botones">
@@ -241,6 +137,66 @@ function convertirJPG() {
   });
 }
 </script>
+<script>
+  const tabla = document.getElementById("nota-table").getElementsByTagName("tbody")[0];
+
+  function actualizarTotales() {
+    let totalFinal = 0;
+    document.querySelectorAll("#nota-body tr").forEach(fila => {
+      const cantidad = parseFloat(fila.querySelector(".cantidad").value) || 0;
+      const precioJuego = parseFloat(fila.querySelector(".precio-juego").value) || 0;
+      const precioUnitario = (precioJuego / 4).toFixed(2);
+
+      fila.querySelector(".precio-unitario").value = isNaN(precioUnitario) ? '' : precioUnitario;
+      const total = (cantidad * precioJuego).toFixed(2);
+      fila.querySelector(".total").value = isNaN(total) ? '' : total;
+
+      totalFinal += parseFloat(total) || 0;
+    });
+
+    document.getElementById("total-final").value = totalFinal.toFixed(2);
+  }
+
+  function agregarFila() {
+    const nuevaFila = document.createElement("tr");
+    nuevaFila.innerHTML = `
+      <td><input type="number" class="cantidad" min="1" value="1"></td>
+      <td><input type="text" class="descripcion"></td>
+      <td><input type="number" class="precio-juego" min="0"></td>
+      <td><input type="text" class="precio-unitario" readonly></td>
+      <td><input type="text" class="total" readonly></td>
+      <td><button class="btn eliminar">🗑️</button></td>
+    `;
+    tabla.appendChild(nuevaFila);
+    actualizarTotales();
+  }
+
+  tabla.addEventListener("input", (e) => {
+    if (["cantidad", "precio-juego"].includes(e.target.className)) {
+      actualizarTotales();
+    }
+  });
+
+  tabla.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      agregarFila();
+    }
+  });
+
+  tabla.addEventListener("click", (e) => {
+    if (e.target.classList.contains("eliminar")) {
+      e.target.closest("tr").remove();
+      actualizarTotales();
+    }
+  });
+
+  actualizarTotales();
+</script>
+
 
 </body>
 </html>
+ 
+
+
