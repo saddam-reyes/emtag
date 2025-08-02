@@ -1,14 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,700&display=swap');
+/* --------------------- */
+/* IMPORTACIÓN DE FUENTES */
+/* --------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 @import url('https://fonts.cdnfonts.com/css/elemental-end');
 
+/* --------------------- */
+/* VARIABLES */
+/* --------------------- */
 :root {
   --primary-color: #FDDD03;
   --dark: #000;
   --light: #fff;
   --gray: #ccc;
   --accent: #333;
+  --white-color: #fff;
+  --font-heading: 'Elemental End', sans-serif;
 }
 
+/* --------------------- */
+/* ESTILOS BASE */
+/* --------------------- */
 body {
   background-color: var(--dark);
   font-family: 'Montserrat', sans-serif;
@@ -17,12 +28,34 @@ body {
   color: var(--accent);
 }
 
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.4rem;
+  width: 100%;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+input[readonly] {
+  background-color: #f0f0f0;
+}
+
+/* --------------------- */
+/* CONTENEDOR PRINCIPAL */
+/* --------------------- */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 1rem;
 }
 
+/* --------------------- */
+/* NOTA */
+/* --------------------- */
 .nota {
   background: var(--light);
   padding: 2rem;
@@ -30,6 +63,9 @@ body {
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.07);
 }
 
+/* --------------------- */
+/* ENCABEZADO */
+/* --------------------- */
 .nota-header {
   position: relative;
   height: 90px;
@@ -45,11 +81,15 @@ body {
   object-fit: contain;
 }
 
+/* --------------------- */
+/* INFORMACIÓN CLIENTE */
+/* --------------------- */
 .fila {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .campo {
@@ -57,33 +97,9 @@ body {
   min-width: 180px;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="number"],
-textarea {
-  padding: 0.5rem;
-  border: 1px solid var(--gray);
-  border-radius: 0.4rem;
-  width: 100%;
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-}
-
-textarea {
-  min-height: 60px;
-  resize: vertical;
-}
-
-input[readonly] {
-  background-color: #f0f0f0;
-}
-
-.prefijo {
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-right: 4px;
-}
-
+/* --------------------- */
+/* TABLA DE PRODUCTOS */
+/* --------------------- */
 .productos {
   width: 100%;
   border-collapse: collapse;
@@ -94,7 +110,7 @@ input[readonly] {
 .productos td {
   border: 1px solid var(--gray);
   padding: 0.6rem;
-  text-align: left;
+  text-align: center;
   font-size: 0.95rem;
 }
 
@@ -102,40 +118,19 @@ input[readonly] {
   background-color: var(--accent);
   color: var(--light);
   font-weight: 600;
-  text-align: center;
 }
 
-.productos input,
-.productos textarea {
-  padding: 0.5rem;
-  border: 1px solid var(--gray);
-  border-radius: 0.3rem;
-  font-size: 0.9rem;
+.descripcion {
+  width: 100%;
 }
 
-.btn-eliminar {
-  background: #e74c3c;
-  border: none;
-  color: white;
-  padding: 6px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.3s;
+.td-precio-juego {
+  display: none;
 }
 
-.btn-eliminar:hover {
-  background: #c0392b;
-}
-
-.resumen {
-  margin: 1rem 0;
-  font-weight: bold;
-}
-
-.resumen label {
-  margin-right: 1rem;
-}
-
+/* --------------------- */
+/* TOTAL FINAL */
+/* --------------------- */
 #total-final {
   font-weight: bold;
   background-color: #dff0d8;
@@ -146,6 +141,26 @@ input[readonly] {
   font-size: 1.2rem;
 }
 
+/* --------------------- */
+/* BOTÓN ELIMINAR */
+/* --------------------- */
+.btn.eliminar {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn.eliminar:hover {
+  background: #c0392b;
+}
+
+/* --------------------- */
+/* OBSERVACIONES */
+/* --------------------- */
 .observaciones {
   font-size: 0.9rem;
   color: #444;
@@ -156,10 +171,16 @@ input[readonly] {
   margin: 0.5rem 0 1.5rem;
 }
 
+/* --------------------- */
+/* FIRMA */
+/* --------------------- */
 .firma p {
   margin: 0.4rem 0;
 }
 
+/* --------------------- */
+/* PIE DE PÁGINA */
+/* --------------------- */
 .footer {
   margin-top: 2rem;
   font-style: italic;
@@ -168,6 +189,9 @@ input[readonly] {
   font-size: 0.9rem;
 }
 
+/* --------------------- */
+/* BOTONES DE ACCIÓN */
+/* --------------------- */
 .botones {
   display: flex;
   gap: 1rem;
@@ -185,6 +209,7 @@ input[readonly] {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .botones button:hover {
@@ -202,31 +227,37 @@ button.whatsapp:hover {
   background-color: #1ebe5d;
 }
 
-.switch-toggle {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 1rem 0;
+.btn.agregar {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   font-weight: bold;
-  color: #333;
-}
-
-.switch-toggle label {
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* Responsive */
+.btn.agregar:hover {
+  background: #2980b9;
+}
+
+
+
+
+/* --------------------- */
+/* UTILIDADES */
+/* --------------------- */
+.ocultar {
+  display: none !important;
+}
+
+/* --------------------- */
+/* RESPONSIVE */
+/* --------------------- */
 @media (max-width: 768px) {
   .fila {
     flex-direction: column;
-  }
-
-  input[type="text"],
-  input[type="date"],
-  input[type="number"],
-  textarea {
-    width: 100%;
   }
 
   .productos th,
@@ -234,7 +265,7 @@ button.whatsapp:hover {
     font-size: 0.85rem;
   }
 
-  .btn-eliminar {
+  .btn.eliminar {
     padding: 4px 8px;
     font-size: 0.8rem;
   }
