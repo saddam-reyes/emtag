@@ -1,5 +1,7 @@
 /*=====================================
 =            1. IMPORTACIONES         =
+/*=====================================
+=            1. FUENTES EXTERNAS      =
 =====================================*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/elemental-end');
@@ -16,9 +18,7 @@
   --gray-color: #909090;
   --text-color: #666262;
   --link-color: #404040;
-  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
-  color: #fff;
-}
+
   /* Tipografías */
   --font-heading: 'Elemental End', sans-serif;
   --font-body: 'Montserrat', sans-serif;
@@ -53,12 +53,43 @@
 =            4. ESTILO BASE           =
 =====================================*/
 body {
-  font-family: var(--font-body);
   color: var(--text-color);
-  background-color: var(--white-color);
   line-height: 1.5;
+  font-family: var(--font-body);
   font-weight: var(--font-weight-normal);
+
+  /* Fondo animado degradado (ajustado según indicación) */
+  background: linear-gradient(-45deg, #18191d, #000000, #18191d, #000000);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
+
+/*=====================================
+=       5. ANIMACIÓN FONDO            =
+=====================================*/
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*=====================================
+=       6. FONDO ALTERNATIVO CLASE    =
+=====================================*/
+.fondo-animado {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #18191d, #000000, #18191d, #000000);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+
 
 /*=====================================
 =            5. TIPOGRAFÍA            =
@@ -85,7 +116,7 @@ h6 { font-size: var(--h6-size); }
 p {
   font-family: var(--font-body);
   font-size: var(--p-size);
-  color: var(--text-color);
+  color: #d0d0d0;
   line-height: 1.6;
   font-weight: var(--font-weight-normal);
 }
@@ -286,6 +317,22 @@ a:hover {
       font-size: 1rem;
     }
   }
+
+
+
+
+
+.navbar-hidden {
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+* {
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-out;
+}
 
 
 /*=====================================
@@ -514,8 +561,8 @@ a[href^="mailto"]:hover,
   MARKETPLACE PROMO SECTION
 =====================================*/
 .marketplace-promo {
-  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
-  color: #fff;
+background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  color: #fff;  
   padding: 4rem 0;
   transition: all 0.3s ease;
 }
@@ -889,7 +936,7 @@ a[href^="mailto"]:hover,
 .card-description {
   font-size: 1rem;
   font-weight: 400;
-  color: var(--color-texto);
+  color: #d0d0d0;
   margin-bottom: 25px;
 }
 
@@ -1166,6 +1213,9 @@ a[href^="mailto"]:hover,
 
 
 
+/* ----------------------------- */
+/* MODAL */
+/* ----------------------------- */
 
 
 .modal-rin {
@@ -1369,6 +1419,136 @@ a[href^="mailto"]:hover,
 
 
 
+/* ----------------------------- */
+/* SECCIÓN: RINES PREMIUM */
+/* ----------------------------- */
+
+.seccion-rines-premium {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url('../images/rines-estilo-premium.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.contenedor-rines {
+  max-width: 800px;
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.05); /* más claro para el efecto vidrio */
+  backdrop-filter: blur(10px); /* desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* soporte para Safari */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* borde sutil tipo glass */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6); /* conservamos el efecto sombra */
+}
+
+.seccion-rines-premium h2 {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  text-transform: uppercase;
+}
+
+/* Reutilización de estilos de texto */
+.texto-amarillo {
+  background: linear-gradient(90deg, #FDDD03, #fff300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: filter 0.3s ease;
+}
+
+.texto-amarillo:hover {
+  filter: brightness(1.15);
+}
+
+.texto-blanco {
+  background: linear-gradient(90deg, #bbb, #eee, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: filter 0.3s ease;
+}
+
+.texto-blanco:hover {
+  filter: brightness(1.15);
+}
+
+.descripcion-rines {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+.boton-cta {
+  background-color: transparent;
+  color: #ffdd00;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid #ffdd00;
+  font-family: 'Elemental End', sans-serif;
+  text-transform: uppercase;
+}
+
+.boton-cta:hover {
+  background-color: #ffdd00;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .seccion-rines-premium h2 {
+    font-size: 2rem;
+  }
+
+  .descripcion-rines {
+    font-size: 1rem;
+  }
+
+  .boton-cta {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1447,6 +1627,136 @@ a[href^="mailto"]:hover,
 
 
 
+/* ----------------------------------------- */
+/* SECCIÓN: VENTAJAS                         */
+/* ----------------------------------------- */
+
+/* Sección de ventajas: estructura base */
+.seccion-ventajas {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título y subtítulo reutilizando estilos existentes */
+.seccion-ventajas h2 {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  text-transform: uppercase;
+}
+
+/* Descripción igual a seccion rines */
+.seccion-ventajas .descripcion-rines {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contenedor responsive de bloques */
+.contenedor-ventajas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* Estilos para cada bloque de ventaja */
+.ventaja {
+  background: linear-gradient(180deg, #2a2b2d 0%, #000000 100%);
+  color: #fff;
+  border-radius: 2rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Brillo sutil y contorno gradiente inverso */
+.ventaja::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 4px;
+  border-radius: 2rem;
+  background: linear-gradient(0deg, #000000, #2a2b2d);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Iconos plateados */
+.ventaja i {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #FDDD03, #fff300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: filter 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+/* Texto de cada ventaja */
+.ventaja p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+/* Hover con zoom sutil */
+.ventaja:hover {
+  transform: scale(1.03);
+}
+
+/* Responsividad adicional */
+@media (max-width: 768px) {
+  .seccion-ventajas h2 {
+    font-size: 2.2rem;
+  }
+
+  .ventaja {
+    padding: 1.5rem;
+  }
+
+  .ventaja i {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ventaja {
+    padding: 1.2rem;
+    border-radius: 1.5rem;
+  }
+
+  .ventaja i {
+    font-size: 1.6rem;
+  }
+
+  .ventaja::before {
+    padding: 3px;
+    border-radius: 1.5rem;
+  }
+}
 
 
 
@@ -1455,16 +1765,134 @@ a[href^="mailto"]:hover,
 
 
 
+/* ----------------------------------------- */
+/* SECCIÓN: LLAMADO FINAL                    */
+/* ----------------------------------------- */
 
+/* Sección final con slogan e imagen */
+.seccion-final {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+/* Grid flexible para texto + imagen */
+.contenido-final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
 
+/* Texto de la izquierda */
+.texto-final {
+  flex: 1 1 450px;
+}
 
+/* Título reutilizando estilos anteriores */
+.texto-final h2 {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 0.6rem;
+  text-transform: uppercase;
+}
 
+/* Botones */
+.botones-final {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
 
+.boton-cta {
+  background: linear-gradient(90deg, #FDDD03, #fff300);
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
 
+.boton-cta:hover {
+  background: linear-gradient(90deg, #fff300, #f0c800);
+  transform: scale(1.05);
+}
 
+.boton-cta.whatsapp {
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+.boton-cta.whatsapp:hover {
+  background: #1ebe5d;
+}
 
+/* Imagen sin borde */
+.imagen-final {
+  flex: 1 1 400px;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+/* Eliminé el pseudoelemento que hacía el borde */
+.imagen-final::before {
+  content: none;
+}
+
+.imagen-final img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .contenido-final {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .texto-final h2 {
+    justify-content: center;
+  }
+
+  .botones-final {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .texto-final h2 {
+    font-size: 2.2rem;
+  }
+
+  .boton-cta {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .imagen-final {
+    border-radius: 1.5rem;
+  }
+
+  .imagen-final img {
+    border-radius: 1.5rem;
+  }
+}
 
 /* ANIMACIONES */
 @keyframes fadeInUp {
@@ -1498,16 +1926,23 @@ a[href^="mailto"]:hover,
 
 
 
-  /*---------------------------------------
-     FOOTER              
-  -----------------------------------------*/
 
-/* Estilos generales para el footer */
+
+
+
+
+ 
+ /*---------------------------------------
+  FOOTER              
+-----------------------------------------*/
+
 .site-footer {
   background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #fff;
   font-family: 'Goldman', sans-serif;
   font-size: 15px;
+  padding: 2rem 0 1.5rem;
+
 }
 
 /* Enlaces */
@@ -1516,73 +1951,31 @@ a[href^="mailto"]:hover,
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .site-footer a:hover {
-  color: #FFD102; /* color dorado */
+  color: #FFD102;
 }
 
 /* Títulos */
 .site-footer h6 {
   color: #fff;
+  background: linear-gradient(90deg, #ccc, #eee, #aaa);
+  -webkit-background-clip: text;
   font-weight: bold;
   margin-bottom: 1rem;
-}
-
-/* Íconos sociales */
-.site-footer .social-icons a {
   font-size: 16px;
-  margin-right: 12px;
-  color: #fff;
-  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.site-footer .social-icons a:hover {
-  color: #FFD102;
-  transform: scale(1.1);
-}
-
-/* Íconos de contacto */
-.site-footer .fa {
-  color: #FFD102;
-  width: 18px;
-}
-
-/* Separadores entre columnas (solo en pantallas grandes) */
-@media (min-width: 992px) {
-  .site-footer .col-lg-2,
-  .site-footer .col-lg-3,
-  .site-footer .col-lg-5 {
-    border-right: 1px solid #2e2e2e;
-  }
-
-  .site-footer .col-lg-5 {
-    border-right: none; /* Última columna sin borde */
-  }
-}
-
-
-
-  /*=====================================
-  FONDO GLOBAL (opcional)
-=====================================*/
-body {
-  background: linear-gradient(90deg, #18191d 0%, #000000 100%);
-}
-
-/*=====================================
-  ÍCONOS SOCIALES EN FOOTER CON NEOMORFISMO
-=====================================*/
+/* Redes sociales - círculos neomórficos */
 .site-footer .social-icons a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin-right: 12px;
   border-radius: 50%;
   background: #18191d;
-  color: #FFD102;
-  font-family: var(--body-font-family);
+  color: #fff; /* blanco en lugar de amarillo */
   font-size: 14px;
   transition: all 0.3s ease;
   box-shadow: 4px 4px 8px #0a0a0a, -4px -4px 8px #22242a;
@@ -1595,6 +1988,7 @@ body {
   box-shadow: inset 4px 4px 6px #c6a900, inset -4px -4px 6px #ffe744;
 }
 
+/* Íconos de la lista de contacto */
 .site-footer ul li i {
   background: #18191d;
   border-radius: 50%;
@@ -1606,9 +2000,32 @@ body {
   box-shadow: 2px 2px 4px #0a0a0a, -2px -2px 4px #22242a;
 }
 
-/*=====================================
-  LISTA DE ICONOS SOCIALES
-=====================================*/
+/* Estilo de listas en general */
+.site-footer .footer-links,
+.site-footer .footer-contact {
+  font-size: 14px;
+  line-height: 1.6;
+  padding-left: 0;
+}
+
+.site-footer .footer-links li,
+.site-footer .footer-contact li {
+  margin-bottom: 8px;
+}
+
+/* Separadores entre columnas (pantallas grandes) */
+@media (min-width: 992px) {
+  .site-footer .col-lg-2,
+  .site-footer .col-lg-3,
+  .site-footer .col-lg-5 {
+    border-right: 1px solid #2e2e2e;
+  }
+  .site-footer .col-lg-5 {
+    border-right: none;
+  }
+}
+
+/* Lista de íconos sociales adicional */
 .social-icon {
   padding: 0;
   margin-top: 5px;
@@ -1625,42 +2042,25 @@ body {
   text-align: center;
   text-decoration: none;
   color: #FFD102;
-  font-family: var(--body-font-family);
   font-size: 16px;
-  font-weight: var(--font-weight-bold);
+  font-weight: bold;
 }
-
 .social-icon li a:hover {
   color: #ffffff;
 }
 
-/*=====================================
-  ESTILOS RESPONSIVOS
-=====================================*/
+/* Responsivo */
 @media screen and (max-width: 992px) {
-  .section {
-    padding: 5rem 0;
-  }
-
-  .nav-item .nav-link {
-    padding: 6px;
-  }
-
-  .navbar .social-icon {
-    margin-top: 22px;
-  }
-
-  .navbar-collapse,
   .site-footer {
     text-align: center;
   }
-
-  .schedule-table {
-    display: block;
+  .site-footer .social-icons {
+    justify-content: center;
   }
-
-  .modal-content {
-    padding: 2rem;
+  .site-footer .col-lg-2,
+  .site-footer .col-lg-3,
+  .site-footer .col-lg-5 {
+    border-right: none;
   }
 }
 
@@ -1668,18 +2068,50 @@ body {
   h1 {
     font-size: 38px;
   }
-
-  .about-working-hours {
-    border-left: 0;
-    padding: 22px 0 0 0;
-  }
-
-  .contact h2 span {
-    display: block;
-  }
 }
-.navbar-hidden {
-  transform: translateY(-110%);
+}
+
+
+
+
+/* Tooltip para la dirección con vista del mapa */
+.tooltip-map {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.tooltip-map .tooltip-content {
+  visibility: hidden;
   opacity: 0;
+  width: 320px;
+  background-color: #18191d;
+  border-radius: 10px;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 110%; /* Tooltip arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+  transition: opacity 0.3s ease;
   pointer-events: none;
+}
+
+/* Flecha debajo del tooltip */
+.tooltip-map .tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;  /* Justo debajo del tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: #18191d transparent transparent transparent; /* Flecha negra apuntando abajo */
+}
+
+.tooltip-map:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
