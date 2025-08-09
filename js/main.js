@@ -112,3 +112,73 @@ ScrollReveal().reveal('.boton-cta', {
   delay: 600,
   reset: false
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const menu = document.querySelector("#navbarNav");
+  const overlay = document.querySelector("#menuOverlay");
+  const rinesLink = document.querySelector("#rinesDropdown");
+  const rinesMenu = rinesLink?.nextElementSibling;
+  const navbar = document.querySelector(".navbar");
+
+  // Toggle menú principal (hamburguesa)
+  navbarToggler.addEventListener("click", function() {
+    const isOpen = menu.classList.toggle("show");
+    overlay.classList.toggle("active");
+    this.classList.toggle("open", isOpen);
+    this.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Cerrar menú al hacer click en overlay
+  overlay.addEventListener("click", function() {
+    menu.classList.remove("show");
+    overlay.classList.remove("active");
+    navbarToggler.classList.remove("open");
+    navbarToggler.setAttribute("aria-expanded", "false");
+
+    // También cerramos dropdown "Rines" si está abierto
+    if (rinesMenu.classList.contains("show")) {
+      rinesMenu.classList.remove("show");
+      rinesLink.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Control de dropdown "Rines" en móvil (toggle al hacer click)
+  rinesLink.addEventListener("click", function(e) {
+    if (window.innerWidth <= 991) {
+      e.preventDefault();
+      const isDropdownOpen = rinesMenu.classList.toggle("show");
+      rinesLink.setAttribute("aria-expanded", isDropdownOpen);
+    }
+  });
+
+  // En escritorio, cerrar dropdown y menú si cambias tamaño desde móvil
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 991) {
+      // Quitar clases y estados de menú y dropdown
+      menu.classList.remove("show");
+      overlay.classList.remove("active");
+      navbarToggler.classList.remove("open");
+      navbarToggler.setAttribute("aria-expanded", "false");
+      rinesMenu.classList.remove("show");
+      rinesLink.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Efecto ocultar navbar al hacer scroll
+  let lastScrollTop = 0;
+  window.addEventListener("scroll", function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > navbar.offsetHeight) {
+      // Scroll hacia abajo → ocultar
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      // Scroll hacia arriba → mostrar
+      navbar.style.transform = "translateY(0)";
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+});
+

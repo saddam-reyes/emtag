@@ -165,8 +165,10 @@ a:hover {
 }
 
 
-
-  /* Navbar general */
+/*=====================================
+        =     NAV      =
+=====================================*/
+/* ===== NAVBAR ===== */
 .navbar {
   background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #fff;
@@ -177,163 +179,257 @@ a:hover {
   font-size: var(--menu-font-size);
   letter-spacing: 1px;
   text-transform: uppercase;
-
-  /* Nueva animación suave */
   transition: transform 0.6s ease-out, box-shadow 0.4s ease-out;
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(4px); /* Opcional: sensación de vidrio esmerilado */
+  backdrop-filter: blur(4px);
+}
+
+/* Logo */
+.navbar-brand img {
+  height: 40px;
+}
+
+/* Links */
+.navbar-nav .nav-link {
+  color: var(--white-color);
+  font-weight: var(--font-weight-bold);
+  font-size: 0.7rem;
+  margin-right: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+.navbar-toggler-icon {
+  width: 25px;
+  height: 2px;
+  background-color: var(--white-color);
+  position: relative;
+  transition: background 0.3s ease;
+}
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  background-color: var(--white-color);
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before { top: -8px; }
+.navbar-toggler-icon::after { top: 8px; }
+
+/* Estado hamburguesa */
+.navbar-toggler:not(.open) .navbar-toggler-icon {
+  background-color: var(--white-color);
+}
+.navbar-toggler:not(.open) .navbar-toggler-icon::before {
+  transform: rotate(0); top: -8px;
+}
+.navbar-toggler:not(.open) .navbar-toggler-icon::after {
+  transform: rotate(0); top: 8px;
+}
+/* Estado X */
+.navbar-toggler.open .navbar-toggler-icon {
+  background-color: transparent;
+}
+.navbar-toggler.open .navbar-toggler-icon::before {
+  transform: rotate(45deg); top: 0;
+}
+.navbar-toggler.open .navbar-toggler-icon::after {
+  transform: rotate(-45deg); top: 0;
 }
 
 
-  /* Logo */
-  .navbar-brand img {
-    height: 40px;
-  }
+.menu-logo {
+  width: 20px;
+  height: auto;
+  object-fit: contain;
+}
 
-  /* Links del menú */
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  padding: 0.4rem 0.8rem;
+  flex-direction: row;
+  gap: 1.2rem;
+  white-space: nowrap;
+  z-index: 1050;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.dropdown-menu.show {
+  display: flex !important;
+  opacity: 1;
+  pointer-events: auto;
+}
+.dropdown-item {
+  color: var(--white-color);
+  font-size: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.dropdown-item:hover {
+  background-color: var(--primary-color);
+}
+
+/* Teléfono y redes */
+.phone-number {
+  color: var(--white-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.social-icons a {
+  color: var(--white-color);
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: var(--primary-color);
+}
+
+/* Contenedor para agrupar WhatsApp y redes sociales */
+.phone-social-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Overlay */
+#menuOverlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+#menuOverlay.active {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
   .navbar-nav .nav-link {
-    color: var(--white-color);
-    font-weight: var(--font-weight-bold);
-    font-size: 0.7rem;
-    margin-right: 1.5rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-    user-select: none;
+    font-size: 0.9rem;          /* Tamaño más legible */
+    font-weight: 700;           /* Más delgado */
+    letter-spacing: 1.5px;      /* Espacio entre letras */
+    margin-right: 1rem;
+    padding: 0.4rem 0;
   }
 
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link:focus {
-    color: var(--primary-color);
-    text-decoration: none;
-  }
-
-  /* Dropdown toggle (Rines) */
-  .nav-link.dropdown-toggle {
-    cursor: pointer;
-  }
-
-  /* MENÚ DESPLEGABLE RINES */
   .dropdown-menu {
-    display: none; /* oculto por defecto */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: linear-gradient(180deg, #18191d 0%, #000000 100%);
-    border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    padding: 0.4rem 0.8rem;
-
-    display: flex !important;
-    flex-direction: row;
-    gap: 1.2rem;
-    min-width: auto;
-    white-space: nowrap;
-    z-index: 1050;
-
+    position: static;
+    flex-direction: column !important;
+    background: #000;
+    box-shadow: none;
     opacity: 0;
     pointer-events: none;
+    display: none;
     transition: opacity 0.3s ease;
   }
-
-  /* Mostrar menú solo al hacer click (Bootstrap agrega 'show') */
   .dropdown-menu.show {
-    display: flex !important;
-    opacity: 9;
+    display: flex;
+    opacity: 1;
     pointer-events: auto;
   }
 
-  /* Ítems del dropdown */
-  .dropdown-item {
-    color: var(--white-color);
-    font-weight: var(--font-weight-bold);
-    font-size: 0.7rem;
-    padding: 0.35rem 0.9rem;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: background-color 0.25s ease, color 0.25s ease;
-    white-space: nowrap;
+  /* WhatsApp + redes en fila y centrados */
+  .phone-social-container {
+    justify-content: center !important;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 1rem;
   }
 
-  .dropdown-item:hover,
-  .dropdown-item:focus {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-
-  /* Posición absoluta correcta para dropdown */
-  .position-static .dropdown-menu {
-    position: absolute;
-  }
-
-  /* Teléfono y redes sociales */
-  .phone-container {
-    justify-content: flex-end;
+  .phone-container,
+  .social-icons {
+    margin-top: 0;
   }
 
   .phone-number {
-    color: var(--white-color);
-    font-size: .9rem;
+    font-size: 1rem;
     font-weight: 600;
-    user-select: text;
-  }
-
-  .fas.fa-phone-alt {
-    color: var(--primary-color);
   }
 
   .social-icons a {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  /* Dropdown padre relativo para evitar que dropdown se desplace */
+  .dropdown.position-static {
+    position: relative !important;
+  }
+
+  /* Mostrar dropdown al hacer hover */
+  .dropdown:hover > .dropdown-menu {
+    display: flex !important;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Dropdown menú horizontal y estilo navbar */
+  .dropdown-menu {
+    flex-direction: row !important;
+    white-space: nowrap;
+    background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+  }
+
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-bold);
     color: var(--white-color);
-    font-size: .9rem;
-    margin-left: 1rem;
-    transition: color 0.3s ease;
-    user-select: none;
+    transition: background-color 0.3s ease;
   }
-
-  .social-icons a:hover,
-  .social-icons a:focus {
-    color: var(--primary-color);
-    text-decoration: none;
+  .dropdown-item:hover {
+    background-color: var(--primary-color);
   }
-
-  /* Responsive (móvil) */
-  @media (max-width: 991px) {
-    .dropdown-menu {
-      flex-direction: column !important;
-      min-width: 100% !important;
-    }
-
-    .social-icons a {
-      margin-left: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .navbar-nav .nav-link {
-      font-size: 1rem;
-    }
-  }
-
-
-
-
-
-.navbar-hidden {
-  transform: translateY(-110%);
-  opacity: 0;
-  pointer-events: none;
 }
 
 
-* {
-  scroll-behavior: smooth;
-  transition: all 0.3s ease-out;
-}
 
+
+
+
+
+
+
+
+
+
+
+ 
 
 /*=====================================
 =      6. BOTONES PERSONALIZADOS      =
