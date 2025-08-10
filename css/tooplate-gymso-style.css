@@ -2165,49 +2165,45 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
     font-size: 38px;
   }
 }
-}
 
 
 
 
-/* Tooltip para la dirección con vista del mapa */
+
 .tooltip-map {
   position: relative;
   cursor: pointer;
   display: inline-block;
+  color: #ccc; /* Texto plateado */
+  font-weight: normal;
+  transition: color 0.3s ease;
 }
 
-.tooltip-map .tooltip-content {
+.tooltip-map:hover {
+  color: #fff; /* Cambia color al pasar mouse */
+}
+
+.tooltip-content {
   visibility: hidden;
   opacity: 0;
-  width: 320px;
-  background-color: #18191d;
+  width: 340px;
+  background-color: #1a1a1a;
+  padding: 8px;
   border-radius: 10px;
-  padding: 0.5rem;
   position: absolute;
-  bottom: 110%; /* Tooltip arriba */
+  bottom: 120%; /* Posición sobre el texto */
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.4s ease;
   z-index: 100;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-/* Flecha debajo del tooltip */
-.tooltip-map .tooltip-content::after {
-  content: "";
-  position: absolute;
-  top: 100%;  /* Justo debajo del tooltip */
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 8px;
-  border-style: solid;
-  border-color: #18191d transparent transparent transparent; /* Flecha negra apuntando abajo */
 }
 
 .tooltip-map:hover .tooltip-content {
   visibility: visible;
   opacity: 1;
-  pointer-events: auto;
+}
+
+.tooltip-content iframe {
+  border-radius: 8px;
 }
