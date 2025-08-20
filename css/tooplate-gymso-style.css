@@ -188,7 +188,7 @@ a:hover {
 
 /* Logo */
 .navbar-brand img {
-  height: 40px;
+  height: 35px;
 }
 
 /* Links */
@@ -304,8 +304,14 @@ a:hover {
 /* Teléfono y redes */
 .phone-number {
   color: var(--white-color);
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.phone-number:hover,
+.phone-number a:hover {
+  color: yellow;   /* O usa tu variable si quieres consistencia */
 }
 .social-icons a {
   color: var(--white-color);
@@ -1943,8 +1949,12 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 }
 
 .boton-cta:hover {
-  background: linear-gradient(90deg, #fff300, #f0c800);
+  background: linear-gradient(135deg, #fff300, #d4c300);
+  color: #18191d;
+  box-shadow: 0 0 18px #fff300cc;
   transform: scale(1.05);
+  border: none;
+  text-decoration: none;
 }
 
 
@@ -1972,11 +1982,15 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 .boton-cta.whatsapp:hover {
   background: #25D366;
   color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  box-shadow: 0 0 18px  #25D366;
+  transform: scale(1.05);
+  border: none;
+  text-decoration: none;
 }
 
+
+
+  
 /* Imagen sin borde */
 .imagen-final {
   flex: 1 1 400px;
