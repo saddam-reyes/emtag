@@ -1,4 +1,4 @@
-// =========================
+  // =========================
 // Contadores animados
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
@@ -180,5 +180,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
+});
+
+// Abrir modal
+function abrirModal() {
+  document.getElementById("modal-rin").classList.add("open");
+}
+
+// Cerrar modal
+function cerrarModal() {
+  document.getElementById("modal-rin").classList.remove("open");
+}
+
+// Cerrar si se da click fuera del contenido
+window.addEventListener("click", function(e) {
+  const modal = document.getElementById("modal-rin");
+  if (e.target === modal) {
+    cerrarModal();
+  }
+});
+
+// Cerrar con tecla ESC
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    cerrarModal();
+  }
 });
 
