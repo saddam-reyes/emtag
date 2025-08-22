@@ -430,9 +430,6 @@ a:hover {
 }
 
 
-
-
-
 /* ==========================
 =   Carrusel Cinturón EMTAG =
 =========================== */
@@ -489,6 +486,22 @@ a:hover {
   100% { transform: translateX(-50%); } /* mueve mitad del total para loop perfecto */
 }
 
+/* ==========================
+=  Leyenda Legal
+=========================== */
+.cinturon-marcas p {
+  font-size: 9px;         /* más pequeña */
+  font-weight: 600;        /* un poco más bold */
+  color: #aaa;             /* gris tenue */
+  text-align: center;      /* SIEMPRE centrado */
+  margin-top:50px;        /* más separación del carrusel */
+  margin-bottom: 0;
+  line-height: 1.5;
+  text-transform: none;    /* formato de frase */
+  pointer-events: none;    /* evita interacción con hover */
+  user-select: none;       /* no seleccionable */
+}
+
 /* Responsivo y velocidad adaptativa */
 @media (max-width: 1024px) {
   .logos-slide {
@@ -510,6 +523,9 @@ a:hover {
     max-height: 55px;
     margin: 0 10px;
   }
+  .cinturon-marcas p {
+    font-size: 10px; /* más pequeño en pantallas medianas */
+  }
 }
 
 @media (max-width: 480px) {
@@ -521,6 +537,9 @@ a:hover {
     max-height: 40px;
     margin: 0 8px;
   }
+  .cinturon-marcas p {
+    font-size: 9px; /* se ajusta en móviles pequeños */
+  }
 }
 
 /* ==========================
@@ -529,6 +548,7 @@ a:hover {
 .cinturon-marcas:hover .logos-slide {
   animation-play-state: paused;
 }
+
 
 
 
@@ -1410,101 +1430,202 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 
 
 
-
-
-/* Sección con efecto parallax */
+/* ===============================
+   SECCIÓN UNIFICADA RINES PREMIUM
+   =============================== */
 .seccion-rines-premium-unificada {
-  background-image: url('../images/dest.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
   position: relative;
-  z-index: 1;
   padding: 5rem 2rem;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
-/* Contenedor con efecto Glass + Shine */
-.seccion-rines-premium-unificada .contenedor-rines {
-  background: rgba(255, 255, 255, 0.1); /* Transparente */
-  backdrop-filter: blur(14px) saturate(180%) brightness(1.2); /* Más brillo */
-  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.2);
+/* Fondo con efecto parallax */
+.seccion-rines-premium-unificada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/dest.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 1;
+  z-index: -1;
+}
+
+/* Caja central con efecto glass */
+.glass-box {
+  background: rgba(17, 17, 17, 0.55); /* semi-transparente */
   border-radius: 20px;
   padding: 3rem 2rem;
   max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 35px rgba(255, 255, 255, 0.15);
-  overflow: hidden; /* Necesario para el efecto shine */
+  width: 100%;
+  margin: auto;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Efecto Shine */
-.seccion-rines-premium-unificada .contenedor-rines::after {
-  content: "";
-  position: absolute;
-  top: 0; 
-  left: -50%;
-  width: 200%; 
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.25) 50%,
-    transparent 100%
-  );
-  transform: skewX(-20deg);
-  animation: shine 6s infinite;
-  border-radius: inherit;
-  pointer-events: none;
+.seccion-rines-premium-unificada .titulo-seccion {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
-@keyframes shine {
-  0% { transform: translateX(-100%) skewX(-20deg); }
-  60% { transform: translateX(100%) skewX(-20deg); }
-  100% { transform: translateX(100%) skewX(-20deg); }
+.seccion-rines-premium-unificada .descripcion-rines {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #ddd;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 720px;
+  margin-inline: auto;
 }
 
-/* Texto dentro del contenedor */
-.seccion-rines-premium-unificada h2 {
+.seccion-rines-premium-unificada .highlight-title {
+  font-family: 'Elemental End', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.seccion-rines-premium-unificada .highlight-subtext {
+  font-family: 'Montserrat', sans-serif;
+  color: #ccc;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.seccion-rines-premium-unificada .highlight-img {
+  max-width: 100%;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.seccion-rines-premium-unificada .highlight-img:hover {
+  transform: scale(1.05);
+}
+
+.seccion-rines-premium-unificada .counter {
   font-size: 2.5rem;
   font-weight: bold;
+  color: #FDDD03;
+}
+
+@media screen and (max-width: 768px) {
+  .seccion-rines-premium-unificada .titulo-seccion { font-size: 2rem; }
+  .seccion-rines-premium-unificada .highlight-title { font-size: 1.6rem; }
+  .seccion-rines-premium-unificada .highlight-img { width: 200px; }
+}
+
+/* ===============================
+   SECCIÓN UNIFICADA RINES PREMIUM
+   =============================== */
+.seccion-rines-premium-unificada {
+  position: relative;
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
   color: #fff;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.seccion-rines-premium-unificada p {
-  font-size: 1.2rem;
-  color: #eee;
-  margin-bottom: 2rem;
-  line-height: 1.6;
+/* Fondo con efecto parallax */
+.seccion-rines-premium-unificada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/dest.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 1;
+  z-index: -1;
 }
 
-/* Botón CTA */
-.seccion-rines-premium-unificada .boton-ml {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: #ffe600;
-  color: #222;
+/* Caja central con efecto glass */
+.glass-box {
+  background: rgba(17, 17, 17, 0.55); /* semi-transparente */
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.seccion-rines-premium-unificada .titulo-seccion {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 2.8rem;
   font-weight: bold;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.seccion-rines-premium-unificada .boton-ml:hover {
-  background: #ffeb3b;
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+.seccion-rines-premium-unificada .descripcion-rines {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #ddd;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 720px;
+  margin-inline: auto;
 }
+
+.seccion-rines-premium-unificada .highlight-title {
+  font-family: 'Elemental End', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.seccion-rines-premium-unificada .highlight-subtext {
+  font-family: 'Montserrat', sans-serif;
+  color: #ccc;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.seccion-rines-premium-unificada .highlight-img {
+  max-width: 100%;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.seccion-rines-premium-unificada .highlight-img:hover {
+  transform: scale(1.05);
+}
+
+.seccion-rines-premium-unificada .counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FDDD03;
+}
+
+@media screen and (max-width: 768px) {
+  .seccion-rines-premium-unificada .titulo-seccion { font-size: 2rem; }
+  .seccion-rines-premium-unificada .highlight-title { font-size: 1.6rem; }
+  .seccion-rines-premium-unificada .highlight-img { width: 200px; }
+}
+
 
 
 
