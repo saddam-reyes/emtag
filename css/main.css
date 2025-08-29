@@ -1370,103 +1370,7 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 
 
 
-/* ===============================
-   SECCIÓN UNIFICADA RINES PREMIUM
-   =============================== */
-.seccion-rines-premium-unificada {
-  position: relative;
-  padding: 5rem 2rem;
-  background: linear-gradient(180deg, #111 0%, #000 100%);
-  color: #fff;
-  text-align: center;
-  overflow: hidden;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-/* Fondo con efecto parallax */
-.seccion-rines-premium-unificada::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('../images/dest.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: 1;
-  z-index: -1;
-}
-
-/* Caja central con efecto glass */
-.glass-box {
-  background: rgba(17, 17, 17, 0.55); /* semi-transparente */
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  max-width: 1100px;
-  width: 100%;
-  margin: auto;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.seccion-rines-premium-unificada .titulo-seccion {
-  font-family: 'Elemental End', sans-serif;
-  font-size: 2.8rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-}
-
-.seccion-rines-premium-unificada .descripcion-rines {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.05rem;
-  color: #ddd;
-  margin-bottom: 2.5rem;
-  line-height: 1.8;
-  max-width: 720px;
-  margin-inline: auto;
-}
-
-.seccion-rines-premium-unificada .highlight-title {
-  font-family: 'Elemental End', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.seccion-rines-premium-unificada .highlight-subtext {
-  font-family: 'Montserrat', sans-serif;
-  color: #ccc;
-  font-size: 1.05rem;
-  font-weight: 400;
-}
-
-.seccion-rines-premium-unificada .highlight-img {
-  max-width: 100%;
-  width: 280px;
-  transition: transform 0.3s ease;
-}
-
-.seccion-rines-premium-unificada .highlight-img:hover {
-  transform: scale(1.05);
-}
-
-.seccion-rines-premium-unificada .counter {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #FDDD03;
-}
-
-@media screen and (max-width: 768px) {
-  .seccion-rines-premium-unificada .titulo-seccion { font-size: 2rem; }
-  .seccion-rines-premium-unificada .highlight-title { font-size: 1.6rem; }
-  .seccion-rines-premium-unificada .highlight-img { width: 200px; }
-}
 
 /* ===============================
    SECCIÓN UNIFICADA RINES PREMIUM
@@ -1497,20 +1401,66 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   z-index: -1;
 }
 
-/* Caja central con efecto glass */
+/* Caja central con efecto glass mejorado */
 .glass-box {
-  background: rgba(17, 17, 17, 0.55); /* semi-transparente */
-  border-radius: 20px;
+  position: relative;
+  background: rgba(17, 17, 17, 0.45);
+  border-radius: 24px;
   padding: 3rem 2rem;
   max-width: 1100px;
   width: 100%;
   margin: auto;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Efecto cristal */
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  /* Sombras para profundidad */
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.65),
+              inset 0 0 25px rgba(255, 255, 255, 0.05);
+
+  /* Borde lujoso */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
 }
 
+/* Brillo diagonal simulando reflejo de luz */
+.glass-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.05) 30%,
+    transparent 60%
+  );
+  transform: rotate(5deg);
+  pointer-events: none;
+}
+
+/* Resplandor sutil dorado en los bordes */
+.glass-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 221, 3, 0.4), rgba(255, 255, 255, 0.15));
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===== TIPOGRAFÍA ===== */
 .seccion-rines-premium-unificada .titulo-seccion {
   font-family: 'Elemental End', sans-serif;
   font-size: 2.8rem;
@@ -1522,13 +1472,14 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 .seccion-rines-premium-unificada .descripcion-rines {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.05rem;
-  color: #ddd;
+  color: #eee;
   margin-bottom: 2.5rem;
   line-height: 1.8;
   max-width: 720px;
   margin-inline: auto;
 }
 
+/* ===== CONTADORES ===== */
 .seccion-rines-premium-unificada .highlight-title {
   font-family: 'Elemental End', sans-serif;
   font-weight: 700;
@@ -1547,19 +1498,23 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 .seccion-rines-premium-unificada .highlight-img {
   max-width: 100%;
   width: 280px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.6));
 }
 
 .seccion-rines-premium-unificada .highlight-img:hover {
   transform: scale(1.05);
+  filter: drop-shadow(0px 12px 24px rgba(255,221,3,0.35));
 }
 
 .seccion-rines-premium-unificada .counter {
   font-size: 2.5rem;
   font-weight: bold;
   color: #FDDD03;
+  text-shadow: 0 0 12px rgba(253, 221, 3, 0.5);
 }
 
+/* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
   .seccion-rines-premium-unificada .titulo-seccion { font-size: 2rem; }
   .seccion-rines-premium-unificada .highlight-title { font-size: 1.6rem; }
@@ -1568,6 +1523,185 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 
 
 
+
+
+
+/* ===============================
+   SECCIÓN UNIFICADA RINES PREMIUM
+   =============================== */
+.seccion-rines-premium-unificada {
+  position: relative;
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fondo con efecto parallax */
+.seccion-rines-premium-unificada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/dest.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 1;
+  z-index: -1;
+}
+
+/* Caja central con efecto glass premium */
+.glass-box {
+  position: relative;
+  background: rgba(17, 17, 17, 0.38); /* un poco más limpio */
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+
+  /* Efecto cristal refinado */
+  backdrop-filter: blur(10px) saturate(160%);  /* menos borroso */
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+
+  /* Sombras elegantes */
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.55),
+              inset 0 0 18px rgba(255, 255, 255, 0.05);
+
+  /* Borde translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+/* Reflejo diagonal más sutil */
+.glass-box::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 30%,
+    transparent 70%
+  );
+  transform: rotate(4deg);
+  pointer-events: none;
+}
+
+/* Borde brillante pero sobrio */
+.glass-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(190, 220, 255, 0.12));
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===== EFECTO BRILLO ANIMADO (más discreto) ===== */
+.glass-box .shine {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.25) 45%,
+    rgba(200,220,255,0.45) 50%,
+    rgba(255,255,255,0.25) 55%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine-move 7s infinite;
+  pointer-events: none;
+}
+
+/* Animación del reflejo */
+@keyframes shine-move {
+  0%   { left: -150%; }
+  60%  { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* ===== TIPOGRAFÍA ===== */
+.seccion-rines-premium-unificada .titulo-seccion {
+  font-family: 'Elemental End', sans-serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.seccion-rines-premium-unificada .descripcion-rines {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #eee;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* ===== CONTADORES ===== */
+.seccion-rines-premium-unificada .highlight-title {
+  font-family: 'Elemental End', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.seccion-rines-premium-unificada .highlight-subtext {
+  font-family: 'Montserrat', sans-serif;
+  color: #ccc;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.seccion-rines-premium-unificada .highlight-img {
+  max-width: 100%;
+  width: 280px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.6));
+}
+
+.seccion-rines-premium-unificada .highlight-img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0px 12px 24px rgba(200, 230, 255, 0.4));
+}
+
+.seccion-rines-premium-unificada .counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(200, 230, 255, 0.55);
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  .seccion-rines-premium-unificada .titulo-seccion { font-size: 2rem; }
+  .seccion-rines-premium-unificada .highlight-title { font-size: 1.6rem; }
+  .seccion-rines-premium-unificada .highlight-img { width: 200px; }
+}
 
 
 
@@ -1784,123 +1918,6 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   .thumbnail {
     width: 60px;
     height: 60px;
-  }
-}
-
-
-
-
-
-/* ----------------------------- */
-/* SECCIÓN: RINES PREMIUM */
-/* ----------------------------- */
-
-.seccion-rines-premium {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  background-image: url('../images/rines-estilo-premium.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  padding: 6rem 2rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-.contenedor-rines {
-  max-width: 800px;
-  padding: 3rem 2rem;
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.05); /* más claro para el efecto vidrio */
-  backdrop-filter: blur(10px); /* desenfoque */
-  -webkit-backdrop-filter: blur(10px); /* soporte para Safari */
-  border: 1px solid rgba(255, 255, 255, 0.15); /* borde sutil tipo glass */
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6); /* conservamos el efecto sombra */
-}
-
-.seccion-rines-premium h2 {
-  font-family: 'Elemental End', sans-serif;
-  font-size: 2.8rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem;
-  text-transform: uppercase;
-}
-
-/* Reutilización de estilos de texto */
-.texto-amarillo {
-  background: linear-gradient(90deg, #FDDD03, #fff300);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: filter 0.3s ease;
-}
-
-.texto-amarillo:hover {
-  filter: brightness(1.15);
-}
-
-.texto-blanco {
-  background: linear-gradient(90deg, #bbb, #eee, #aaa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: filter 0.3s ease;
-}
-
-.texto-blanco:hover {
-  filter: brightness(1.15);
-}
-
-.descripcion-rines {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  color: #d0d0d0;
-}
-
-.boton-cta {
-  background-color: transparent;
-  color: #ffdd00;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  border-radius: 0.75rem;
-  font-weight: 700;
-  font-size: 1rem;
-  display: inline-block;
-  transition: all 0.3s ease;
-  border: 2px solid #ffdd00;
-  font-family: 'Elemental End', sans-serif;
-  text-transform: uppercase;
-}
-
-.boton-cta:hover {
-  background-color: #ffdd00;
-  color: #000;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .seccion-rines-premium h2 {
-    font-size: 2rem;
-  }
-
-  .descripcion-rines {
-    font-size: 1rem;
-  }
-
-  .boton-cta {
-    font-size: 0.95rem;
-    padding: 0.8rem 1.5rem;
   }
 }
 
