@@ -9,13 +9,14 @@
 =====================================*/
 :root {
   /* Colores */
-  --primary-color: #FDDD03;
-  --primary-gradient: linear-gradient(45deg, #FBEF04, #FFD102);
+  --primary-color: #C0C0C0; /* plateado metálico */
+  --secondary-color: #FFD800; /* amarillo */
+  --gradient-carbon: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%); /* negro/carbono */
   --white-color: #ffffff;
-  --dark-color: #171819;
+  --dark-color: #121212;
   --gray-color: #909090;
-  --text-color: #666262;
-  --link-color: #404040;
+  --text-color: #d0d0d0;
+  --link-color: #cccccc;
 
   /* Tipografías */
   --font-heading: 'Elemental End', sans-serif;
@@ -36,6 +37,12 @@
 
   /* Navegación */
   --menu-size: 0.55rem;
+
+  /* Botones */
+  --btn-padding: 10px 25px;
+  --btn-radius: 30px;
+  --btn-font-size: 1rem;
+  --btn-transition: all 0.3s ease;
 }
 
 /*=====================================
@@ -52,35 +59,152 @@
 /*=====================================
 =            4. ESTILO BASE           =
 =====================================*/
-/* ==================== Reset y tipografía ==================== */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212;
-  color: #f5f5f5;
+  font-family: var(--font-body);
+  background-color: var(--dark-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
 }
 
 a {
   text-decoration: none;
+  color: var(--link-color);
+  transition: color 0.3s ease;
 }
 
-/* ==================== Navbar ==================== */
+a:hover {
+  color: var(--secondary-color);
+}
+*=====================================
+=            NAVBAR BASE              =
+=====================================*/
 .navbar {
-  background-color: #1c1c1c;
+  background: linear-gradient(180deg, #18191d 0%, #000000 100%);
+  padding: 1rem 2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--menu-size);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-.navbar .nav-link {
-  color: #f5f5f5;
-  transition: color 0.3s;
+/*=====================================
+=            NAV LINKS                =
+=====================================*/
+.navbar-nav .nav-link {
+  color: #fff;
+  margin-right: 1.5rem;
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover { color: #FDDD03; }
+
+/*=====================================
+=         BOTÓN HAMBURGUESA           =
+=====================================*/
+.navbar-toggler { border: none; background: transparent; }
+.navbar-toggler-icon {
+  width: 25px; height: 2px;
+  background: #fff;
+  position: relative;
+  transition: background 0.3s ease;
+}
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute; left: 0;
+  width: 25px; height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before { top: -8px; }
+.navbar-toggler-icon::after { top: 8px; }
+.navbar-toggler.open .navbar-toggler-icon { background: transparent; }
+.navbar-toggler.open .navbar-toggler-icon::before { transform: rotate(45deg); top: 0; }
+.navbar-toggler.open .navbar-toggler-icon::after { transform: rotate(-45deg); top: 0; }
+
+/*=====================================
+=     SUBMENU RINES (HORIZONTAL)      =
+=====================================*/
+.navbar-nav .dropdown-menu {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 
-.navbar .nav-link.active,
-.navbar .nav-link:hover {
-  color: #fddc03;
+/* Bootstrap agrega .show al abrir el dropdown */
+.navbar-nav .dropdown-menu.show {
+  display: flex;
 }
 
-/* ==================== Hero / Carrusel ==================== */
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.5rem;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+  background: rgba(255,221,3,0.15);
+  color: #FDDD03;
+  transform: scale(1.05);
+}
+/*=====================================
+=        TELÉFONO Y REDES             =
+=====================================*/
+.phone-social-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.phone-container, .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+/* Letras y iconos en blanco por defecto */
+.phone-number,
+.phone-container i,
+.social-icons i {
+  color: #fff;
+  font-size: 0.65rem; /* mismo tamaño que el menú */
+  transition: color 0.3s ease;
+}
+
+/* Hover: Amarillo */
+.phone-number:hover,
+.phone-container i:hover,
+.social-icons i:hover {
+  color: #FDDD03;
+}
+
+/*=====================================
+=          LOGOS SUBMENU              =
+=====================================*/
+.menu-logo { width: 20px; height: auto; object-fit: contain; }
+
+/*==================== Hero / Carrusel ====================*/
 .hero .carousel-item img {
   max-height: 500px;
   object-fit: cover;
@@ -94,7 +218,7 @@ a {
 .hero .carousel-caption h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #fddc03;
+  color: var(--secondary-color);
 }
 
 .hero .carousel-caption p {
@@ -102,14 +226,14 @@ a {
   color: #ffffffcc;
 }
 
-/* ==================== Sección Productos ==================== */
+/*==================== Sección Productos ====================*/
 section h2 {
-  color: #fddc03;
+  color: var(--primary-color);
   font-weight: 700;
 }
 
 section p {
-  color: #cccccc;
+  color: var(--gray-color);
 }
 
 .card {
@@ -122,98 +246,135 @@ section p {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(253, 220, 3, 0.4);
+  box-shadow: 0 10px 25px rgba(192, 192, 192, 0.4);
 }
 
 .card-img-top {
-  border-bottom: 2px solid #fddc03;
+  border-bottom: 2px solid var(--primary-color);
   object-fit: cover;
   height: 250px;
 }
 
 .card-title {
-  color: #fddc03;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .card-text {
-  color: #d0d0d0;
+  color: var(--text-color);
 }
 
+/*==================== Botones refinados ====================*/
 .btn-primary {
-  background-color: #fddc03;
-  color: #1c1c1c;
+  background: var(--primary-color);
+  color: var(--dark-color);
+  font-weight: 600;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  font-size: var(--btn-font-size);
   border: none;
-  transition: all 0.3s ease;
+  transition: var(--btn-transition);
 }
 
 .btn-primary:hover {
-  background-color: #e6c900;
+  background: var(--secondary-color);
   color: #121212;
-  box-shadow: 0 0 12px rgba(253, 220, 3, 0.6);
+  box-shadow: 0 0 10px rgba(255, 216, 0, 0.6);
+  transform: translateY(-2px);
 }
 
-/* ==================== CTA ==================== */
-section.bg-dark {
-  background-color: #1c1c1c;
+/* Botón CTA */
+.btn-cta {
+  background: var(--gradient-carbon);
+  color: var(--secondary-color);
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: var(--btn-radius);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 15px rgba(255, 216, 0, 0.2);
 }
 
-section.bg-dark h2 {
-  color: #fddc03;
+.btn-cta:hover {
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  color: var(--primary-color);
+  box-shadow: 0 5px 20px rgba(192, 192, 192, 0.5);
+  transform: translateY(-2px);
 }
 
-section.bg-dark p {
+/*==================== CTA / Contacto ====================*/
+.cta-contacto {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-contacto::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(192,192,192,0.15) 0%, transparent 70%);
+  animation: cta-glow 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes cta-glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cta-contacto .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-titulo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+  text-transform: uppercase;
+}
+
+.cta-texto {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
   color: #cccccc;
 }
 
-section.bg-dark .btn-warning {
-  background-color: #fddc03;
-  color: #1c1c1c;
-  border: none;
-  font-weight: 600;
-}
-
-section.bg-dark .btn-warning:hover {
-  background-color: #e6c900;
-  box-shadow: 0 0 15px rgba(253, 220, 3, 0.5);
-}
-
-/* ==================== Footer ==================== */
+/*==================== Footer ====================*/
 footer {
   background-color: #121212;
   color: #cccccc;
+  padding: 40px 20px;
 }
 
 footer a {
-  color: #fddc03;
+  color: var(--primary-color);
   transition: color 0.3s;
 }
 
 footer a:hover {
-  color: #ffffff;
+  color: var(--secondary-color);
 }
 
-/* ==================== Responsivo ==================== */
+/*==================== Responsivo ====================*/
 @media (max-width: 991px) {
-  .hero .carousel-caption h1 {
-    font-size: 2rem;
-  }
-  .hero .carousel-caption p {
-    font-size: 1rem;
-  }
-  .card-img-top {
-    height: 200px;
-  }
+  .hero .carousel-caption h1 { font-size: 2rem; }
+  .hero .carousel-caption p { font-size: 1rem; }
+  .card-img-top { height: 200px; }
 }
 
 @media (max-width: 575px) {
-  .hero .carousel-caption h1 {
-    font-size: 1.5rem;
-  }
-  .hero .carousel-caption p {
-    font-size: 0.9rem;
-  }
-  .card-img-top {
-    height: 180px;
-  }
+  .hero .carousel-caption h1 { font-size: 1.5rem; }
+  .hero .carousel-caption p { font-size: 0.9rem; }
+  .card-img-top { height: 180px; }
 }
