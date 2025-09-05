@@ -528,23 +528,67 @@ a[href^="mailto"]:hover,
 
 
 
-
 /*=====================================
 =      SECCIÓN CINTURÓN MARCAS        =
 =====================================*/
 .cinturon-marcas {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   width: 100%;
-  padding: 10px 0; /* antes 20px → más delgado */
+  padding: 10px 0;
 }
 
+.cinturon-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Overlay Gloss con blur + Sheen */
+.gloss-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05); /* más sutil */
+  backdrop-filter: blur(4px) saturate(140%); /* antes blur(8px) */
+  -webkit-backdrop-filter: blur(4px) saturate(140%);
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Efecto Sheen animado */
+.gloss-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%, /* menos intenso */
+    transparent 100%
+  );
+  animation: sheenMove 4s infinite;
+}
+
+@keyframes sheenMove {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Logos deslizantes */
 .cinturon-marcas .logos-slide {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 30px; /* antes 40px → menos aire entre logos */
+  gap: 30px;
   animation: slideLoop 25s linear infinite;
+  position: relative;
+  z-index: 1; /* logos debajo del gloss */
 }
 
 .cinturon-marcas .logos-slide a {
@@ -556,13 +600,13 @@ a[href^="mailto"]:hover,
 }
 
 .cinturon-marcas .logos-slide a img {
-  width: 65px;   /* antes 80px */
-  height: 65px;  /* antes 80px */
+  width: 65px;
+  height: 65px;
   object-fit: contain;
   display: block;
   filter: grayscale(20%);
   border-radius: 50%;
-  padding: 6px; /* antes 10px */
+  padding: 6px;
   background: rgba(255,255,255,0.05);
   transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
@@ -573,7 +617,7 @@ a[href^="mailto"]:hover,
   box-shadow: 0 0 12px rgba(253, 221, 3, 0.6);
 }
 
-/* Animación loop infinito */
+/* Animación loop infinito logos */
 @keyframes slideLoop {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -583,7 +627,7 @@ a[href^="mailto"]:hover,
 .cinturon-marcas p {
   font-size: 0.7rem;
   color: #d0d0d0;
-  margin-top: 8px; /* antes 15px */
+  margin-top: 8px;
   text-align: center;
 }
 
@@ -617,7 +661,6 @@ a[href^="mailto"]:hover,
     font-size: 0.6rem;
   }
 }
-
 
 
 
