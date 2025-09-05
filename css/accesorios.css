@@ -1,0 +1,219 @@
+/*=====================================
+=            1. IMPORTACIONES         =
+=====================================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/elemental-end');
+
+/*=====================================
+=            2. VARIABLES ROOT        =
+=====================================*/
+:root {
+  /* Colores */
+  --primary-color: #FDDD03;
+  --primary-gradient: linear-gradient(45deg, #FBEF04, #FFD102);
+  --white-color: #ffffff;
+  --dark-color: #171819;
+  --gray-color: #909090;
+  --text-color: #666262;
+  --link-color: #404040;
+
+  /* Tipografías */
+  --font-heading: 'Elemental End', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Pesos */
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+
+  /* Tamaños tipográficos */
+  --h1-size: 48px;
+  --h2-size: 36px;
+  --h3-size: 28px;
+  --h4-size: 24px;
+  --h5-size: 22px;
+  --h6-size: 20px;
+  --p-size: 18px;
+
+  /* Navegación */
+  --menu-size: 0.55rem;
+}
+
+/*=====================================
+=            3. RESET GENERAL         =
+=====================================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*=====================================
+=            4. ESTILO BASE           =
+=====================================*/
+/* ==================== Reset y tipografía ==================== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ==================== Navbar ==================== */
+.navbar {
+  background-color: #1c1c1c;
+}
+
+.navbar .nav-link {
+  color: #f5f5f5;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: #fddc03;
+}
+
+/* ==================== Hero / Carrusel ==================== */
+.hero .carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.hero .carousel-caption {
+  bottom: 30%;
+}
+
+.hero .carousel-caption h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fddc03;
+}
+
+.hero .carousel-caption p {
+  font-size: 1.1rem;
+  color: #ffffffcc;
+}
+
+/* ==================== Sección Productos ==================== */
+section h2 {
+  color: #fddc03;
+  font-weight: 700;
+}
+
+section p {
+  color: #cccccc;
+}
+
+.card {
+  background-color: #1c1c1c;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(253, 220, 3, 0.4);
+}
+
+.card-img-top {
+  border-bottom: 2px solid #fddc03;
+  object-fit: cover;
+  height: 250px;
+}
+
+.card-title {
+  color: #fddc03;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #d0d0d0;
+}
+
+.btn-primary {
+  background-color: #fddc03;
+  color: #1c1c1c;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6c900;
+  color: #121212;
+  box-shadow: 0 0 12px rgba(253, 220, 3, 0.6);
+}
+
+/* ==================== CTA ==================== */
+section.bg-dark {
+  background-color: #1c1c1c;
+}
+
+section.bg-dark h2 {
+  color: #fddc03;
+}
+
+section.bg-dark p {
+  color: #cccccc;
+}
+
+section.bg-dark .btn-warning {
+  background-color: #fddc03;
+  color: #1c1c1c;
+  border: none;
+  font-weight: 600;
+}
+
+section.bg-dark .btn-warning:hover {
+  background-color: #e6c900;
+  box-shadow: 0 0 15px rgba(253, 220, 3, 0.5);
+}
+
+/* ==================== Footer ==================== */
+footer {
+  background-color: #121212;
+  color: #cccccc;
+}
+
+footer a {
+  color: #fddc03;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* ==================== Responsivo ==================== */
+@media (max-width: 991px) {
+  .hero .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  .hero .carousel-caption p {
+    font-size: 1rem;
+  }
+  .card-img-top {
+    height: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+  .hero .carousel-caption p {
+    font-size: 0.9rem;
+  }
+  .card-img-top {
+    height: 180px;
+  }
+}
