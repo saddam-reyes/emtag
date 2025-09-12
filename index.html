@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <!-- ==================== Metadatos básicos ==================== -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Language" content="es">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Language" content="es-MX">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ==================== SEO: Título y descripción ==================== -->
   <title>Rines Premium EMTAG | Venta y Reparación Profesional</title>
-  <meta name="description" content="EMTAG es especialista en venta y reparación de rines premium para autos de lujo. Rines originales, deportivos y personalizados con servicio profesional y garantía.">
-  <meta name="author" content="Saddam Reyes - EMTAG">
+  <meta name="description" content="EMTAG: especialistas en venta y reparación de rines premium en México. Rines originales, deportivos y personalizados con servicio profesional y garantía.">
+  <meta name="author" content="EMTAG">
+
+  <!-- ==================== Robots ==================== -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="keywords" content="rines EMTAG, rines premium México, venta de rines, reparación de rines, rines deportivos, rines originales, rines autos de lujo">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <!-- ✅ Canonical para evitar duplicados (#:~:text, parámetros, etc.) -->
+  <!-- ✅ Canonical + Hreflang -->
   <link rel="canonical" href="https://emtag.com.mx/">
-
-  <!-- ✅ Evitar indexación de fragmentos de texto en Google -->
-  <meta name="fragment" content="!">
-
-  <!-- ==================== Verificación Google ==================== -->
-  <meta name="google-site-verification" content="z7mIMsAw8fPSZ2IwRKr_4MFT_8wtV6uqbQm9GrrNCjI">
+  <link rel="alternate" href="https://emtag.com.mx/" hreflang="es-MX">
+  <link rel="alternate" href="https://emtag.com.mx/" hreflang="x-default">
 
   <!-- ==================== Open Graph (Facebook / LinkedIn) ==================== -->
   <meta property="og:title" content="Rines Premium EMTAG | Venta y Reparación">
-  <meta property="og:description" content="Transforma el estilo de tu auto con rines exclusivos EMTAG y servicios profesionales.">
+  <meta property="og:description" content="Transforma tu auto con rines exclusivos EMTAG y servicio profesional con garantía.">
   <meta property="og:image" content="https://emtag.com.mx/images/og-image.jpg">
-  <meta property="og:url" content="https://emtag.com.mx">
+  <meta property="og:image:secure_url" content="https://emtag.com.mx/images/og-image.jpg">
+  <meta property="og:image:alt" content="Rines premium EMTAG montados en auto de lujo">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://emtag.com.mx/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="EMTAG">
@@ -35,33 +38,44 @@
   <!-- ==================== Twitter Card ==================== -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rines Premium EMTAG">
-  <meta name="twitter:description" content="Venta y reparación profesional de rines para autos de lujo.">
+  <meta name="twitter:description" content="Venta y reparación profesional de rines para autos de lujo en México.">
   <meta name="twitter:image" content="https://emtag.com.mx/images/og-image.jpg">
+  <!-- <meta name="twitter:site" content="@TU_CUENTA"> -->
 
-  <!-- ==================== Datos estructurados (Schema.org) ==================== -->
-  <!-- (dejé igual tu JSON-LD porque está muy bien estructurado 👌) -->
+  <!-- ==================== Verificación Google ==================== -->
+  <meta name="google-site-verification" content="z7mIMsAw8fPSZ2IwRKr_4MFT_8wtV6uqbQm9GrrNCjI">
 
-  <!-- ==================== Favicon ==================== -->
+  <!-- ==================== Favicon & PWA ==================== -->
   <link rel="icon" href="https://emtag.com.mx/images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://emtag.com.mx/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest"> <!-- Opcional si usas PWA -->
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
-  <!-- ==================== Preload / Performance ==================== -->
-  <link rel="preload" href="https://emtag.com.mx/images/logo.svg" as="image">
+  <!-- ==================== Performance ==================== -->
+  <link rel="preload" href="https://emtag.com.mx/images/logo.svg" as="image" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <!-- (Opcional) Preload CSS crítico propio -->
+  <!-- <link rel="preload" href="/css/critical.css" as="style"> -->
 
   <!-- ==================== Fuentes ==================== -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/elemental-end" rel="stylesheet">
 
   <!-- ==================== Iconos ==================== -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha384-<!-- TODO: SRI -->" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <!-- ==================== Bootstrap ==================== -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ==================== CSS Framework ==================== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-<!-- TODO: SRI -->" crossorigin="anonymous">
 
-  <!-- ==================== Estilos ==================== -->
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/main.css">
+  <!-- ==================== Estilos del sitio ==================== -->
+  <link rel="stylesheet" href="/css/aos.css">
+  <link rel="stylesheet" href="/css/main.css">
 
   <!-- ==================== Google Tag Manager ==================== -->
   <script>
@@ -71,23 +85,162 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W7MNPFWR');
   </script>
+  <!-- ⚠️ Añade el bloque <noscript> de GTM inmediatamente dentro del <body>:
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7MNPFWR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  -->
 
-  <!-- ==================== Google Analytics ==================== -->
+  <!-- ==================== Google Analytics (con privacidad) ==================== -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYSFPSF9W"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-YKYSFPSF9W');
+    gtag('config', 'G-YKYSFPSF9W', {
+      anonymize_ip: true,
+      page_title: document.title,
+      page_path: window.location.pathname + window.location.search
+    });
   </script>
 
-  <!-- ✅ Script para limpiar fragmentos de texto en URL -->
-  <script>
-    if (window.location.href.includes("#:~:text")) {
-      window.location.href = window.location.origin + window.location.pathname;
+  <!-- ==================== Datos estructurados (Schema.org) ==================== -->
+  <!-- WebSite + SearchAction: elegibilidad de sitelinks y mejor descubrimiento -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "EMTAG",
+    "url": "https://emtag.com.mx/",
+    "inLanguage": "es-MX",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://emtag.com.mx/buscar?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
+  }
   </script>
+
+  <!-- Organization / LocalBusiness: completa TODOs con tus datos reales -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoPartsStore",
+    "name": "EMTAG",
+    "url": "https://emtag.com.mx/",
+    "logo": "https://emtag.com.mx/images/logo.svg",
+    "image": "https://emtag.com.mx/images/og-image.jpg",
+    "telephone": "+52-55-<!-- TODO: teléfono real -->",
+    "email": "contacto@emtag.com.mx",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "<!-- TODO: calle y número -->",
+      "addressLocality": "<!-- TODO: ciudad -->",
+      "addressRegion": "<!-- TODO: estado -->",
+      "postalCode": "<!-- TODO: CP -->",
+      "addressCountry": "MX"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": <!-- TODO: latitud -->,
+      "longitude": <!-- TODO: longitud -->
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/<!-- TODO -->",
+      "https://www.instagram.com/<!-- TODO -->",
+      "https://listado.mercadolibre.com.mx/_CustId_<!-- TODO -->"
+    ]
+  }
+  </script>
+
+  <!-- WebPage (Homepage): refuerza tema/keywords y coherencia semántica -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Rines Premium EMTAG | Venta y Reparación Profesional",
+    "url": "https://emtag.com.mx/",
+    "inLanguage": "es-MX",
+    "description": "Rines premium originales, deportivos y personalizados con instalación y garantía en México."
+  }
+  </script>
+
+<!-- Organization / LocalBusiness (EMTAG) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoPartsStore",
+  "name": "EMTAG",
+  "url": "https://emtag.com.mx/",
+  "logo": "https://emtag.com.mx/images/logo.svg",
+  "image": "https://emtag.com.mx/images/og-image.jpg",
+  "email": "ventas@emtag.com.mx",
+  "telephone": "+52 55 8057 8240",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Obrero Mundial 246, Del Valle",
+    "addressLocality": "Benito Juárez",
+    "addressRegion": "CDMX",
+    "addressCountry": "MX"
+  },
+  "areaServed": "MX",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "ventas",
+      "telephone": "+52 55 8057 8240",
+      "email": "ventas@emtag.com.mx",
+      "areaServed": "MX",
+      "availableLanguage": ["es"]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "atención al cliente",
+      "telephone": "+52 55 19308 1634",
+      "areaServed": "MX",
+      "availableLanguage": ["es"]
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.mercadolibre.com.mx/pampa/profile"
+    // Agrega aquí tus redes si quieres: Facebook/Instagram
+    // "https://www.facebook.com/TUCUENTA",
+    // "https://www.instagram.com/TUCUENTA"
+  ]
+}
+</script>
+
+  <!-- (Opcional) FAQPage: añade solo si tienes el bloque FAQ visible en la página -->
+  <!--
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"¿Hacen envíos en todo México?",
+       "acceptedAnswer":{"@type":"Answer","text":"Sí, enviamos a toda la República Mexicana con paqueterías confiables."}},
+      {"@type":"Question","name":"¿Ofrecen instalación?",
+       "acceptedAnswer":{"@type":"Answer","text":"Contamos con servicio de instalación y balanceo en sucursal."}}
+    ]
+  }
+  </script>
+  -->
 </head>
+
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="50"> 
   <div class="fondo-animado">
 
