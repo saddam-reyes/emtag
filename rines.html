@@ -4,7 +4,7 @@
   <!-- ==================== Metadatos básicos ==================== -->
   <meta charset="UTF-8">
   <meta http-equiv="Content-Language" content="es-MX">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ==================== SEO: Título y descripción (Categoría Rines) ==================== -->
   <title>Rines EMTAG | Venta y Reparación Profesional de Alta Gama</title>
@@ -46,7 +46,7 @@
 
   <!-- ==================== Performance ==================== -->
   <link rel="preload" href="images/rines-hero-fallback.jpg" as="image" fetchpriority="high">
-  <link rel="preload" href="images/rines-hero.mp4" as="video">
+  <link rel="preload" href="images/rines-hero.mp4" as="video" type="video/mp4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -61,10 +61,11 @@
   <link href="https://fonts.cdnfonts.com/css/elemental-end" rel="stylesheet">
 
   <!-- ==================== Iconos ==================== -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- ==================== Bootstrap ==================== -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
 
   <!-- ==================== Estilos ==================== -->
   <link rel="stylesheet" href="css/aos.css">
@@ -78,7 +79,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W7MNPFWR');
   </script>
-  <!-- ⚠️ El bloque <noscript> va al inicio del <body> -->
+  <!-- ⚠️ El bloque <noscript> debe ir justo después de <body> -->
 
   <!-- ==================== Google Analytics (privacidad) ==================== -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKYSFPSF9W"></script>
@@ -94,7 +95,6 @@
   </script>
 
   <!-- ==================== Datos estructurados (Schema.org) ==================== -->
-  <!-- Negocio local -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -125,14 +125,12 @@
       {
         "@type": "ContactPoint",
         "contactType": "atención al cliente",
-        "telephone": "+52 55 19308 1634",
+        "telephone": "+52 55 1930 81634",
         "areaServed": "MX",
         "availableLanguage": ["es"]
       }
     ],
-    "sameAs": [
-      "https://www.mercadolibre.com.mx/pampa/profile"
-    ]
+    "sameAs": ["https://www.mercadolibre.com.mx/pampa/profile"]
   }
   </script>
 
@@ -185,11 +183,11 @@
     ]
   }
   </script>
-
-
 </head>
 
+
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="50">
+
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7MNPFWR"
@@ -198,188 +196,231 @@
   </noscript>
   <!-- End GTM (noscript) -->
 
-  <!-- ===========================
-       NAVBAR PRINCIPAL EMTAG
-  =========================== -->
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Menú principal">
-  <div class="container">
+  <!-- NAVBAR PRINCIPAL EMTAG -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" role="navigation" aria-label="Menú principal">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio" title="EMTAG - Inicio">
+        <img src="images/logo.svg" alt="Logo EMTAG - Rines y Accesorios Premium" width="120" loading="lazy">
+      </a>
 
-    <!-- Logo -->
-    <a class="navbar-brand" href="#inicio" title="EMTAG - Inicio">
-      <img src="images/logo.svg" alt="Logo EMTAG - Rines y Accesorios Premium" loading="lazy" width="120">
-    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <i class="fa-solid fa-bars text-white"></i>
+      </button>
 
-    <!-- Botón móvil -->
-    <button 
-      class="navbar-toggler" 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navbarNav" 
-      aria-controls="navbarNav" 
-      aria-expanded="false" 
-      aria-label="Abrir menú de navegación">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
 
-    <!-- Menú -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav align-items-lg-center">
-
-        <li class="nav-item">
-          <a class="nav-link" href="#inicio" title="Ir al inicio">Inicio</a>
-        </li>
-
-        <!-- Dropdown Rines -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="rines.html" id="rinesDropdown" role="button"
-             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Rines
-          </a>
-          <div class="dropdown-menu shadow" aria-labelledby="rinesDropdown">
-            <a class="dropdown-item d-flex align-items-center" href="rines.html#mercedes">
-              <img src="images/logos-rin/mercedes-benz.svg" alt="Logo Mercedes-Benz" class="menu-logo me-2" width="20" height="20">
-              Mercedes-Benz
+          <!-- Dropdown Rines -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="rines.html" id="rinesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              Rines
             </a>
-            <a class="dropdown-item d-flex align-items-center" href="rines.html#bmw">
-              <img src="images/logos-rin/bmw.svg" alt="Logo BMW" class="menu-logo me-2" width="20" height="20">
-              BMW
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="rines.html#audi">
-              <img src="images/logos-rin/audi.svg" alt="Logo Audi" class="menu-logo me-2" width="20" height="20">
-              Audi
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="rines.html#porsche">
-              <img src="images/logos-rin/porsche.svg" alt="Logo Porsche" class="menu-logo me-2" width="20" height="20">
-              Porsche
-            </a>
-          </div>
-        </li>
+            <div class="dropdown-menu shadow" aria-labelledby="rinesDropdown">
+              <a class="dropdown-item d-flex align-items-center" href="rines.html#mercedes">
+                <img src="images/logos-rin/mercedes-benz.svg" alt="Logo Mercedes-Benz" width="20" height="20" class="menu-logo me-2" loading="lazy">
+                Mercedes-Benz
+              </a>
+              <!-- demás marcas -->
+            </div>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="accesorios.html" title="Ver accesorios para vehículos">Accesorios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Servicios" title="Explorar servicios especializados">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Contacto" title="Contactar a EMTAG">Contacto</a>
-        </li>
+          <li class="nav-item"><a class="nav-link" href="accesorios.html">Accesorios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
 
-        <!-- Teléfono + Redes -->
-        <li class="nav-item phone-social-container ms-lg-3">
-          <div class="phone-container d-flex align-items-center">
-            <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>
-            <a 
-              href="https://wa.me/525580578240" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="text-white fw-bold" 
-              title="Enviar mensaje por WhatsApp a EMTAG">
-              <span class="phone-number">55 8057 8240</span>
-            </a>
-          </div>
-          <div class="social-icons d-flex align-items-center mt-2 mt-lg-0">
-            <a href="#" title="Facebook EMTAG" aria-label="Facebook" class="ms-2"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" title="Instagram EMTAG" aria-label="Instagram" class="ms-2"><i class="fab fa-instagram"></i></a>
-            <a href="#" title="TikTok EMTAG" aria-label="TikTok" class="ms-2"><i class="fab fa-tiktok"></i></a>
-            <a href="#" title="YouTube EMTAG" aria-label="YouTube" class="ms-2"><i class="fab fa-youtube"></i></a>
-          </div>
-        </li>
+          <li class="nav-item phone-social-container ms-lg-3">
+            <div class="phone-container d-flex align-items-center">
+              <i class="fab fa-whatsapp me-2"></i>
+              <a href="https://wa.me/525580578240" target="_blank" rel="noopener noreferrer" class="text-white fw-bold">
+                <span class="phone-number">55 8057 8240</span>
+              </a>
+            </div>
+            <div class="social-icons d-flex align-items-center mt-2 mt-lg-0">
+              <a href="#" class="ms-2" title="Facebook EMTAG" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="ms-2" title="Instagram EMTAG" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="ms-2" title="TikTok EMTAG" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="ms-2" title="YouTube EMTAG" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-        <!-- CTA Cotizar -->
-        <li class="nav-item ms-lg-3">
-          <a href="#cotizar" class="btn-cta" role="button">Cotizar ahora</a>
-        </li>
+  <div id="menuOverlay"></div>
 
+<!-- ===========================  
+     SUBMENÚ PERSONALIZADO
+=========================== -->
+<div class="submenu-container">
+  <div class="submenu">
+    <!-- Botón MARCA -->
+    <div class="submenu-item dropdown">
+      <button class="submenu-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-speedometer2 me-1"></i> Marca
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">TSW</a></li>
+        <li><a class="dropdown-item" href="#">Rotiform</a></li>
+        <li><a class="dropdown-item" href="#">OZ Racing</a></li>
+      </ul>
+    </div>
+
+    <!-- Botón DIÁMETRO -->
+    <div class="submenu-item dropdown">
+      <button class="submenu-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-circle-half me-1"></i> Diámetro
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">17"</a></li>
+        <li><a class="dropdown-item" href="#">18"</a></li>
+        <li><a class="dropdown-item" href="#">19"</a></li>
+      </ul>
+    </div>
+
+    <!-- Botón BARRENACIÓN -->
+    <div class="submenu-item dropdown">
+      <button class="submenu-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-gear-wide-connected me-1"></i> Barrenación
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">4x100</a></li>
+        <li><a class="dropdown-item" href="#">5x114.3</a></li>
+        <li><a class="dropdown-item" href="#">5x120</a></li>
       </ul>
     </div>
   </div>
-</nav>
+</div>
 
-<div id="menuOverlay"></div>
+
+
 <!-- ===========================
-     SUBMENÚ FILTROS (FIJO HASTA MITAD)
+     HERO SECCIÓN RINES PREMIUM
 =========================== -->
-<nav class="submenu-filtros" id="submenuFiltros">
-  <ul>
-    <li class="dropdown">
-      <button class="submenu-btn">MARCA <i class="bi bi-chevron-down"></i></button>
-      <ul class="submenu-dropdown">
-        <li><a href="#mercedes">Mercedes</a></li>
-        <li><a href="#audi">Audi</a></li>
-        <li><a href="#bmw">BMW</a></li>
-        <li><a href="#porsche">Porsche</a></li>
-      </ul>
-    </li>
+<section id="hero-rines" class="hero-rines d-flex align-items-center justify-content-center text-center">
 
-    <li class="dropdown">
-      <button class="submenu-btn">BARRENACIÓN <i class="bi bi-chevron-down"></i></button>
-      <ul class="submenu-dropdown">
-        <li><a href="#">4x100</a></li>
-        <li><a href="#">5x112</a></li>
-        <li><a href="#">5x114.3</a></li>
-        <li><a href="#">5x120</a></li>
-      </ul>
-    </li>
+  <!-- Video de fondo (solo escritorio) -->
+  <div class="video-background d-none d-md-block" aria-hidden="true">
+    <video autoplay muted loop playsinline class="video-fondo" preload="metadata" poster="images/rines-hero-fallback.jpg">
+      <source src="images/rines-hero.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
 
-    <li class="dropdown">
-      <button class="submenu-btn">DIÁMETRO <i class="bi bi-chevron-down"></i></button>
-      <ul class="submenu-dropdown">
-        <li><a href="#">17"</a></li>
-        <li><a href="#">18"</a></li>
-        <li><a href="#">19"</a></li>
-        <li><a href="#">20"</a></li>
-        <li><a href="#">21"</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+  <!-- Imagen fallback (solo móvil) -->
+  <div class="fallback-img d-block d-md-none position-relative">
+    <img src="images/rines-hero-fallback.jpg" 
+         alt="Rines Premium EMTAG" 
+         class="img-fluid w-100" 
+         loading="eager" 
+         width="1440" 
+         height="720">
+    <div class="video-overlay"></div>
+  </div>
 
+  <!-- Contenido centrado -->
+  <div class="container position-relative text-white contenido-hero">
+    <header class="mb-5">
+      <h1 class="titulo-seccion display-4 fw-bold">
+        <span class="texto-amarillo">Estilo que rueda</span><br>
+        <span class="texto-plateado">contigo</span>
+      </h1>
+      <p class="lead mt-3">Rines premium para quienes exigen lo mejor.</p>
+      <a href="#catalogo" class="btn btn-emtag btn-lg mt-3" role="button">VER CATÁLOGO COMPLETO</a>
+    </header>
+  </div>
+</section>
 
-  <!-- HERO SECCIÓN RINES PREMIUM -->
-  <section id="hero-rines" class="hero-rines d-flex align-items-center justify-content-center text-center">
-    <!-- Video de fondo (solo escritorio) -->
-    <div class="video-background d-none d-md-block" aria-hidden="true">
-      <video autoplay muted loop playsinline class="video-fondo" preload="metadata" poster="images/rines-hero-fallback.jpg">
-        <source src="images/rines-hero.mp4" type="video/mp4">
-        Tu navegador no soporta video.
-      </video>
-      <div class="video-overlay"></div>
-    </div>
+<!-- ===========================
+     CATÁLOGO DE RINES
+=========================== -->
 
-    <!-- Imagen fallback (solo móvil) -->
-    <div class="fallback-img d-block d-md-none">
-      <img src="images/rines-hero-fallback.jpg" alt="Rines Premium EMTAG" class="img-fluid w-100" loading="eager" width="1440" height="720">
-      <div class="video-overlay"></div>
-    </div>
-
-    <!-- Contenido centrado -->
-    <div class="container position-relative text-white contenido-hero">
-      <header class="mb-5">
-        <h1 class="titulo-seccion display-4 fw-bold">
-          <span class="texto-amarillo">RINES QUE DEFINEN</span><br>
-          <span class="texto-plateado">TU ESTILO</span>
-        </h1>
-        <p class="lead mt-3">
-          Descubre nuestra selección de rines premium, combinando resistencia y desempeño<br>
-          para transformar la presencia de tu auto.
-        </p>
-        <a href="#catalogo" class="btn btn-emtag btn-lg mt-3" role="button">VER CATÁLOGO COMPLETO</a>
-      </header>
-
-    <!-- === Sección de Rines Mercedes-Benz === -->
+<!-- === Sección de Rines Mercedes-Benz === -->
 <section id="rines-mercedes-benz" class="rines-marca mb-5">
   <h2 class="text-center mb-4">Rines Mercedes-Benz</h2>
   <div class="row g-4 justify-content-center">
 
-      <article class="producto col-md-6 col-lg-3 text-center">
-        <img src="images/modelos-rin/mercedes-benz/rin-deportivo-black-evo.png" 
-             alt="Rin Mercedes AMG Multispoke deportivo negro" 
-             class="img-fluid imagen-rin">
-        <h3 class="nombre-rin mt-3">Mercedes AMG Multispoke</h3>
-        <img src="images/logos-carrusel/logos-01.svg" alt="Logo Mercedes-Benz" width="60" class="mt-2">
-      </article>
+<!-- === Tarjeta del producto (abre el modal) === -->
+<!-- === TARJETA DEL PRODUCTO (dispara el modal) === -->
+<!-- === PRODUCTO === -->
+<article class="producto col-md-6 col-lg-3 text-center"
+         data-bs-toggle="modal"
+         data-bs-target="#modalMercedesBlackEvo">
+  <img src="images/modelos-rin/mercedes-benz/rin-deportivo-black-evo.png"
+       alt="Rin Mercedes AMG Multispoke Black EVO 19"
+       class="img-fluid imagen-rin">
+  <h3 class="nombre-rin mt-3">Mercedes AMG Multispoke Black EVO 19”</h3>
+  <img src="images/logos-carrusel/logos-01.svg"
+       alt="Logo Mercedes-Benz" width="60" class="mt-2">
+</article>
+
+<!-- === MODAL PREMIUM EMTAG === -->
+<div class="modal fade" id="modalMercedesBlackEvo" tabindex="-1"
+     aria-labelledby="modalMercedesBlackEvoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      <div class="modal-body row align-items-center g-4">
+
+        <!-- LADO IZQUIERDO -->
+        <div class="col-lg-6 text-center">
+          <div class="main-media mb-3">
+            <img src="images/modelos-rin/mercedes-benz/rin-deportivo-black-evo.png"
+                 alt="Rin Mercedes AMG Multispoke Black EVO 19 principal"
+                 class="img-fluid">
+          </div>
+
+          <!-- Miniaturas -->
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <img src="images/modelos-rin/mercedes-benz/rin-deportivo-black-evo.png"
+                 alt="Vista frontal" class="thumb active">
+            <img src="images/modelos-rin/mercedes-benz/rin-deportivo-black-evo-detalle1.png"
+                 alt="Vista lateral" class="thumb">
+            <img src="images/modelos-rin/mercedes-benz/rin-deportivo-black-evo-detalle2.png"
+                 alt="Detalle de rayos" class="thumb">
+            <img src="images/modelos-rin/mercedes-benz/rin-deportivo-black-evo-detalle3.png"
+                 alt="Vista con llanta" class="thumb">
+          </div>
+        </div>
+
+        <!-- LADO DERECHO -->
+        <div class="col-lg-6">
+          <h2 class="title-gradient mb-3">Mercedes AMG Multispoke Black EVO 19”</h2>
+          <p>Rin para <strong>Mercedes-Benz</strong> en <strong>Negro Mate</strong>, combina elegancia, ligereza y carácter deportivo.</p>
+
+          <hr>
+
+          <ul>
+          <li><i class="fa-solid fa-car-side fa-2x text-warning me-2"></i> <strong>Marca:</strong> Mercedes-Benz</li>
+          <li><i class="fa-solid fa-ruler fa-2x text-warning me-2"></i> <strong>Modelo:</strong> 1028</li>
+          <li><i class="fa-solid fa-arrows-up-down-left-right fa-2x text-warning me-2"></i> <strong>Medida:</strong> 19"</li>
+          <li><i class="fa-solid fa-circle-notch fa-2x text-warning me-2"></i> <strong>Tamaño:</strong> 19x8.5</li>
+          <li><i class="fa-solid fa-sliders fa-2x text-warning me-2"></i> <strong>Offset (ET):</strong> 35</li>
+          <li><i class="fa-solid fa-circle-nodes fa-2x text-warning me-2"></i> <strong>Barrenación:</strong> 5x112</li>
+          <li><i class="fa-solid fa-bullseye fa-2x text-warning me-2"></i> <strong>C.B.:</strong> 66.6</li>
+          <li><i class="fa-solid fa-palette fa-2x text-warning me-2"></i> <strong>Color:</strong> Negro Mate</li>
+        </ul>
+
+          <hr>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#" class="btn btn-warning">Cotizar Ahora</a>
+            <a href="https://wa.me/5215512345678?text=Hola,%20quiero%20más%20info%20del%20rin%20Mercedes%20AMG%20Black%20EVO%2019”"
+               class="btn btn-outline-warning" target="_blank">
+              WhatsApp
+            </a>
+          </div>
+
+          <small>*Imágenes ilustrativas. Precio sujeto a disponibilidad.</small>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
     <article class="producto col-md-6 col-lg-3 text-center">
       <img src="images/modelos-rin/mercedes-benz/cromo-luxury-edition.png" 
@@ -409,9 +450,9 @@
 </section>
 
 <!-- === Sección de Rines Ocultos (BMW, Audi, Porsche) === -->
-<div id="rines-ocultos" style="display:none;">
+<div id="rines-ocultos" class="container" style="display: none;">
 
-  <!-- === Sección de Rines BMW === -->
+  <!-- === BMW === -->
   <section id="rines-bmw" class="rines-marca mb-5">
     <h2 class="text-center mb-4">Rines BMW</h2>
     <div class="row g-4 justify-content-center">
@@ -451,7 +492,7 @@
     </div>
   </section>
 
-  <!-- === Sección de Rines Audi === -->
+  <!-- === Audi === -->
   <section id="rines-audi" class="rines-marca mb-5">
     <h2 class="text-center mb-4">Rines Audi</h2>
     <div class="row g-4 justify-content-center">
@@ -491,7 +532,7 @@
     </div>
   </section>
 
-  <!-- === Sección de Rines Porsche === -->
+  <!-- === Porsche === -->
   <section id="rines-porsche" class="rines-marca mb-5">
     <h2 class="text-center mb-4">Rines Porsche</h2>
     <div class="row g-4 justify-content-center">
@@ -535,9 +576,10 @@
 
 <!-- === Botón Mostrar / Ocultar === -->
 <div class="text-center mb-5">
-  <button id="toggleRinesBtn" class="btn-emtag">MOSTRAR MÁS</button>
+  <button id="toggleRinesBtn" class="btn btn-emtag">MOSTRAR MÁS</button>
 </div>
 
+<!-- === Script Mostrar/Ocultar === -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('toggleRinesBtn');
@@ -551,51 +593,80 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-
   <!-- SECCIÓN: VENTAJAS -->
-  <section class="seccion-ventajas">
-    <div class="container">
-      <h2 class="h3">
-        <span class="texto-amarillo">Nuestras</span>
-        <span class="texto-blanco">Ventajas</span>
+<section class="seccion-ventajas py-5" id="ventajas">
+  <div class="container text-center">
+    <h2 class="h3 mb-3">
+      <span class="texto-amarillo">Nuestras</span>
+      <span class="texto-blanco">Ventajas</span>
+    </h2>
+    <p class="descripcion-rines mb-4">
+      Con EMTAG, tienes la confianza de un servicio profesional respaldado por envíos rápidos,
+      devoluciones sencillas y seguridad en cada compra.
+    </p>
+
+    <div class="contenedor-ventajas d-flex flex-wrap justify-content-center gap-4">
+      <div class="ventaja text-center">
+        <i class="fa-solid fa-shield-halved fa-2x mb-2 text-warning" aria-hidden="true"></i>
+        <p class="mb-0">Compras Seguras</p>
+      </div>
+      <div class="ventaja text-center">
+        <i class="fa-solid fa-truck-fast fa-2x mb-2 text-warning" aria-hidden="true"></i>
+        <p class="mb-0">Envíos a Todo México</p>
+      </div>
+      <div class="ventaja text-center">
+        <i class="fa-solid fa-rotate-left fa-2x mb-2 text-warning" aria-hidden="true"></i>
+        <p class="mb-0">Fácil Devolución</p>
+      </div>
+      <div class="ventaja text-center">
+        <i class="fa-solid fa-screwdriver-wrench fa-2x mb-2 text-warning" aria-hidden="true"></i>
+        <p class="mb-0">Instalación Disponible</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN FINAL -->
+<section class="seccion-final py-5" id="final">
+  <div class="contenido-final container d-flex flex-column flex-lg-row align-items-center justify-content-between">
+    
+    <!-- Texto -->
+    <div class="texto-final text-center text-lg-start mb-4 mb-lg-0">
+      <h2 class="h3 mb-3">
+        <span class="texto-amarillo">Rines</span>
+        <span class="texto-blanco">Que Transforman</span>
       </h2>
-      <p class="descripcion-rines">
-        Con EMTAG, tienes la confianza de un servicio profesional respaldado con envíos rápidos, devoluciones sencillas y seguridad en cada compra.
+      <p class="descripcion-rines mb-4">
+        Descubre el diseño y la ingeniería que define tu camino. 
+        Con EMTAG, cada rin eleva tu estilo y tu experiencia de manejo.
       </p>
-
-      <div class="contenedor-ventajas">
-        <div class="ventaja"><i class="fa-solid fa-shield-halved"></i><p>Compras Seguras</p></div>
-        <div class="ventaja"><i class="fa-solid fa-truck-fast"></i><p>Envíos a Todo México</p></div>
-        <div class="ventaja"><i class="fa-solid fa-rotate-left"></i><p>Fácil Devolución</p></div>
-        <div class="ventaja"><i class="fa-solid fa-screwdriver-wrench"></i><p>Instalación Disponible</p></div>
+      <div class="botones-final d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+        <a href="#catalogo" class="boton-cta" title="Ver catálogo de rines EMTAG">
+          Ver Catálogo
+        </a>
+        <a href="https://wa.me/525580578240?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20rines%20premium%20EMTAG" 
+           class="boton-cta whatsapp d-flex align-items-center justify-content-center"
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Cotizar por WhatsApp EMTAG">
+          <i class="fa-brands fa-whatsapp me-2" aria-hidden="true"></i> Cotizar por WhatsApp
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- SECCIÓN FINAL -->
-  <section class="seccion-final">
-    <div class="contenido-final container">
-      <div class="texto-final">
-        <h2 class="h3">
-          <span class="texto-amarillo">Rines</span>
-          <span class="texto-blanco">Que Transforman</span>
-        </h2>
-        <p class="descripcion-rines">
-          Descubre el diseño y la ingeniería que define tu camino. Con EMTAG, cada rin eleva tu estilo y tu experiencia de manejo.
-        </p>
-        <div class="botones-final">
-          <a href="#catalogo" class="boton-cta">Ver Catálogo</a>
-          <a href="https://wa.me/525580578240?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20rines%20premium%20EMTAG" class="boton-cta whatsapp" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <div class="imagen-final">
-        <img src="images/black-rin.png" alt="Rin premium negro EMTAG" class="thumbnail" width="720" height="720" loading="lazy">
-      </div>
+    <!-- Imagen -->
+    <div class="imagen-final text-center">
+      <img src="images/black-rin.png" 
+           alt="Rin premium color negro EMTAG" 
+           class="thumbnail img-fluid"
+           width="720" height="720" 
+           loading="lazy">
     </div>
-  </section>
+  </div>
+</section>
+
+  
+
 
   <!-- FOOTER -->
   <footer class="site-footer pt-5 pb-4 text-white" role="contentinfo" id="contacto">
@@ -683,54 +754,83 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </footer>
 
-  <!-- ===============================
-       JS: librerías y scripts
-  =============================== -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/aos.js" defer></script>
-  <script src="https://unpkg.com/scrollreveal" defer></script>
-  <script src="js/custom.js" defer></script>
-  <script src="js/main.js" defer></script>
+<!-- ===============================
+     JS: Librerías y scripts
+=============================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous" defer></script>
 
-  <!-- Inicializaciones -->
-  <script defer>
-    function changeMainImage(el){ var main=document.getElementById('mainImage'); if(main && el && el.src){ main.src = el.src; main.alt = el.alt || main.alt; } }
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="https://unpkg.com/scrollreveal" defer></script>
 
-    document.addEventListener("DOMContentLoaded", function() {
-      if (typeof AOS !== "undefined") AOS.init({ duration: 800, once: true });
-      if (typeof ScrollReveal !== "undefined") {
-        ScrollReveal().reveal('.reveal', { distance: '50px', duration: 1000, easing: 'ease-in-out', interval: 200 });
-      }
-      if (typeof bootstrap !== "undefined") {
-        const tooltipList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        tooltipList.map(el => new bootstrap.Tooltip(el));
-      }
+<script src="js/custom.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/modal-vektor.js" defer></script>
+
+<!-- ===============================
+     Inicializaciones globales
+=============================== -->
+<script defer>
+document.addEventListener("DOMContentLoaded", () => {
+  // AOS
+  if (typeof AOS !== "undefined") {
+    AOS.init({ duration: 800, once: true });
+  }
+
+  // ScrollReveal
+  if (typeof ScrollReveal !== "undefined") {
+    ScrollReveal().reveal('.reveal', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      interval: 200
     });
-  </script>
+  }
 
+  // Tooltips
+  if (typeof bootstrap !== "undefined") {
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+  }
 
-<script>
+  // Mostrar/ocultar navbar con scroll
+  const mainNav = document.querySelector('.navbar');
+  const subNav = document.querySelector('.sub-navbar');
   const submenu = document.getElementById('submenuFiltros');
   let lastScrollTop = 0;
+  const threshold = 50;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > lastScrollTop) {
-      submenu.classList.add('hidden-submenu'); // desaparece al bajar
-    } else {
-      submenu.classList.remove('hidden-submenu'); // aparece al subir
-    }
-    lastScrollTop = currentScroll;
+    const y = window.scrollY;
+    const down = y > lastScrollTop && y > threshold;
+    [mainNav, subNav, submenu].forEach(el => el && el.classList.toggle('hidden', down));
+    lastScrollTop = Math.max(y, 0);
   });
+});
 </script>
 
+<!-- ===============================
+     Zoho SalesIQ
+=============================== -->
+<script>
+  window.$zoho = window.$zoho || {};
+  $zoho.salesiq = $zoho.salesiq || { ready: function(){} };
+</script>
+<script id="zsiqscript"
+        src="https://salesiq.zohopublic.com/widget?wc=siq77626ab5d6a3c1cd1d946b63d6a06f4b"
+        defer></script>
+<script>
+window.addEventListener("scroll", function() {
+  const submenu = document.querySelector(".submenu-container");
+  if (window.scrollY > 50) {
+    submenu.classList.add("scrolled");
+  } else {
+    submenu.classList.remove("scrolled");
+  }
+});
+</script>
 
-  <!-- Zoho SalesIQ -->
-  <script>
-    window.$zoho = window.$zoho || {};
-    $zoho.salesiq = $zoho.salesiq || { ready: function(){} };
-  </script>
-  <script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq77626ab5d6a3c1cd1d946b63d6a06f4b" defer></script>
+<script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll(".modal");e.forEach(e=>{const t=e.querySelector(".main-media img"),a=e.querySelectorAll(".thumb");if(!t||0===a.length)return;const c=a[0].src,n=a[0].alt||"Vista principal";a.forEach(e=>{e.addEventListener("click",()=>{if(e.classList.contains("active"))return;a.forEach(e=>e.classList.remove("active")),e.classList.add("active"),t.style.opacity=0,setTimeout(()=>{t.src=e.src,t.alt=e.alt||"Vista del producto",t.style.opacity=1},250)})}),e.addEventListener("hidden.bs.modal",()=>{t.style.opacity=0,setTimeout(()=>{t.src=c,t.alt=n,t.style.opacity=1,a.forEach(e=>e.classList.remove("active")),a[0].classList.add("active")},200)})})});</script>
+
 </body>
 </html>
