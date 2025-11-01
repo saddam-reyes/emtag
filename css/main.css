@@ -1186,12 +1186,77 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   }
 }
 
+/* ================================
+=      SUBMENÚ RINES BASE         =
+================================ */
+.submenu-rines {
+  background-color: #0d0d0d; /* negro carbón sólido */
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-heading);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
+/* ================================
+=         LISTA PRINCIPAL         =
+================================ */
+.submenu-list {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
 
+.submenu-item {
+  position: relative;
+}
 
+/* ================================
+=        BOTONES DEL MENÚ         =
+================================ */
+.submenu-btn {
+  background: transparent;
+  border: none;
+  color: #b3b3b3; /* gris elegante */
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
 
+.submenu-btn:hover {
+  color: #FDDD03; /* Amarillo EMTAG */
+}
 
+.submenu-btn i {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
 
+.dropdown:hover .submenu-btn i {
+  transform: rotate(180deg);
+}
+
+/* ================================
+=        DROPDOWN MENU            =
+================================ */
+.submenu-dropdown {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111111;
+  border
 
 
 /* ------------------------------------ */
@@ -1205,15 +1270,13 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   overflow: hidden;
 }
 
+/* ===== HEADER CON FONDO ===== */
 .seccion-rines header {
   position: relative;
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
-  background-image: url('../images/rin-estilo.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url('../images/rin-estilo.jpg') center/cover no-repeat;
   padding: 6rem 2rem 5rem;
   text-align: center;
   overflow: hidden;
@@ -1233,6 +1296,7 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   z-index: 2;
 }
 
+/* ===== TÍTULO PRINCIPAL ===== */
 .titulo-seccion {
   font-family: 'Elemental End', sans-serif;
   font-size: 2.8rem;
@@ -1243,6 +1307,7 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   justify-content: center;
   gap: 0.6rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .titulo-seccion .texto-amarillo {
@@ -1265,6 +1330,7 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   filter: brightness(1.15);
 }
 
+/* ===== DESCRIPCIÓN ===== */
 .about-description {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.05rem;
@@ -1278,26 +1344,25 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   animation: fadeInUp 1s ease forwards 0.3s;
 }
 
+/* ===== GRID DE PRODUCTOS ===== */
 .grid-productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 3rem;
   max-width: 1200px;
-  margin: 0 auto 5rem auto;
+  margin: 0 auto 5rem;
   padding: 0 1.5rem;
 }
 
+/* ===== TARJETAS ===== */
 .producto {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  background-color: transparent;
+  background: transparent;
   border: none;
-  border-radius: 0;
   padding: 1.5rem 1rem;
-  box-shadow: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: translateY(20px);
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
@@ -1308,45 +1373,57 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   box-shadow: 0 0 18px rgba(253, 221, 3, 0.18);
 }
 
-.producto:nth-child(1) { animation-delay: 0.4s; }
-.producto:nth-child(2) { animation-delay: 0.6s; }
-.producto:nth-child(3) { animation-delay: 0.8s; }
-.producto:nth-child(4) { animation-delay: 1s; }
-.producto:nth-child(5) { animation-delay: 1.2s; }
-.producto:nth-child(6) { animation-delay: 1.4s; }
-.producto:nth-child(7) { animation-delay: 1.6s; }
-.producto:nth-child(8) { animation-delay: 1.8s; }
-
 .producto figure {
   margin: 0;
 }
 
+/* ===== IMÁGENES ===== */
 .imagen-rin {
   max-width: 100%;
-  height: auto;
+  border-radius: 10px;
   margin-bottom: 1.2rem;
   transition: transform 0.3s ease;
-  border-radius: 10px;
 }
 
 .imagen-rin:hover {
   transform: scale(1.04);
 }
 
+/* ===== NOMBRE DE RIN ===== */
 .nombre-rin {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1.05rem;
   line-height: 1.4;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.4rem;
   transition: color 0.3s ease;
 }
+
 .nombre-rin:hover {
   color: #FDDD03;
 }
 
+/* ===== NOMBRE DE MARCA (nuevo estilo discreto y elegante) ===== */
+.nombre-marca {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.6px;
+  color: #ffeb70; /* Amarillo elegante y suave */
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+  font-weight: 500;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nombre-marca:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* ===== BOTONES ===== */
 .btn-cta-secundario {
-  background-color: transparent;
+  background: transparent;
   border: 1.5px solid #777;
   color: #bbb;
   font-family: 'Montserrat', sans-serif;
@@ -1354,31 +1431,23 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   padding: 0.6rem 1rem;
   text-transform: uppercase;
   letter-spacing: 1.1px;
-  transition: all 0.3s ease;
-  cursor: pointer;
   border-radius: 10px;
   font-weight: 600;
   box-shadow: inset 0 0 5px #fff2;
   text-decoration: none;
   display: inline-block;
-  text-align: center;
+  transition: all 0.3s ease;
 }
+
 .btn-cta-secundario:hover {
   background-color: #FDDD03;
   color: #111;
   border-color: #FDDD03;
   transform: scale(1.05);
   box-shadow: 0 0 10px #FDDD03bb;
-  text-decoration: none;
 }
 
-.cta-final {
-  margin-top: 2rem;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s;
-}
-
+/* ===== BOTÓN FINAL ===== */
 .btn-emtag {
   font-family: 'Elemental End', sans-serif;
   font-size: 0.9rem;
@@ -1386,15 +1455,12 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   padding: 0.7rem 1.2rem;
   border-radius: 12px;
-  box-shadow: 0 0 12px #18191d;
   text-transform: uppercase;
   letter-spacing: 1.3px;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  display: inline-block;
-  font-weight: 700;
   border: 1px solid #18191d;
-  text-decoration: none;
-  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 0 12px #18191d;
+  transition: all 0.3s ease;
 }
 
 .btn-emtag:hover {
@@ -1402,14 +1468,90 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
   color: #18191d;
   box-shadow: 0 0 18px #fff300cc;
   transform: scale(1.05);
-  border: none;
-  text-decoration: none;
 }
 
-.btn-cta-secundario,
-.btn-emtag {
-  text-decoration: none;
+/* ===== CTA FINAL ===== */
+.cta-final {
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s;
 }
+
+/* ===== ANIMACIÓN ===== */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SECCIÓN PREMIUM (optimizada) ===== */
+.seccion-rines-premium-unificada {
+  position: relative;
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seccion-rines-premium-unificada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../images/dest.jpg') center/cover fixed;
+  opacity: 1;
+  z-index: -1;
+}
+
+.glass-box {
+  position: relative;
+  background: rgba(17, 17, 17, 0.45);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.65),
+              inset 0 0 25px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+/* Resaltado dorado discreto */
+.glass-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 221, 3, 0.4), rgba(255, 255, 255, 0.15));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  .titulo-seccion { font-size: 2rem; }
+  .nombre-marca { font-size: 0.7rem; }
+  .seccion-rines-premium-unificada .highlight-title { font-size: 1.6rem; }
+}
+
+
+
+
+
 
 
 
@@ -1749,310 +1891,6 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 
 
 
-
-
-/* ----------------------------- */
-/* MODAL */
-/* ----------------------------- */
-
-.modal-rin {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-.modal-rin.open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-content-rin {
-  background: rgba(24, 25, 29, 0.9); /* un poco más sólido para contraste */
-  border-radius: 1rem;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  width: 100%;
-  overflow: hidden;
-  padding: 2rem;
-  position: relative;
-  animation: fadeInScale 0.5s ease-out forwards;
-}
-
-/* Animación de entrada */
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.modal-image-container {
-  flex: 1 1 45%;
-  text-align: center;
-  padding: 1rem;
-}
-
-.main-image {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 0.5rem;
-  transition: opacity 0.3s ease;
-}
-
-.thumbnail-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.thumbnail {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: border 0.3s ease, transform 0.3s ease;
-}
-
-.thumbnail:hover {
-  border-color: #fbdc04;
-  transform: scale(1.05);
-}
-
-.modal-text-rin {
-  flex: 1 1 55%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.modal-text-rin h2 {
-  font-family: 'Elemental End', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-}
-
-.yellow-gradient {
-  background: linear-gradient(90deg, #FBEF04, #FFD102);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.modal-specs {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ccc;
-  margin-bottom: 1.5rem;
-}
-
-.modal-specs i {
-  color: #FDDD03;
-  margin-right: 0.5rem;
-  min-width: 1.2rem;
-}
-
-.modal-specs ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.modal-specs li {
-  margin-bottom: 0.6rem;
-  display: flex;
-  align-items: flex-start;
-}
-
-.modal-cta-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.modal-cta-buttons a {
-  font-family: 'Montserrat', sans-serif;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #000;
-  background: linear-gradient(90deg, #FBEF04, #FFD102);
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.modal-cta-buttons a:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(90deg, #ffe600, #ffd700);
-}
-
-/* Botón cerrar */
-.modal-close {
-  position: absolute;
-  top: 0.8rem;
-  right: 1rem;
-  font-size: 2.2rem;
-  color: #fff;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
-  z-index: 10000;
-  line-height: 1;
-}
-
-.modal-close:hover {
-  color: #ffd700;
-  transform: scale(1.1);
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .modal-content-rin {
-    flex-direction: column;
-    padding: 1rem;
-    max-height: 90vh;
-    overflow-y: auto; /* scroll si se pasa en móviles */
-  }
-
-  .modal-text-rin {
-    padding: 1.5rem 1rem;
-  }
-
-  .modal-text-rin h2 {
-    font-size: 1.5rem;
-  }
-
-  .main-image {
-    max-width: 100%;
-  }
-
-  .thumbnail-container {
-    gap: 0.5rem;
-  }
-
-  .thumbnail {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ---------------------- */
-/* ANIMACIÓN DE ENTRADA   */
-/* ---------------------- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ---------------------- */
-/* RESPONSIVE             */
-/* ---------------------- */
-@media (max-width: 768px) {
-  .modal-content-rin {
-    flex-direction: column;
-  }
-
-  .modal-image-rin, .modal-text-rin {
-    flex: 1 1 100%;
-    padding: 1rem 0;
-  }
-
-  .modal-text-rin h2 {
-    font-size: 1.8rem;
-  }
-
-  .modal-specs {
-    font-size: 0.95rem;
-  }
-}
-.rin-card {
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 12px;
-  background-color: #111111;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-.rin-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(255, 213, 0, 0.2);
-}
-
-.rin-thumbnail {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.rin-title {
-  font-family: 'Elemental End', sans-serif;
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 
 
 
@@ -2575,4 +2413,108 @@ background: linear-gradient(180deg, #18191d 0%, #000000 100%);
 
 .tooltip-content iframe {
   border-radius: 8px;
+}
+
+
+
+/* Modal general */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.95);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+/* Contenedor del contenido */
+.modal-contenido {
+  background: #111;
+  border: 1px solid #ffd70030;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Imagen dentro del modal */
+.modal-imagen img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 2px solid #ffd70050;
+}
+
+/* Texto */
+.modal-texto {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.modal-texto h2 {
+  font-size: 1.5rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.modal-texto p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Botón de cierre */
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #ffcc00;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+  color: #fff;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.lista-especificaciones {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  border-top: 1px solid #ffd70030;
+  padding-top: 15px;
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lista-especificaciones li {
+  color: #ddd;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.lista-especificaciones strong {
+  color: #ffcc00;
 }
