@@ -192,99 +192,118 @@
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="50">
   <!-- Google Tag Manager (noscript) -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7MNPFWR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7MNPFWR"
+            height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End GTM (noscript) -->
-<!-- ===========================
-     NAVBAR PRINCIPAL EMTAG
-=========================== -->
+
+  <!-- ===========================
+       NAVBAR PRINCIPAL EMTAG
+  =========================== -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Menú principal">
   <div class="container">
+
     <!-- Logo -->
-    <a class="navbar-brand" href="/" title="EMTAG - Inicio">
-      <img src="images/logo.svg" alt="Logo EMTAG - Rines y Accesorios Premium" loading="eager" width="120" height="36">
+    <a class="navbar-brand" href="#inicio" title="EMTAG - Inicio">
+      <img src="images/logo.svg" alt="Logo EMTAG - Rines y Accesorios Premium" loading="lazy" width="120">
     </a>
 
     <!-- Botón móvil -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Abrir menú de navegación">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menú principal -->
+    <!-- Menú -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav align-items-lg-center">
+
         <li class="nav-item">
-          <a class="nav-link" href="/" title="Ir al inicio">Inicio</a>
+          <a class="nav-link" href="#inicio" title="Ir al inicio">Inicio</a>
         </li>
 
         <!-- Dropdown Rines -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#rines" id="rinesDropdown" role="button"
-            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="rines.html" id="rinesDropdown" role="button"
+             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Rines
           </a>
           <div class="dropdown-menu shadow" aria-labelledby="rinesDropdown">
-            <a class="dropdown-item" href="#mercedes">
-              <img src="images/logos-rin/mercedes-benz.svg" alt="Logo Mercedes-Benz" class="menu-logo">
+            <a class="dropdown-item d-flex align-items-center" href="rines.html#mercedes">
+              <img src="images/logos-rin/mercedes-benz.svg" alt="Logo Mercedes-Benz" class="menu-logo me-2" width="20" height="20">
               Mercedes-Benz
-     
-            <a class="dropdown-item" href="#bmw">
-              <img src="images/logos-rin/bmw.svg" alt="Logo BMW" class="menu-logo">
+            </a>
+            <a class="dropdown-item d-flex align-items-center" href="rines.html#bmw">
+              <img src="images/logos-rin/bmw.svg" alt="Logo BMW" class="menu-logo me-2" width="20" height="20">
               BMW
             </a>
-            <a class="dropdown-item" href="#audi">
-              <img src="images/logos-rin/audi.svg" alt="Logo Audi" class="menu-logo">
+            <a class="dropdown-item d-flex align-items-center" href="rines.html#audi">
+              <img src="images/logos-rin/audi.svg" alt="Logo Audi" class="menu-logo me-2" width="20" height="20">
               Audi
             </a>
-            <a class="dropdown-item" href="#porsche">
-              <img src="images/logos-rin/porsche.svg" alt="Logo Porsche" class="menu-logo">
+            <a class="dropdown-item d-flex align-items-center" href="rines.html#porsche">
+              <img src="images/logos-rin/porsche.svg" alt="Logo Porsche" class="menu-logo me-2" width="20" height="20">
               Porsche
             </a>
           </div>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#accesorios" title="Ver accesorios">Accesorios</a>
+          <a class="nav-link" href="accesorios.html" title="Ver accesorios para vehículos">Accesorios</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="#servicios" title="Explorar servicios especializados">Servicios</a>
+          <a class="nav-link" href="#Servicios" title="Explorar servicios especializados">Servicios</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="#contacto" title="Contactar a EMTAG">Contacto</a>
+          <a class="nav-link" href="#Contacto" title="Contactar a EMTAG">Contacto</a>
         </li>
 
-        <!-- Teléfono y Redes -->
+        <!-- Teléfono + Redes -->
         <li class="nav-item phone-social-container ms-lg-3">
           <div class="phone-container d-flex align-items-center">
             <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>
-            <a href="https://wa.me/525580578240" target="_blank" rel="noopener noreferrer" class="text-white fw-bold"
+            <a 
+              href="https://wa.me/525580578240" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-white fw-bold" 
               title="Enviar mensaje por WhatsApp a EMTAG">
               <span class="phone-number">55 8057 8240</span>
             </a>
           </div>
-
           <div class="social-icons d-flex align-items-center mt-2 mt-lg-0">
-            <a href="https://www.facebook.com/emtag" title="Facebook EMTAG" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/emtag" title="Instagram EMTAG" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@emtag" title="TikTok EMTAG" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@emtag" title="YouTube EMTAG" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="Facebook EMTAG" aria-label="Facebook" class="ms-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Instagram EMTAG" aria-label="Instagram" class="ms-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok EMTAG" aria-label="TikTok" class="ms-2"><i class="fab fa-tiktok"></i></a>
+            <a href="#" title="YouTube EMTAG" aria-label="YouTube" class="ms-2"><i class="fab fa-youtube"></i></a>
           </div>
         </li>
+
+        <!-- CTA Cotizar -->
+        <li class="nav-item ms-lg-3">
+          <a href="#cotizar" class="btn-cta" role="button">Cotizar ahora</a>
+        </li>
+
       </ul>
     </div>
   </div>
 </nav>
-<!-- ===========================
-     SUBMENÚ RINES (FILTROS)
-=========================== -->
-<nav class="submenu-rines">
-  <ul class="submenu-list">
 
-         <!-- MARCA -->
-    <li class="submenu-item dropdown">
+<div id="menuOverlay"></div>
+<!-- ===========================
+     SUBMENÚ FILTROS (FIJO HASTA MITAD)
+=========================== -->
+<nav class="submenu-filtros" id="submenuFiltros">
+  <ul>
+    <li class="dropdown">
       <button class="submenu-btn">MARCA <i class="bi bi-chevron-down"></i></button>
       <ul class="submenu-dropdown">
         <li><a href="#mercedes">Mercedes</a></li>
@@ -293,23 +312,28 @@
         <li><a href="#porsche">Porsche</a></li>
       </ul>
     </li>
-    <li class="submenu-item dropdown">
+
+    <li class="dropdown">
+      <button class="submenu-btn">BARRENACIÓN <i class="bi bi-chevron-down"></i></button>
+      <ul class="submenu-dropdown">
+        <li><a href="#">4x100</a></li>
+        <li><a href="#">5x112</a></li>
+        <li><a href="#">5x114.3</a></li>
+        <li><a href="#">5x120</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
       <button class="submenu-btn">DIÁMETRO <i class="bi bi-chevron-down"></i></button>
       <ul class="submenu-dropdown">
-        <li><a href="#">13"</a></li>
-        <li><a href="#">14"</a></li>
-        <li><a href="#">15"</a></li>
-        <li><a href="#">16"</a></li>
         <li><a href="#">17"</a></li>
         <li><a href="#">18"</a></li>
         <li><a href="#">19"</a></li>
         <li><a href="#">20"</a></li>
         <li><a href="#">21"</a></li>
-        <li><a href="#">22"</a></li>
-        <li><a href="#">23
-            </a>
-
-
+      </ul>
+    </li>
+  </ul>
 </nav>
 
 
@@ -684,6 +708,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   </script>
+
+
+<script>
+  const submenu = document.getElementById('submenuFiltros');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScrollTop) {
+      submenu.classList.add('hidden-submenu'); // desaparece al bajar
+    } else {
+      submenu.classList.remove('hidden-submenu'); // aparece al subir
+    }
+    lastScrollTop = currentScroll;
+  });
+</script>
+
 
   <!-- Zoho SalesIQ -->
   <script>

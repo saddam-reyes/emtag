@@ -294,94 +294,116 @@ a:hover { color: var(--primary-color); }
   text-shadow: 0 0 6px rgba(255, 221, 3, 0.6);
 }
 
-/* =====================================
-   SUBMENÚ RINES SECUNDARIO
-===================================== */
-.submenu-rines {
-  background: #0a0a0a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.8rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+
+
+
+/* ===========================
+   SUBMENÚ FILTROS ESTILO PREMIUM REFINADO
+=========================== */
+.submenu-filtros {
+  position: fixed;
+  top: 70px; /* ajusta según la altura del navbar principal */
+  left: 0;
+  width: 50%;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #262626 100%);
+  z-index: 1000;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #111;
+  border-top: 1px solid #2b2b2b;
+  border-right: 1px solid #111;
+  border-radius: 0 0 6px 0;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* fuente más elegante */
 }
 
-.submenu-list {
+/* Contenedor de botones */
+.submenu-filtros ul {
   list-style: none;
-  display: flex;
-  gap: 2rem;
-  padding: 0;
   margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
-.submenu-item {
+/* Botones principales refinados */
+.submenu-filtros .submenu-btn {
+  background: none;
+  border: none;
+  color: #d0d0d0;
+  font-weight: 500; /* menos pesado, más refinado */
+  font-size: .5rem; /* un poco más grande para resaltar */
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.submenu-filtros .submenu-btn:hover {
+  color: #fdd835;
+  transform: translateY(-1px); /* más sutil */
+}
+
+/* Dropdown refinado */
+.submenu-filtros .dropdown {
   position: relative;
 }
 
-.submenu-btn {
-  background: transparent;
-  border: none;
-  color: #bfbfbf;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.submenu-btn:hover {
-  color: #ffdd03;
-  text-shadow: 0 0 8px rgba(255, 221, 3, 0.5);
-}
-
-.submenu-dropdown {
+.submenu-filtros .submenu-dropdown {
   display: none;
   position: absolute;
-  top: 110%;
+  top: 100%;
   left: 0;
-  background: #0d0d0d;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  min-width: 180px;
-  padding: 0.4rem 0;
-  z-index: 99;
+  background-color: #0f0f0f;
+  list-style: none;
+  padding: 5px 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  min-width: 160px;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.submenu-item:hover .submenu-dropdown {
+.submenu-filtros .submenu-dropdown li a {
+  color: #d0d0d0;
+  text-decoration: none;
+  display: block;
+  padding: 8px 15px;
+  font-weight: 400;
+  font-size: 0.95rem; /* más refinado */
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.submenu-filtros .submenu-dropdown li a:hover {
+  color: #fdd835;
+  background-color: #1a1a1a;
+}
+
+.submenu-filtros .dropdown:hover .submenu-dropdown {
   display: block;
 }
 
-.submenu-dropdown a {
-  color: #bfbfbf;
-  padding: 0.5rem 1rem;
-  display: block;
-  font-size: 0.85rem;
-  text-transform: none;
-  transition: all 0.3s ease;
-}
-.submenu-dropdown a:hover {
-  color: #ffdd03;
-  background: rgba(255, 221, 3, 0.1);
-  transform: translateX(4px);
+/* Ocultar al hacer scroll */
+.hidden-submenu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
 }
 
-/* Scroll interno si hay muchas opciones */
-.submenu-scroll {
-  max-height: 220px;
-  overflow-y: auto;
-}
-.submenu-scroll::-webkit-scrollbar {
-  width: 6px;
-}
-.submenu-scroll::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
-}
-.submenu-scroll::-webkit-scrollbar-thumb:hover {
-  background: #ffdd03;
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*=====================================
