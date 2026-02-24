@@ -1,188 +1,166 @@
-
-Dijiste:
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" data-bs-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cotización Ztrus</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cotización | Saddam Reyes</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@0,100..900&display=swap" rel="stylesheet">
 
 <style>
-
 body{
-    background:#0B21BF;
-    padding:40px 15px;
-    font-family: 'Segoe UI', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
-
-.documento{
-    background:#ffffff;
-    max-width:900px;
-    margin:auto;
-    padding:50px 60px;
-    border-radius:25px;
-    box-shadow:0 20px 50px rgba(0,0,0,.20);
+.logo-img{
+  max-height:60px;
 }
-
-.logo-circular{ width:150px; }
-.logo-gris{ width:90px; }
-
-.nombre{
-    font-weight:700;
-    font-size:28px;
-    color:#1f3fbf;
-    margin:0;
+.quote-box{
+  border:1px solid #e5e5e5;
+  padding:15px;
 }
-
-.cargo{
-    color:#1f3fbf;
-    font-size:14px;
-    margin-bottom:10px;
+.totals-card{
+  border:1px solid #e5e5e5;
+  padding:20px;
+  border-radius:8px;
 }
-
-.datos span{
-    display:block;
-    font-size:14px;
-    color:#555;
-}
-
-.caja-fecha{
-    background:#1f3fbf;
-    color:white;
-    padding:8px 0;
-    font-weight:600;
-}
-
-.caja-num{
-    border:2px solid #ccc;
-    border-top:0;
-    padding:10px;
-    font-size:14px;
-}
-
-.inciso{
-    color:#1f3fbf;
-    font-weight:600;
-}
-
-.inciso i{
-    margin-right:6px;
-}
-
-hr{ margin:35px 0; }
-
-.footer-img{
-    width:100%;
-    margin-top:40px;
-}
-
-@media(max-width:768px){
-    .documento{ padding:30px 20px; }
-    .logo-circular{ width:110px; }
-}
-
 </style>
 </head>
 
 <body>
+<main class="container py-4">
 
-<div class="documento">
+<!-- HEADER CON LOGO -->
+<div class="row g-4 align-items-center">
+<div class="col-lg-8">
+<div class="d-flex align-items-center gap-3">
+<img src="https://raw.githubusercontent.com/trazossucios91-prog/emtag/refs/heads/main/logo.svg" 
+     alt="Logo Saddam Reyes" 
+     class="logo-img">
 
-<!-- ENCABEZADO -->
-<div class="row align-items-start mb-4">
-
-    <div class="col-md-8 d-flex gap-4">
-         <img src="https://raw.githubusercontent.com/saddam-reyes/emtag/main/Logo-a.png" class="logo-gris mb-3">
-
-        <div>
-            <h1 class="nombre">SADDAM <span style="font-weight:400;">REYES</span></h1>
-            <div class="cargo">CEO, DIRECTOR CREATIVO</div>
-
-            <div class="datos">
-                <span><i class="bi bi-telephone"></i> 55 3470 0701</span>
-                <span><i class="bi bi-envelope"></i> saddam.atomoz@gmail.com</span>
-                <span><i class="bi bi-instagram"></i> Atomoz</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 text-md-end mt-4 mt-md-0">
-
-       
-         <img src="https://raw.githubusercontent.com/saddam-reyes/emtag/main/Logo-B.png" class="logo-circular">
-
-        <div class="row g-0">
-            <div class="col-6">
-                <div class="caja-fecha text-center">FECHA</div>
-                <div class="caja-num text-center">17/02/2026</div>
-            </div>
-            <div class="col-6">
-                <div class="caja-fecha text-center">NUMERACIÓN</div>
-                <div class="caja-num text-center">0101</div>
-            </div>
-        </div>
-
-    </div>
-
+<div>
+<h1 class="h4 mb-1 fw-bold">Saddam Reyes</h1>
+<div class="text-muted small">Diseño Gráfico · Web · Ilustrador Digital</div>
+<div class="small mt-1">
+<i class="bi bi-telephone"></i> 55 2805 2035 |
+<i class="bi bi-envelope"></i> trazos.sucios.91@gmail.com
+</div>
+</div>
+</div>
 </div>
 
-<hr>
-
-<p><span class="inciso"><i class="bi bi-person-fill"></i>Cliente:</span> Abraham</p>
-<p><span class="inciso"><i class="bi bi-building"></i>Empresa:</span> Ztrus</p>
-<p><span class="inciso"><i class="bi bi-telephone-fill"></i>Teléfono:</span> 55 7279 3179</p>
-
-<hr>
-
-<h5 class="inciso"><i class="bi bi-briefcase-fill"></i>Proyecto</h5>
-<p>Creación de piezas gráficas tipo banner para las marcas Henkel, Azor y Pelikan.</p>
-
-<h5 class="inciso mt-4"><i class="bi bi-grid-1x2-fill"></i>Alcance del Proyecto</h5>
-
-<p class="inciso"><i class="bi bi-palette-fill"></i>1. Marca Henkel</p>
-<ul>
-<li>1 concepto gráfico adaptable</li>
-<li>Estilo alegre, feliz y dinámico</li>
-<li>Medidas: 1580x700 px, 820x1000 px, 1580x220 px</li>
-</ul>
-
-<p class="inciso"><i class="bi bi-palette-fill"></i>2. Marca Azor</p>
-<ul>
-<li>1 concepto gráfico adaptable</li>
-<li>Estilo alegre, feliz y dinámico</li>
-<li>Medidas: 1580x700 px, 820x1000 px, 1580x220 px</li>
-</ul>
-
-<p class="inciso"><i class="bi bi-palette-fill"></i>3. Marca Pelikan</p>
-<ul>
-<li>1 concepto gráfico adaptable</li>
-<li>Estilo alegre, feliz y dinámico</li>
-<li>Medidas: 1580x700 px, 820x1000 px, 1580x220 px</li>
-</ul>
-
-<hr>
-
-<h5 class="inciso"><i class="bi bi-calendar-check-fill"></i>Cronograma</h5>
-<ul>
-<li><span class="inciso"><i class="bi bi-play-fill"></i>18 Feb:</span> Inicio del proyecto</li>
-<li><span class="inciso"><i class="bi bi-send-fill"></i>20 Feb:</span> Primer avance</li>
-<li><span class="inciso"><i class="bi bi-arrow-repeat"></i>22 Feb:</span> Segundo avance</li>
-<li><span class="inciso"><i class="bi bi-check-circle-fill"></i>24 Feb:</span> Entrega final</li>
-</ul>
-
-<hr>
-
-<h5 class="inciso"><i class="bi bi-cash-coin"></i>Inversión</h5>
-<p><span class="inciso"><i class="bi bi-wallet-fill"></i>Costo total:</span> $5,500 MXN</p>
-<p><span class="inciso"><i class="bi bi-percent"></i>Anticipo:</span> 10% para iniciar</p>
-<p><span class="inciso"><i class="bi bi-credit-card-fill"></i>Liquidación:</span> Contra entrega final</p>
-
-<img src="https://raw.githubusercontent.com/saddam-reyes/emtag/main/foother.png" class="footer-img">
-
+<div class="col-lg-4">
+<div class="quote-box text-center">
+<div class="fw-bold">COTIZACIÓN</div>
+<div class="small text-muted mt-2">Fecha: 23 Febrero 2026</div>
+<div class="small text-muted">Folio: SR-0024</div>
+</div>
+</div>
 </div>
 
+<!-- CLIENTE -->
+<section class="mt-4">
+<h6 class="fw-bold">Cotización para:</h6>
+<p class="mb-0"><strong>Magally</strong></p>
+<p class="text-muted">Desarrollo de Identidad Gráfica Profesional</p>
+</section>
+
+<!-- DESCRIPCIÓN -->
+<section class="mt-4">
+<h6 class="fw-bold">Descripción del Proyecto</h6>
+
+<p class="small text-muted">
+Desarrollo integral de identidad gráfica para marca especializada en nutrición renal y perinatal.
+Concepto basado en la abstracción del glomérulo vinculado visualmente con la forma orgánica de una mora,
+conectando ciencia, nutrición y autocuidado.
+</p>
+
+<p class="small">
+<strong>Inicio del proyecto:</strong> una vez autorizada la cotización y recibido el anticipo correspondiente.<br>
+<strong>Fecha estimada de entrega:</strong> Si la autorización se realiza el 24 de febrero,
+la entrega final del proyecto estaría prevista para el <strong>11 de marzo de 2026</strong>.
+</p>
+</section>
+
+<!-- CONCEPTOS -->
+<section class="mt-4">
+<h6 class="fw-bold">Conceptos</h6>
+<table class="table">
+<thead>
+<tr>
+<th>Concepto</th>
+<th class="text-end">Importe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desarrollo conceptual y naming estratégico</td>
+<td class="text-end">$800 MXN</td>
+</tr>
+<tr>
+<td>Diseño de logotipo profesional (3 versiones + 2 ajustes)</td>
+<td class="text-end">$1,200 MXN</td>
+</tr>
+<tr>
+<td>Sistema visual (paleta cromática + tipografías)</td>
+<td class="text-end">$500 MXN</td>
+</tr>
+<tr>
+<td>Aplicaciones de marca (tarjeta, sello y hoja clínica)</td>
+<td class="text-end">$500 MXN</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<!-- TOTALES -->
+<section class="mt-4">
+<div class="row">
+<div class="col-lg-6">
+<div class="border p-3 rounded">
+<strong>Condiciones:</strong>
+<ul class="small text-muted mt-2">
+<li>Se requiere un pago del <strong>20%</strong> para iniciar el proyecto.</li>
+<li>El <strong>80% restante</strong> se liquida contra entrega final aprobada.</li>
+<li>Cambios fuera del alcance acordado pueden generar cargos adicionales.</li>
+</ul>
+
+<p class="small mt-3">
+<strong>Anticipo requerido (20%):</strong> $600 MXN<br>
+<strong>Pago restante contra entrega:</strong> $2,400 MXN
+</p>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="totals-card">
+<div class="d-flex justify-content-between">
+<span>Subtotal</span>
+<span>$3,000 MXN</span>
+</div>
+<div class="d-flex justify-content-between">
+<span>IVA</span>
+<span>$0 MXN</span>
+</div>
+<hr>
+<div class="d-flex justify-content-between fw-bold fs-5">
+<span>Total</span>
+<span>$3,000 MXN</span>
+</div>
+<div class="d-flex justify-content-between mt-3">
+<span>Anticipo (20%)</span>
+<span>$600 MXN</span>
+</div>
+<div class="d-flex justify-content-between">
+<span>Restante</span>
+<span>$2,400 MXN</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
 </body>
 </html>
